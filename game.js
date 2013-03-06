@@ -32,7 +32,7 @@ function(multiplication){
     a= Math.floor((Math.random()*10)+1);
     b= Math.floor((Math.random()*10)+1);
     var answer =
-    prompt( "What is the answer for"+ a +" x " + b + " ?")
+    prompt( "What is the answer for"+ a +" × " + b + " ?")
     if (answer == a * b){
         return true;
     }
@@ -45,10 +45,10 @@ function(multiplication){
 function(division){
     a= Math.floor((Math.random()*10)+1);
     b= Math.floor((Math.random()*10)+1);
-    c=a * b
+    c = a * b
     
     var answer =
-    prompt( "What is the answer for"+ c +" / " + a + " ?")
+    prompt( "What is the answer for"+ c +" ÷ " + a + " ?")
     if (answer == b){
         return true;
     }
