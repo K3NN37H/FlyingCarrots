@@ -1,5 +1,6 @@
-var mazeSize=21;
+var mazeSize=17;
 var maze=[mazeSize];
+var endX, endY, endCounter=-1;
 for(var i=0;i<mazeSize;i++)
 {
     maze[i]=[mazeSize]
@@ -11,9 +12,12 @@ for(var i=0;i<mazeSize;i++)
 
 maze[0][1]=true;
 maze[1][1]=true;
-makeMaze(1,1);
-function makeMaze (cx,cy)
+makeMaze(1,1,0);
+function makeMaze (cx,cy,counter)
 {
+ 
+    deadEnd(cx,cy,counter);
+    counter++;
     printMaze();
     if(cx==1&&cy==1)
     {
@@ -27,7 +31,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy+1]=true;
                     maze[cx][cy+2]=true;
-                    makeMaze(cx,cy+2);
+                    makeMaze(cx,cy+2,counter);
                 }
             }
             if(dir==2)
@@ -36,7 +40,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx+1][cy]=true;
                     maze[cx+2][cy]=true;
-                    makeMaze(cx+2,cy);
+                    makeMaze(cx+2,cy,counter);
                 }
             }
         }
@@ -53,7 +57,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy-1]=true;
                     maze[cx][cy-2]=true;
-                    makeMaze(cx,cy-2);
+                    makeMaze(cx,cy-2,counter);
                 }
             }
             if(dir==2)
@@ -62,7 +66,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx+1][cy]=true;
                     maze[cx+2][cy]=true;
-                    makeMaze(cx+2,cy);
+                    makeMaze(cx+2,cy,counter);
                 }
             }
         }
@@ -79,7 +83,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy+1]=true;
                     maze[cx][cy+2]=true;
-                    makeMaze(cx,cy+2);
+                    makeMaze(cx,cy+2,counter);
                 }
             }
             if(dir==2)
@@ -88,7 +92,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx-1][cy]=true;
                     maze[cx-2][cy]=true;
-                    makeMaze(cx-2,cy);
+                    makeMaze(cx-2,cy,counter);
                 }
             }
         }
@@ -105,7 +109,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy-1]=true;
                     maze[cx][cy-2]=true;
-                    makeMaze(cx,cy-2);
+                    makeMaze(cx,cy-2,counter);
                 }
             }
             if(dir==2)
@@ -114,7 +118,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx-1][cy]=true;
                     maze[cx-2][cy]=true;
-                    makeMaze(cx-2,cy);
+                    makeMaze(cx-2,cy,counter);
                 }
             }
         }
@@ -131,7 +135,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy+1]=true;
                     maze[cx][cy+2]=true;
-                    makeMaze(cx,cy+2);
+                    makeMaze(cx,cy+2,counter);
                 }
             }
             if(dir==2)
@@ -140,7 +144,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx+1][cy]=true;
                     maze[cx+2][cy]=true;
-                    makeMaze(cx+2,cy);
+                    makeMaze(cx+2,cy,counter);
                 }
             }
             if(dir==3)
@@ -149,7 +153,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy-1]=true;
                     maze[cx][cy-2]=true;
-                    makeMaze(cx,cy-2);
+                    makeMaze(cx,cy-2,counter);
                 }
             }
         }
@@ -166,7 +170,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy+1]=true;
                     maze[cx][cy+2]=true;
-                    makeMaze(cx,cy+2);
+                    makeMaze(cx,cy+2,counter);
                 }
             }
             if(dir==2)
@@ -175,7 +179,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx-1][cy]=true;
                     maze[cx-2][cy]=true;
-                    makeMaze(cx-2,cy);
+                    makeMaze(cx-2,cy,counter);
                 }
             }
             if(dir==3)
@@ -184,7 +188,7 @@ function makeMaze (cx,cy)
                 {
                     maze[cx][cy-1]=true;
                     maze[cx][cy-2]=true;
-                    makeMaze(cx,cy-2);
+                    makeMaze(cx,cy-2,counter);
                 }
             }
         }
@@ -197,29 +201,29 @@ function makeMaze (cx,cy)
             dir=Math.floor(Math.random()*3+1);
             if(dir==1)
             {
-                if(maze[cx][cy+2]==false)
+                if(maze[cx][cy+2]===false)
                 {
                     maze[cx][cy+1]=true;
                     maze[cx][cy+2]=true;
-                    makeMaze(cx,cy+2);
+                    makeMaze(cx,cy+2,counter);
                 }
             }
             if(dir==2)
             {
-                if(maze[cx+2][cy]==false)
+                if(maze[cx+2][cy]===false)
                 {
                     maze[cx+1][cy]=true;
                     maze[cx+2][cy]=true;
-                    makeMaze(cx+2,cy);
+                    makeMaze(cx+2,cy,counter);
                 }
             }
             if(dir==3)
             {
-                if(maze[cx-2][cy]==false)
+                if(maze[cx-2][cy]===false)
                 {
                     maze[cx-1][cy]=true;
                     maze[cx-2][cy]=true;
-                    makeMaze(cx-2,cy);
+                    makeMaze(cx-2,cy,counter);
                 }
             }
         }
@@ -232,55 +236,20 @@ function makeMaze (cx,cy)
             dir=Math.floor(Math.random()*3+1);
             if(dir==1)
             {
-                if(maze[cx][cy-2]==false)
+                if(maze[cx][cy-2]===false)
                 {
                     maze[cx][cy-1]=true;
                     maze[cx][cy-2]=true;
-                    makeMaze(cx,cy-2);
+                    makeMaze(cx,cy-2,counter);
                 }
             }
             if(dir==2)
             {
-                if(maze[cx+2][cy]==false)
+                if(maze[cx+2][cy]===false)
                 {
                     maze[cx+1][cy]=true;
                     maze[cx+2][cy]=true;
-                    makeMaze(cx+2,cy);
-                }
-            }
-            if(dir==3)
-            {
-                if(maze[cx-2][cy]==false)
-                {
-                    maze[cx-1][cy]=true;
-                    maze[cx-2][cy]=true;
-                    makeMaze(cx-2,cy);
-                }
-            }
-        }
-    }
-    else
-    {
-        while(maze[cx+2][cy]===false||maze[cx][cy+2]===false||maze[cx-2][cy]===false||maze[cx][cy-2]===false)
-        {
-           var dir;
-            dir=Math.floor(Math.random()*4+1);
-            if(dir==1)
-            {
-                if(maze[cx][cy+2]==false)
-                {
-                    maze[cx][cy+1]=true;
-                    maze[cx][cy+2]=true;
-                    makeMaze(cx,cy+2);
-                }
-            }
-            if(dir==2)
-            {
-                if(maze[cx+2][cy]==false)
-                {
-                    maze[cx+1][cy]=true;
-                    maze[cx+2][cy]=true;
-                    makeMaze(cx+2,cy);
+                    makeMaze(cx+2,cy,counter);
                 }
             }
             if(dir==3)
@@ -289,16 +258,51 @@ function makeMaze (cx,cy)
                 {
                     maze[cx-1][cy]=true;
                     maze[cx-2][cy]=true;
-                    makeMaze(cx-2,cy);
+                    makeMaze(cx-2,cy,counter);
+                }
+            }
+        }
+    }
+    else
+    {
+        while(maze[cx+2][cy]===false||maze[cx][cy+2]===false||maze[cx-2][cy]===false||maze[cx][cy-2]===false)
+        {
+            var dir;
+            dir=Math.floor(Math.random()*4+1);
+            if(dir==1)
+            {
+                if(maze[cx][cy+2]===false)
+                {
+                    maze[cx][cy+1]=true;
+                    maze[cx][cy+2]=true;
+                    makeMaze(cx,cy+2,counter);
+                }
+            }
+            if(dir==2)
+            {
+                if(maze[cx+2][cy]===false)
+                {
+                    maze[cx+1][cy]=true;
+                    maze[cx+2][cy]=true;
+                    makeMaze(cx+2,cy,counter);
+                }
+            }
+            if(dir==3)
+            {
+                if(maze[cx-2][cy]===false)
+                {
+                    maze[cx-1][cy]=true;
+                    maze[cx-2][cy]=true;
+                    makeMaze(cx-2,cy,counter);
                 }
             }
             if(dir==4)
             {
-                if(maze[cx][cy-2]==false)
+                if(maze[cx][cy-2]===false)
                 {
                     maze[cx][cy-1]=true;
                     maze[cx][cy-2]=true;
-                    makeMaze(cx,cy-2);
+                    makeMaze(cx,cy-2,counter);
                 }
             }
         }
@@ -327,6 +331,17 @@ function printMaze()
     console.log("****************************************************");
 }
 
+function deadEnd(cx,cy, counter)
+{
+    console.log(counter);
+    if(counter>endCounter)
+    {
+        endX=cx;
+        endY=cy;
+        endCounter=counter;
+        console.log(endX+", "+endY);
+    }
+}
 
 
 
