@@ -2,11 +2,23 @@ body
 {
     background:#224E9D;
 }
-#wall
+#mapContainer
 {
-    background:000000;
+    position:absolute;
+    top:10%;
+    left:30%;
+    width:40%;
+    height:40%;
 }
-#floor
+.wall
 {
-    background:FFFFFF;
+    background-color:#000000;
+    width:10px;
+    height:10px;
+}
+.floor
+{
+    background-color:#FFFFFF;
+    width:10px;
+    height:10px;
 }
