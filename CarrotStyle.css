@@ -2,3 +2,11 @@ body
 {
     background:#224E9D;
 }
+#wall
+{
+    background:000000;
+}
+#floor
+{
+    background:FFFFFF;
+}

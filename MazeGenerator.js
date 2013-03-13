@@ -339,10 +339,32 @@ function deadEnd(cx,cy, counter)
         endX=cx;
         endY=cy;
         endCounter=counter;
-        console.log(endX+", "+endY);
+        
     }
+    console.log(endX+", "+endY);
 }
 
+function mazeDrawer()
+{
+    var counter=0;
+    for(var i=0;i<mazeSize;i++)
+    {
+         $("#mapContainer").append('<tr>');
+        for(var j=0;j<mazeSize;j++)
+        {
+           
+            if(maze[j][i]===false)
+            {
+                $("#mapContainer").append('<th id=wall></th>');
+            }
+            if(maze[j][i]===true)
+            {
+                $("#mapContainer").append('<th id=floor></th>');
+            }
+        }
+        $("#mapContainer").append('</tr>');
+    }
+}
 
 
 

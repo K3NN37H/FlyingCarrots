@@ -1,0 +1,4 @@
+function mazeDrawer(var maze)
+{
+    
+}
