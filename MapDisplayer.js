@@ -40,6 +40,7 @@ function mover(event)
 
 function mazeDrawer()
 {
+    $("#mapContainer").empty();
     var mapHtml = "";
     for(var i=0;i<mazeSize;i++)
     {
