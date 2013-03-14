@@ -352,5 +352,3 @@ function deadEnd(cx,cy, counter)
 
 
 
-
-
