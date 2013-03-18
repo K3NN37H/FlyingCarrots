@@ -2,6 +2,19 @@ var playerX=0;
 var playerY=1;
 mazeDrawer();
   $(document).keydown(mover);
+$("#up").click(function () {
+	mover({which:"38"});
+});
+$("#down").click(function () {
+	mover({which:"40"});
+});
+$("#left").click(function () {
+	mover({which:"37"});
+});
+$("#right").click(function () {
+	mover({which:"39"});
+});
+  
 function mover(event)
 {
     var text=event.which;

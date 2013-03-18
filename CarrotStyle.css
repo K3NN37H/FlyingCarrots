@@ -23,3 +23,29 @@ body
     width:20px;
     height:20px;
 }
+.moveButtons
+{
+	position:absolute;
+	width:25px;
+	height:25px;
+}
+#up
+{
+	left:25px;
+	bottom:50px;
+}
+#down
+{
+	left:25px;
+	bottom:0px;
+}
+#left
+{
+	left:0px;
+	bottom:25px;
+}
+#right
+{
+	left:50px;
+	bottom:25px;
+}
