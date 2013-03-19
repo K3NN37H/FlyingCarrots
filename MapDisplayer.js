@@ -1,7 +1,11 @@
+/* @global $, maze, playerX, playerY */
 var playerX=0;
 var playerY=1;
+// call function to display the maze
 mazeDrawer();
-  $(document).keydown(mover);
+// listen for keyboard events to move around the maze
+$(document).keydown(mover);
+// listen for clicks on movement buttons to move around the maze
 $("#up").click(function () {
 	mover({which:"38"});
 });
@@ -14,15 +18,16 @@ $("#left").click(function () {
 $("#right").click(function () {
 	mover({which:"39"});
 });
-  
+
+// Moves player around the map depending on the keyboard event received
 function mover(event)
 {
     var text=event.which;
     
     if(text=="38")
     {
-        if(maze[playerX][playerY-1]===true)
         {
+        if(maze[playerX][playerY-1]===true)
             playerY--;
         }
     }
@@ -50,7 +55,7 @@ function mover(event)
     mazeDrawer();
 }
 
-
+// Generates an HTML table to display the map and appends it to mapContainer div
 function mazeDrawer()
 {
     $("#mapContainer").empty();
