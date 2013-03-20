@@ -49,3 +49,27 @@ body
 	left:50px;
 	bottom:25px;
 }
+
+#startgame{
+    position:absolute;
+    top:30%;
+    left:35%;
+    width:30%;
+    height:15%;
+}
+
+#option{
+    position:absolute;
+    top:70%;
+    left:35%;
+    width:30%;
+    height:15%;
+}
+
+#continue{
+    position:absolute;
+    top:50%;
+    left:35%;
+    width:30%;
+    height:15%;
+}

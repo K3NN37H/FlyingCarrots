@@ -52,16 +52,27 @@ function division(){
 function buttonMaker(){
 
 var d = Math.floor((Math.random()*3)+1);
-var num1= Math.floor((Math.random()*100)+1);
-var num2= Math.floor((Math.random()*100)+1);
-if(num1==c){
-    num1=c-1
+var e = Math.floor((Math.random()*3)+1);
+
+if(e===1){
+var num1=c+ Math.floor((Math.random()*5)+1);
+var num2=c- Math.floor((Math.random()*5)+1);
 }
-if(num2==c){
-    num2=c+1
-}
+
+if(e===2){
+var num1=c+ Math.floor((Math.random()*5)+1);
+var num2=c+ Math.floor((Math.random()*5)+1);
 if(num1==num2){
-    num2=num1+2
+    num1=num2+1
+}
+}
+
+if(e===3){
+    var num1=c- Math.floor((Math.random()*5)+1);
+    var num2=c- Math.floor((Math.random()*5)+1);
+    if(num1==num2){
+    num1=num2-1
+}
 }
 
 if(d===1){
