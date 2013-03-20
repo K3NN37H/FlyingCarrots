@@ -1,54 +1,169 @@
 var a,b,c = 0;
+var random1=0;
+var random2=1;
+var correctNumber=2;
 
 function addition(){
 	a= Math.floor((Math.random()*50)+1);
 	b= Math.floor((Math.random()*50)+1);
+    c = a + b;
+    
+    console.log( "What is the answer for "+ a +" + " + b + " ?");
+    
+    buttonMaker();
+    
 
-	var answer = prompt("What is the answer for"+ a +" + " + b + " ?")
-
-	if ( answer == a + b){
-	 return true;
-	}
-	else {
-	 return false;
-	}
 }
 
 function subtraction(){
     a= Math.floor((Math.random()*100)+1);
-    b= Math.floor((Math.random()*100)+1);
-    var answer = prompt("What is the answer for"+ a +" - " + b + " ?")
-    if (answer == a - b){
-        return true;
-    }
-    else{
-        return false;
-    }
+    c= Math.floor((Math.random()*100)+1);
+    b= a + c;
+    
+    console.log( "What is the answer for "+ b +" - " + a + " ?");
+    
+    buttonMaker();
+
 }
 
 function multiplication(){
     a= Math.floor((Math.random()*10)+1);
     b= Math.floor((Math.random()*10)+1);
-    var answer = prompt("What is the answer for"+ a +" × " + b + " ?")
-    if (answer == a * b){
-        return true;
-    }
-    else{
-        return false;
-    }
+    c= a * b;
+
+    console.log( "What is the answer for "+ a +" × " + b + " ?");
+
+    buttonMaker();
+
 }
 
 
 function division(){
     a= Math.floor((Math.random()*10)+1);
-    b= Math.floor((Math.random()*10)+1);
-    c = a * b
+    c= Math.floor((Math.random()*10)+1);
+    b = a * c;
     
-    var answer = prompt( "What is the answer for"+ c +" ÷ " + a + " ?")
-    if (answer == b){
-        return true;
-    }
-    else{
-        return false;
-    }
+     console.log( "What is the answer for "+ b +" ÷ " + a + " ?");
+    
+    buttonMaker();
+
+}
+
+function buttonMaker(){
+
+var d = Math.floor((Math.random()*3)+1);
+var num1= Math.floor((Math.random()*100)+1);
+var num2= Math.floor((Math.random()*100)+1);
+if(num1==c){
+    num1=c-1
+}
+if(num2==c){
+    num2=c+1
+}
+if(num1==num2){
+    num2=num1+2
+}
+
+if(d===1){
+    $("#multipleChoice").append('<button class="gamebutton" id='+random1+'>'+num1+'</button>');
+    $("#"+random1).css("position", "absolute");
+    $("#"+random1).css("left",20+"%");
+    $("#"+random1).css("top",10+"%");
+    $("#"+random1).css("height",10+"%");
+    $("#"+random1).css("width", 10+"%");
+    $("#"+random1).css("border-radius",10);
+    $("#"+random1).click(wrongbutton);
+    
+    $("#multipleChoice").append('<button class="gamebutton" id='+random2+'>'+num2+'</button>');
+    $("#"+random2).css("position", "absolute");
+    $("#"+random2).css("left",50+"%");
+    $("#"+random2).css("top",10+"%");
+    $("#"+random2).css("height",10+"%");
+    $("#"+random2).css("width", 10+"%");
+    $("#"+random2).css("border-radius",10);
+    $("#"+random2).click(wrongbutton);
+    
+    $("#multipleChoice").append('<button class="gamebutton" id='+correctNumber+'>'+c+'</button>');
+    $("#"+correctNumber).css("position", "absolute");
+    $("#"+correctNumber).css("left",80+"%");
+    $("#"+correctNumber).css("top",10+"%");
+    $("#"+correctNumber).css("height",10+"%");
+    $("#"+correctNumber).css("width", 10+"%");
+    $("#"+correctNumber).css("border-radius",10);
+    $("#"+correctNumber).click(gameButtonClick);
+}
+else if(d===2){
+    $("#multipleChoice").append('<button class="gamebutton" id='+random1+'>'+num1+'</button>');
+    $("#"+random1).css("position", "absolute");
+    $("#"+random1).css("left",20+"%");
+    $("#"+random1).css("top",10+"%");
+    $("#"+random1).css("height",10+"%");
+    $("#"+random1).css("width", 10+"%");
+    $("#"+random1).css("border-radius",10);
+    $("#"+random1).click(wrongbutton);
+    
+    $("#multipleChoice").append('<button class="gamebutton" id='+random2+'>'+num2+'</button>');
+    $("#"+random2).css("position", "absolute");
+    $("#"+random2).css("left",80+"%");
+    $("#"+random2).css("top",10+"%");
+    $("#"+random2).css("height",10+"%");
+    $("#"+random2).css("width", 10+"%");
+    $("#"+random2).css("border-radius",10);
+    $("#"+random2).click(wrongbutton);
+    
+    $("#multipleChoice").append('<button class="gamebutton" id='+correctNumber+'>'+c+'</button>');
+    $("#"+correctNumber).css("position", "absolute");
+    $("#"+correctNumber).css("left",50+"%");
+    $("#"+correctNumber).css("top",10+"%");
+    $("#"+correctNumber).css("height",10+"%");
+    $("#"+correctNumber).css("width", 10+"%");
+    $("#"+correctNumber).css("border-radius",10);
+    $("#"+correctNumber).click(gameButtonClick);
+}
+if(d===3){
+    $("#multipleChoice").append('<button class="gamebutton" id='+random1+'>'+num1+'</button>');
+    $("#"+random1).css("position", "absolute");
+    $("#"+random1).css("left",80+"%");
+    $("#"+random1).css("top",10+"%");
+    $("#"+random1).css("height",10+"%");
+    $("#"+random1).css("width", 10+"%");
+    $("#"+random1).css("border-radius",10);
+    $("#"+random1).click(wrongbutton);
+    
+    $("#multipleChoice").append('<button class="gamebutton" id='+random2+'>'+num2+'</button>');
+    $("#"+random2).css("position", "absolute");
+    $("#"+random2).css("left",50+"%");
+    $("#"+random2).css("top",10+"%");
+    $("#"+random2).css("height",10+"%");
+    $("#"+random2).css("width", 10+"%");
+    $("#"+random2).css("border-radius",10);
+    $("#"+random2).click(wrongbutton);
+    
+    $("#multipleChoice").append('<button class="gamebutton" id='+correctNumber+'>'+c+'</button>');
+    $("#"+correctNumber).css("position", "absolute");
+    $("#"+correctNumber).css("left",20+"%");
+    $("#"+correctNumber).css("top",10+"%");
+    $("#"+correctNumber).css("height",10+"%");
+    $("#"+correctNumber).css("width", 10+"%");
+    $("#"+correctNumber).css("border-radius",10);
+    $("#"+correctNumber).click(gameButtonClick);
+}
+
+}
+
+
+function gameButtonClick()
+{
+
+
+    console.log("Correct")
+    $("#multipleChoice").empty();
+
+
+}
+
+function wrongbutton(){
+    
+    console.log("wrong")
+    
 }

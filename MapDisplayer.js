@@ -52,6 +52,7 @@ function mover(event)
             playerX++;
         }
     }
+    addition();
     mazeDrawer();
 }
 
