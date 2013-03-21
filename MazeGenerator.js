@@ -1,3 +1,9 @@
+$("#startgame").click(startGame);
+
+function startGame(){
+    $("#menuPage").hide();
+}
+
 var mazeSize=21;
 var numEnemies=10;
 var maze=[mazeSize];

@@ -1,3 +1,4 @@
+
 var a,b,c = 0;
 var random1=0;
 var random2=1;
