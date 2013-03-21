@@ -1,13 +1,7 @@
-/* @global $, maze, playerX, playerY */
-var playerX=0;
-var playerY=1;
-// call function to display the maze
 mazeDrawer();
-// listen for keyboard events to move around the maze
-$(document).keydown(mover);
-// listen for clicks on movement buttons to move around the maze
+  $(document).keydown(mover);
 $("#up").click(function () {
-	mover({which:"38"});
+    mover({which:"38"});
 });
 $("#down").click(function () {
 	mover({which:"40"});
@@ -18,45 +12,52 @@ $("#left").click(function () {
 $("#right").click(function () {
 	mover({which:"39"});
 });
-
-// Moves player around the map depending on the keyboard event received
+  
 function mover(event)
 {
     var text=event.which;
-    
+    console.log();
     if(text=="38")
     {
+        if(maze[playerX][playerY-1]!=="wall")
         {
-        if(maze[playerX][playerY-1]===true)
+            maze[playerX][playerY]="floor";
+            maze[playerX][playerY-1]="player";
             playerY--;
         }
     }
     else if(text=="40")
     {
-        if(maze[playerX][playerY+1]===true)
+        if(maze[playerX][playerY+1]!=="wall")
         {
+            maze[playerX][playerY]="floor";
+            maze[playerX][playerY+1]="player";
             playerY++;
         }
     }
     else if(text=="37")
     {
-        if(maze[playerX-1][playerY]===true)
+        if(maze[playerX-1][playerY]!=="wall")
         {
+            maze[playerX][playerY]="floor";
+            maze[playerX-1][playerY]="player";
             playerX--;
         }
     }
     else if(text=="39")
     {
-        if(maze[playerX+1][playerY]===true)
+        if(maze[playerX+1][playerY]!=="wall")
         {
+            maze[playerX][playerY]="floor";
+            maze[playerX+1][playerY]="player";
             playerX++;
         }
     }
-    addition();
+    console.log("entered");
     mazeDrawer();
 }
 
-// Generates an HTML table to display the map and appends it to mapContainer div
+
 function mazeDrawer()
 {
     $("#mapContainer").empty();
@@ -66,20 +67,20 @@ function mazeDrawer()
         mapHtml += '<tr>';
         for(var j=0;j<mazeSize;j++)
         {
-            if(j==playerX&&i==playerY)
+            if(maze[j][i]==="player")
             {
                 mapHtml += '<td class="floor">♥</td>';
             }
-            else if(j==endX&&i==endY)
+            else if(maze[j][i]==="kite")
             {
                  mapHtml += '<td class="floor">◊</td>';
             }
-            else if(maze[j][i]===false)
+            else if(maze[j][i]==="wall")
             {
                 mapHtml += '<td class="wall"></td>';
             }
             
-            else if(maze[j][i]===true)
+            else if(maze[j][i]==="floor")
             {
                 mapHtml += '<td class="floor"></td>';
             }
