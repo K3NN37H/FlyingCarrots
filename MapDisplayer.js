@@ -1,3 +1,5 @@
+var currentLocal="floor";
+var prevX, prevY;
 mazeDrawer();
   $(document).keydown(mover);
 $("#up").click(function () {
@@ -21,8 +23,11 @@ function mover(event)
     {
         if(maze[playerX][playerY-1]!=="wall")
         {
-            maze[playerX][playerY]="floor";
+            maze[playerX][playerY]=currentLocal;
+            currentLocal=maze[playerX][playerY-1];
             maze[playerX][playerY-1]="player";
+            prevX=playerX;
+            prevY=playerY;
             playerY--;
         }
     }
@@ -30,8 +35,11 @@ function mover(event)
     {
         if(maze[playerX][playerY+1]!=="wall")
         {
-            maze[playerX][playerY]="floor";
+            maze[playerX][playerY]=currentLocal;
+            currentLocal=maze[playerX][playerY+1];
             maze[playerX][playerY+1]="player";
+            prevX=playerX;
+            prevY=playerY;
             playerY++;
         }
     }
@@ -39,8 +47,11 @@ function mover(event)
     {
         if(maze[playerX-1][playerY]!=="wall")
         {
-            maze[playerX][playerY]="floor";
+            maze[playerX][playerY]=currentLocal;
+            currentLocal=maze[playerX-1][playerY];
             maze[playerX-1][playerY]="player";
+            prevX=playerX;
+            prevY=playerY;
             playerX--;
         }
     }
@@ -48,10 +59,18 @@ function mover(event)
     {
         if(maze[playerX+1][playerY]!=="wall")
         {
-            maze[playerX][playerY]="floor";
+            maze[playerX][playerY]=currentLocal;
+            currentLocal=maze[playerX+1][playerY];
             maze[playerX+1][playerY]="player";
+            prevX=playerX;
+            prevY=playerY;
             playerX++;
         }
+    }
+    if(currentLocal==="enemy")
+    {
+        subtraction();
+        $("#controlButtons").hide();
     }
     console.log("entered");
     mazeDrawer();
@@ -70,6 +89,10 @@ function mazeDrawer()
             if(maze[j][i]==="player")
             {
                 mapHtml += '<td class="floor">♥</td>';
+            }
+            if(maze[j][i]==="enemy")
+            {
+                mapHtml += '<td class="floor">◙</td>';
             }
             else if(maze[j][i]==="kite")
             {
