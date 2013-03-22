@@ -73,3 +73,10 @@ body
     width:30%;
     height:15%;
 }
+#battleInterface
+{
+	position:absolute;
+	width:97%;
+	height:33%;
+	bottom:0%;
+}
