@@ -1,16 +1,11 @@
-<<<<<<< Updated upstream
 $("#startgame").click(startGame);
 
 function startGame(){
     $("#menuPage").hide();
 }
 
-var mazeSize=21;
-var numEnemies=10;
-=======
 var mazeSize=15;
 var numEnemies=15;
->>>>>>> Stashed changes
 var maze=[mazeSize];
 var enemyPos=[numEnemies]
 var endX, endY, endCounter=-1;
