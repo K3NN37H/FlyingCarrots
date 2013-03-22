@@ -4,8 +4,8 @@ function startGame(){
     $("#menuPage").hide();
 }
 
-var mazeSize=21;
-var numEnemies=10;
+var mazeSize=15;
+var numEnemies=15;
 var maze=[mazeSize];
 var enemyPos=[numEnemies]
 var endX, endY, endCounter=-1;
@@ -25,7 +25,7 @@ maze[1][1]="floor";
 makeMaze(1,1,0);
 maze[0][1]="player";
 maze[endX][endY]="kite";
-//inputEnemies();
+inputEnemies();
 function makeMaze (cx,cy,counter)
 {
     deadEnd(cx,cy,counter);

@@ -170,12 +170,19 @@ function gameButtonClick()
 
     console.log("Correct")
     $("#multipleChoice").empty();
-
-
+    $("#controlButtons").show();
+    currentLocal="floor";
 }
 
 function wrongbutton(){
     
     console.log("wrong")
-    
+    maze[playerX][playerY]=currentLocal;
+    playerX=prevX;
+    playerY=prevY;
+    currentLocal=maze[playerX][playerY];
+    maze[playerX][playerY]="player";
+    mazeDrawer();
+    $("#multipleChoice").empty();
+    $("#controlButtons").show();
 }
