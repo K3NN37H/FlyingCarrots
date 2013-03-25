@@ -27,4 +27,14 @@ function initBattle()
 		bcan.lineTo(xSize,10);
 		bcan.stroke();
 	});
+	$("#slingshot").on("touchend", function(e) {
+		e.preventDefault();
+		var blah = document.getElementById("can");
+		var bcan = blah.getContext("2d");
+		bcan.clearRect(0,0,xSize,ySize);
+		bcan.beginPath();
+		bcan.moveTo(0,10);
+		bcan.lineTo(xSize,10);
+		bcan.stroke();
+	});
 }
