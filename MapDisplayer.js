@@ -18,7 +18,6 @@ $("#right").click(function () {
 function mover(event)
 {
     var text=event.which;
-    console.log();
     if(text=="38")
     {
         if(maze[playerX][playerY-1]!=="wall")
@@ -72,8 +71,8 @@ function mover(event)
         subtraction();
         $("#controlButtons").hide();
     }
-    console.log("entered");
     mazeDrawer();
+    setImg();
 }
 
 
