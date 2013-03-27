@@ -1,6 +1,9 @@
 body
 {
     background:#224E9D;
+	background-image:url("forwardcorridor.jpg");
+	background-repeat:no-repeat;
+	background-size:100%;
 }
 #mapContainer
 {
@@ -28,6 +31,11 @@ body
 	position:absolute;
 	width:25px;
 	height:25px;
+}
+#carrot
+{
+	height:10px;
+	width:10px;
 }
 #up
 {
