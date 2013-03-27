@@ -73,6 +73,7 @@ function mover(event)
     }
     mazeDrawer();
     setImg();
+    endGame();
 }
 
 
@@ -110,5 +111,16 @@ function mazeDrawer()
         mapHtml += '</tr>';
         $("#mapContainer").append(mapHtml);
         mapHtml="";
+    }
+}
+
+function endGame(){
+    if(playerX==endX){
+        if(playerY==endY){
+         $("#controlButtons").hide();
+         $("#multipleChoice").hide();
+         $("#mapContainer").hide();
+         $("#endGame").show();
+        }
     }
 }
