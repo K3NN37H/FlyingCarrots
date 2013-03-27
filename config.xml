@@ -13,6 +13,7 @@
         PhoneGap Team
     </author>
     -->
+	<gap:splash src="splashlogo.png" />
     <preference name="phonegap-version" value="2.3.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
