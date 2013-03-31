@@ -1,6 +1,6 @@
 body
 {
-    background:#224E9D;
+    background:#000000;
 	background-image:url("forwardcorridor.jpg");
 	background-repeat:no-repeat;
 	background-size:100%;
@@ -8,10 +8,14 @@ body
 #mapContainer
 {
     position:absolute;
-    top:10%;
-    left:10%;
-    width:80%;
-    height:70%;
+    top:1%;
+    left:1%;
+}
+#display
+{
+    position:absolute;
+    left:-2px;
+    top:-2px;
 }
 .wall
 {
@@ -81,6 +85,7 @@ body
     width:30%;
     height:15%;
 }
+<<<<<<< Updated upstream
 #battleInterface
 {
 	position:absolute;
@@ -96,3 +101,5 @@ body
     width:30%;
     height:15%;
 }
+=======
+>>>>>>> Stashed changes

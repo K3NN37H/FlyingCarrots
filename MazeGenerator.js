@@ -8,24 +8,30 @@ var mazeSize=15;
 var numEnemies=15;
 var maze=[mazeSize];
 var enemyPos=[numEnemies]
-var endX, endY, endCounter=-1;
-var playerX=0;
-var playerY=1;
-for(var i=0;i<mazeSize;i++)
+var endX, endY, endCounter;
+var playerX;
+var playerY;
+createMaze();
+function createMaze()
 {
-    maze[i]=[mazeSize];
-    for(var j=0;j<mazeSize;j++)
+    endCounter=-1;
+    playerX=0;
+    playerY=1;
+    for(var i=0;i<mazeSize;i++)
     {
-        maze[i][j]="wall";
+        maze[i]=[mazeSize];
+        for(var j=0;j<mazeSize;j++)
+        {
+            maze[i][j]="wall";
+        }
     }
+    maze[0][1]="floor";
+    maze[1][1]="floor";
+    makeMaze(1,1,0);
+    maze[0][1]="player";
+    maze[endX][endY]="kite";
+    inputEnemies();
 }
-
-maze[0][1]="floor";
-maze[1][1]="floor";
-makeMaze(1,1,0);
-maze[0][1]="player";
-maze[endX][endY]="kite";
-inputEnemies();
 function makeMaze (cx,cy,counter)
 {
     deadEnd(cx,cy,counter);

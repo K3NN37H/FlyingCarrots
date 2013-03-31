@@ -2,13 +2,26 @@ var xWall;
 var yWall;
 function setImg()
 {
-    numWalls();    if(xWall===2||yWall===2)
+    numWalls();    
+    if(xWall===2||yWall===2)//straight corridor
     {
-        $("#display").attr("src","forwardcorridor.jpg");
+        $("body").css("background-image",'url("forwardcorridor.jpg")')
     }
-    else if(xWall===1&&yWall===1)
+    else if(xWall===1&&yWall===1)//corner corridor
     {
-        $("#display").attr("src","conercorridor.jpg");
+        $("body").css("background-image",'url("conercorridor.jpg")')
+    }
+    else if((xWall===0&&yWall===1)||(xWall===1&&yWall===0))//3-way 
+    {
+        
+    }
+    else if(xWall===0&&yWall===0)//4-way
+    {
+        
+    }
+    else if((xWall===1&&yWall===2)||(xWall===2&&yWall===1))//dead end
+    {
+        
     }
 }
 function numWalls()
@@ -17,31 +30,31 @@ function numWalls()
     yWall=0;
     try
     {
-        if(maze[playerX][playerY-1]===false)
-        {console.log(xWall+" "+yWall);
+        if(maze[playerX][playerY-1]==="wall")
+        {
             yWall++;
         }
     }
     catch(err){}
     try
     {
-        if(maze[playerX][playerY+1]===false)
+        if(maze[playerX][playerY+1]==="wall")
         {
             yWall++;
         }
     }
     catch(err){}
     try
-    {console.log(xWall+" "+yWall);
-        if(maze[playerX-1][playerY]===false)
+    {
+        if(maze[playerX-1][playerY]==="wall")
         {
             xWall++;
         }
     }
     catch(err){}
     try
-    {console.log(xWall+" "+yWall);
-        if(maze[playerX+1][playerY]===false)
+    {
+        if(maze[playerX+1][playerY]==="wall")
         {
             xWall++;
         }
