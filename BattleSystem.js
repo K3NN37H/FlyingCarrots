@@ -4,7 +4,7 @@ function initBattle()
 	var ySize = $("#battleInterface").height();
 	$("#battleInterface").show();
 	$("#battleInterface").append('<canvas id="slingshot" width="'+xSize+'px" height="'+ySize+'px"></canvas>');
-	$("#slingshot").on("mousemove", function(e) {
+	$("#slingshot").on("touchstart touchmove", function(e) {
 		//Disable scrolling by preventing default touch behaviour
 		e.preventDefault();
 		var orig = e.originalEvent;
