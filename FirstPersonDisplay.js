@@ -1,63 +1,186 @@
-var xWall;
-var yWall;
+var leftWall,rightWall,forewardWall,backwardWall;
 function setImg()
 {
-    numWalls();    
-    if(xWall===2||yWall===2)//straight corridor
+    numWalls(); 
+    console.log("entered");
+    if(leftWall===true&&rightWall===true&&forewardWall===false)//straight corridor
     {
-        $("body").css("background-image",'url("forwardcorridor.jpg")');
+        $("#backgroundImg").attr("src","Images/forwardcorridor.jpg")
     }
-    else if(xWall===1&&yWall===1)//corner corridor
+    else if(forewardWall===true&&leftWall===true&&rightWall===false)//corner right corridor
     {
-        $("body").css("background-image",'url("conercorridor.jpg")');
+        $("#backgroundImg").attr("src","Images/conercorridor.jpg")
     }
-    else if((xWall===0&&yWall===1)||(xWall===1&&yWall===0))//3-way 
+    else if(forewardWall===true&&leftWall===false&&rightWall===true)//corner left corridor
     {
-        
+        $("#backgroundImg").attr("src","Images/conercorridorreverse.jpg")
     }
-    else if(xWall===0&&yWall===0)//4-way
+    else if(forewardWall===true&&leftWall===false&&rightWall===false)//3 way front corridor
     {
-        
+        console.log("entered 3way front")
+        $("#backgroundImg").attr("src","Images/3wayfront.jpg")
     }
-    else if((xWall===1&&yWall===2)||(xWall===2&&yWall===1))//dead end
+    else if(forewardWall===false&&leftWall===true&&rightWall===false)//3 way right corridor
     {
-        
+        $("#backgroundImg").attr("src","Images/3wayside.jpg")
+    }
+    else if(forewardWall===false&&leftWall===false&&rightWall===true)//3 way left corridor
+    {
+        $("#backgroundImg").attr("src","Images/3waysideinverse.jpg")
+    }
+    else if(forewardWall===false&&leftWall===false&&rightWall===false)//4 way corridor
+    {
+        $("#backgroundImg").attr("src","Images/intersectioncorridor.jpg")
+    }
+    else if(forewardWall===true&&leftWall===true&&rightWall===true)//dead end corridor
+    {
+        $("#backgroundImg").attr("src","Images/deadendp.jpg")
     }
 }
 function numWalls()
 {
-    xWall=0;
-    yWall=0;
-    try
+    leftWall=false;
+    rightWall=false;
+    forewardWall=false;
+    backwardWall=false;
+    if(recentmove==="up")
     {
-        if(maze[playerX][playerY-1]==="wall")
+        try
         {
-            yWall++;
+            if(maze[playerX][playerY-1]==="wall")
+            {
+                forewardWall=true;
+            }
         }
+        catch(err){}
+        try
+        {
+            if(maze[playerX][playerY+1]==="wall")
+            {
+                backwardWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX-1][playerY]==="wall")
+            {
+                leftWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX+1][playerY]==="wall")
+            {
+                rightWall=true;
+            }
+        }
+        catch(err){}
     }
-    catch(err){}
-    try
+    else if(recentmove==="down")
     {
-        if(maze[playerX][playerY+1]==="wall")
+        try
         {
-            yWall++;
+            if(maze[playerX][playerY+1]==="wall")
+            {
+                forewardWall=true;
+            }
         }
+        catch(err){}
+        try
+        {
+            if(maze[playerX][playerY-1]==="wall")
+            {
+                backwardWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX+1][playerY]==="wall")
+            {
+                leftWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX-1][playerY]==="wall")
+            {
+                rightWall=true;
+            }
+        }
+        catch(err){}
     }
-    catch(err){}
-    try
+    else if(recentmove==="left")
     {
-        if(maze[playerX-1][playerY]==="wall")
+        try
         {
-            xWall++;
+            if(maze[playerX-1][playerY]==="wall")
+            {
+                forewardWall=true;
+            }
         }
+        catch(err){}
+        try
+        {
+            if(maze[playerX+1][playerY]==="wall")
+            {
+                backwardWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX][playerY+1]==="wall")
+            {
+                leftWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX][playerY-1]==="wall")
+            {
+                rightWall=true;
+            }
+        }
+        catch(err){}
     }
-    catch(err){}
-    try
+    else if(recentmove==="right")
     {
-        if(maze[playerX+1][playerY]==="wall")
+        try
         {
-            xWall++;
+            if(maze[playerX+1][playerY]==="wall")
+            {
+                forewardWall=true;
+            }
         }
+        catch(err){}
+        try
+        {
+            if(maze[playerX-1][playerY]==="wall")
+            {
+                backwardWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX][playerY-1]==="wall")
+            {
+                leftWall=true;
+            }
+        }
+        catch(err){}
+        try
+        {
+            if(maze[playerX][playerY+1]==="wall")
+            {
+                rightWall=true;
+            }
+        }
+        catch(err){}
     }
-    catch(err){}
 }

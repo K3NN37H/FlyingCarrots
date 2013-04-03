@@ -5,7 +5,7 @@ function startGame(){
 }
 
 var mazeSize=15;
-var numEnemies=15;
+var numEnemies=10;
 var maze=[mazeSize];
 var enemyPos=[numEnemies]
 var endX, endY, endCounter;
