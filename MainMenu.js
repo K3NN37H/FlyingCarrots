@@ -8,6 +8,7 @@ function startGame()
 function hideGame()
 {
     $("#controlButtons").hide();
+    $("#mathAnswer").hide();
     $("#multipleChoice").hide();
     $("#mapContainer").hide();
     $("#endGame").hide();
@@ -16,7 +17,6 @@ function showGame()
 {
     $("#menuPage").hide();
     $("#controlButtons").show();
-    $("#multipleChoice").show();
     $("#mapContainer").show();
 }
 
