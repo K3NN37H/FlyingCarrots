@@ -294,9 +294,13 @@ function mazeDrawer()
                     mapHtml += '<td class="floor">></td>';
                 }
             }
-            if(maze[j][i]==="enemy")
+            else if(maze[j][i]==="zombie")
             {
-                mapHtml += '<td class="floor">◙</td>';
+                mapHtml += '<td class="floor">Z</td>';
+            }
+            else if(maze[j][i]==="bull")
+            {
+                mapHtml += '<td class="floor">B</td>';
             }
             else if(maze[j][i]==="kite")
             {
