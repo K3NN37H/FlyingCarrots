@@ -1,7 +1,7 @@
 var currentLocal="floor";
 var prevX, prevY, prevO;
 var recentmove="right";
-mazeDrawer();
+
 $(document).keydown(mover);
 $("#up").click(function () {
     mover({which:"38"});

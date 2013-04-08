@@ -11,7 +11,7 @@ var maze=[mazeSize];
 var endX, endY, endCounter;
 var playerX;
 var playerY;
-createMaze();
+
 function createMaze()
 {
     endCounter=-1;
@@ -31,6 +31,7 @@ function createMaze()
     maze[0][1]="player";
     maze[endX][endY]="kite";
     inputEnemies();
+    mazeDrawer()
 }
 function makeMaze (cx,cy,counter)
 {
