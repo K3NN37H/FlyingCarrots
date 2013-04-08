@@ -5,9 +5,9 @@ function startGame(){
 }
 
 var mazeSize=15;
-var numEnemies=10;
+var numZombie=10;
+var numBull=5;
 var maze=[mazeSize];
-var enemyPos=[numEnemies]
 var endX, endY, endCounter;
 var playerX;
 var playerY;

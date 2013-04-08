@@ -5,10 +5,27 @@ var a,b,c = 0;
 //var random2=1;
 //var correctNumber=2;
 var question;
-   
 var answer = "";
-
-
+function typeQuestion(difficulty)
+{
+    var level=Math.floor((Math.random()*difficulty)+1);
+    if(level===1)
+    {
+        addition();
+    }
+    else if(level===2)
+    {
+        subtraction();
+    }
+    else if(level===3)
+    {
+        multiplication();
+    }
+    else if(level===4)
+    {
+        division();
+    }
+}
 function addition(){
 	a= Math.floor((Math.random()*50)+1);
 	b= Math.floor((Math.random()*50)+1);
@@ -382,9 +399,6 @@ function enterAnswer(){
 
 function gameButtonClick()
 {
-
-
-    console.log("Correct");
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
     $("#controlButtons").show();
@@ -393,11 +407,10 @@ function gameButtonClick()
 }
 
 function wrongbutton(){
-    
-    console.log("wrong");
     maze[playerX][playerY]=currentLocal;
     playerX=prevX;
     playerY=prevY;
+    recentmove=prevO;
     currentLocal=maze[playerX][playerY];
     maze[playerX][playerY]="player";
     mazeDrawer();

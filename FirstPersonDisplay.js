@@ -2,7 +2,6 @@ var leftWall,rightWall,forewardWall,backwardWall;
 function setImg()
 {
     numWalls(); 
-    console.log("entered");
     if(leftWall===true&&rightWall===true&&forewardWall===false)//straight corridor
     {
         $("#backgroundImg").attr("src","Images/forwardcorridor.jpg")
@@ -17,7 +16,6 @@ function setImg()
     }
     else if(forewardWall===true&&leftWall===false&&rightWall===false)//3 way front corridor
     {
-        console.log("entered 3way front")
         $("#backgroundImg").attr("src","Images/3wayfront.jpg")
     }
     else if(forewardWall===false&&leftWall===true&&rightWall===false)//3 way right corridor
