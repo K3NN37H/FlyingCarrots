@@ -4,7 +4,7 @@ function initBattle()
 	var ySize = $("#battleInterface").height();
 	$("#battleInterface").show();
 	$("#battleInterface").append('<canvas id="slingshot" width="'+xSize+'px" height="'+ySize+'px"></canvas>');
-	$("#slingshot").on("touchstart touchmove", function(e) {
+	$("#slingshot").on("mousedrag", function(e) {
 		//Disable scrolling by preventing default touch behaviour
 		e.preventDefault();
 		var orig = e.originalEvent;
@@ -28,7 +28,7 @@ function initBattle()
 		bcan.lineTo(xSize,10);
 		bcan.stroke();
 	});
-	$("#slingshot").on("mouseout", function(e) {
+	$("#slingshot").on("mouseup", function(e) {
 		e.preventDefault();
 		var blah = document.getElementById("slingshot");
 		var bcan = blah.getContext("2d");
@@ -47,11 +47,17 @@ function initBattle()
 		}
 		$("#carrot").css("left",$("body").width()/2+(xSize/2-x));
 		$("#carrot").css("top",$("#battleInterface").offset().top-(y-10)*2);
+		$("#battleInterface").append('<button id="leaveBattle"></button>');
+		$("#leaveBattle").click(function (e) {
+			destroyBattle();
+			$("#controlButtons").show();
+		});
 	});
 }
 
 function destroyBattle()
 {
 	$("#battleInterface").empty();
+	$("#battleInterface").hide();
 	$("#carrot").remove();
 }

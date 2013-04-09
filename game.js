@@ -401,7 +401,7 @@ function gameButtonClick()
 {
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
-    $("#controlButtons").show();
+    //$("#controlButtons").show();
     answer="";
     if(currentLocal=="bull"&&numQuestion<1)
     {
@@ -411,6 +411,7 @@ function gameButtonClick()
     else
     {
         numQuestion=0;
+		initBattle();
         currentLocal="floor";
     }
 }
