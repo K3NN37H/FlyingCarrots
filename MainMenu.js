@@ -89,6 +89,8 @@ function normalLevelOption(){
     mazeSize=15;
     numZombie=10;
     numBull=5;
+    LevelDisplay="Normal";
+    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
     createMaze();
     mazeDrawer();
 }
