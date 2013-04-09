@@ -1,6 +1,6 @@
 
 var a,b,c = 0;
-
+var numQuestion=0;
 //var random1=0;
 //var random2=1;
 //var correctNumber=2;
@@ -402,8 +402,17 @@ function gameButtonClick()
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
     $("#controlButtons").show();
-    currentLocal="floor";
     answer="";
+    if(currentLocal=="bull"&&numQuestion<1)
+    {
+        typeQuestion(4);
+        numQuestion++;
+    }
+    else
+    {
+        numQuestion=0;
+        currentLocal="floor";
+    }
 }
 
 function wrongbutton(){
@@ -419,4 +428,5 @@ function wrongbutton(){
     $("#controlButtons").show();
     setImg();
     answer=""
+    numQuestion=0;
 }

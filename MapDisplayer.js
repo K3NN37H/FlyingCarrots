@@ -255,7 +255,12 @@ function mover(event)
             }
         }
     }
-    if(currentLocal==="enemy")
+    if(currentLocal==="zombie")
+    {
+        typeQuestion(4);
+        $("#controlButtons").hide();
+    }
+    if(currentLocal==="bull")
     {
         typeQuestion(4);
         $("#controlButtons").hide();

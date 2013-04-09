@@ -16,7 +16,7 @@ function setImg()
     }
     else if(forewardWall===true&&leftWall===false&&rightWall===false)//3 way front corridor
     {
-        $("#backgroundImg").attr("src","Images/3wayfront.jpg")
+        $("#backgroundImg").attr("src","Images/3way front.jpg")
     }
     else if(forewardWall===false&&leftWall===true&&rightWall===false)//3 way right corridor
     {
