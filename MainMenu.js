@@ -1,4 +1,8 @@
 hideGame();
+
+var score = 0;
+var totalScore = 0;
+
 $("#startgame").click(startGame);
 $("#back").click(restartGame);
 $("#option").click(changeMazeSize);
@@ -15,6 +19,7 @@ function hideGame()
     $("#mapContainer").hide();
     $("#endGame").hide();
     $("#optionPage").hide();
+    $("#scoreDisplay").hide();
 }
 function showGame()
 {
@@ -22,11 +27,23 @@ function showGame()
     $("#controlButtons").show();
     $("#mapContainer").show();
     $("#difficultyDisplay").hide();
+    $("#scoreDisplay").show();
     createMaze();
     mazeDrawer();
 }
-
+function optionShowGame(){
+    $("#optionPage").hide();
+    $("#controlButtons").show();
+    $("#mapContainer").show();
+    $("#difficultyDisplay").hide();
+    $("#scoreDisplay").show();
+    createMaze();
+    mazeDrawer();
+}
 function restartGame(){
+    score = 0;
+    $("#scorebutton").text("Your score is "+ score); 
+    $("#finalScoreButton").text("Your final score is "+ score); 
     $("#endGame").hide();
     $("#menuPage").show();
     $("#difficultyDisplay").show();
@@ -70,15 +87,25 @@ function changeMazeSize(){
    $("#backOption").css("position","absolute");
    $("#backOption").css("left",65+"%");
    $("#backOption").css("top",75+"%");
-   $("#backOption").css("height",6+"%");
-   $("#backOption").css("width", 6+"%");
+   $("#backOption").css("height",10+"%");
+   $("#backOption").css("width", 15+"%");
    $("#backOption").css("border-radius",10);
    $("#backOption").click(optionBack);
 
+   $("#optionPage").append('<button class="gamebutton" id=startOption>'+"Start Game"+'</button>');
+   $("#startOption").css("position","absolute");
+   $("#startOption").css("left",15+"%");
+   $("#startOption").css("top",75+"%");
+   $("#startOption").css("height",10+"%");
+   $("#startOption").css("width", 15+"%");
+   $("#startOption").css("border-radius",10);
+   $("#startOption").click(optionShowGame);
+   
 function easyLevelOption(){
     mazeSize=11;
     numZombie=6;
     numBull=3;
+    difficulty=1    
     LevelDisplay="Easy";
    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
     createMaze();
@@ -89,6 +116,7 @@ function normalLevelOption(){
     mazeSize=15;
     numZombie=10;
     numBull=5;
+    difficulty=2
     LevelDisplay="Normal";
     $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
     createMaze();
@@ -99,6 +127,7 @@ function hardLevelOption(){
     mazeSize=21;
     numZombie=14;
     numBull=8;
+    difficulty=4
     LevelDisplay="Hard";
     $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
     createMaze();
@@ -121,4 +150,20 @@ function optionBack(){
    $("#difficultybutton").css("width", 20+"%");
    $("#difficultybutton").css("border-radius",10);
 
+   $("#scoreDisplay").append('<button class="gamebutton" id=scorebutton></button>');
+   $("#scorebutton").text("Your score is "+ score);   
+   $("#scorebutton").css("position","absolute");
+   $("#scorebutton").css("left",75+"%");
+   $("#scorebutton").css("top",13+"%");
+   $("#scorebutton").css("height",6+"%");
+   $("#scorebutton").css("width", 20+"%");
+   $("#scorebutton").css("border-radius",10);
 
+   $("#menuPage").append('<button class="gamebutton" id=totalScoreButton></button>');
+   $("#totalScoreButton").text("Your total score is "+ totalScore);   
+   $("#totalScoreButton").css("position","absolute");
+   $("#totalScoreButton").css("left",75+"%");
+   $("#totalScoreButton").css("top",5+"%");
+   $("#totalScoreButton").css("height",6+"%");
+   $("#totalScoreButton").css("width", 20+"%");
+   $("#totalScoreButton").css("border-radius",10);

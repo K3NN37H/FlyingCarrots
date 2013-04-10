@@ -1,11 +1,13 @@
 
 var a,b,c = 0;
 var numQuestion=0;
+
 //var random1=0;
 //var random2=1;
 //var correctNumber=2;
 var question;
 var answer = "";
+var difficulty = 2
 function typeQuestion(difficulty)
 {
     var level=Math.floor((Math.random()*difficulty)+1);
@@ -401,20 +403,39 @@ function gameButtonClick()
 {
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
-    //$("#controlButtons").show();
+    $("#controlButtons").show();
+    $("#scoreDisplay").show();
     answer="";
     if(currentLocal=="bull"&&numQuestion<1)
     {
-        typeQuestion(4);
+        typeQuestion(difficulty);
         numQuestion++;
+        $("#scoreDisplay").hide();
     }
     else
     {
         numQuestion=0;
-		initBattle();
-        currentLocal="floor";
+//		initBattle();
+        
+    if(currentLocal=="zombie"){
+        score+=100;
+        totalScore+=100;
+        $("#scorebutton").text("Your score is "+ score);
+        $("#finalScoreButton").text("Your final score is "+ score); 
+        $("#totalScoreButton").text("Your total score is "+ totalScore);   
     }
+    if(currentLocal=="bull"){
+        score+=300;
+        totalScore+=300;
+        $("#scorebutton").text("Your score is "+ score); 
+        $("#finalScoreButton").text("Your final score is "+ score); 
+        $("#totalScoreButton").text("Your total score is "+ totalScore);   
+    }
+        currentLocal="floor"; 
+    }
+
 }
+
 
 function wrongbutton(){
     maze[playerX][playerY]=currentLocal;
@@ -427,6 +448,7 @@ function wrongbutton(){
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
     $("#controlButtons").show();
+    $("#scoreDisplay").show();
     setImg();
     answer=""
     numQuestion=0;

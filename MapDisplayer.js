@@ -257,13 +257,15 @@ function mover(event)
     }
     if(currentLocal==="zombie")
     {
-        typeQuestion(4);
+        typeQuestion(difficulty);
         $("#controlButtons").hide();
+        $("#scoreDisplay").hide();
     }
     if(currentLocal==="bull")
     {
-        typeQuestion(4);
+        typeQuestion(difficulty);
         $("#controlButtons").hide();
+        $("#scoreDisplay").hide();
     }
     mazeDrawer();
     setImg();
@@ -336,6 +338,7 @@ function endGame()
             $("#controlButtons").hide();
             $("#multipleChoice").hide();
             $("#mapContainer").hide();
+            $("#scoreDisplay").hide();
             $("#endGame").show();
             currentLocal="floor";
             recentmove="right";
@@ -345,3 +348,11 @@ function endGame()
         }
     }
 }
+   $("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
+   $("#finalScoreButton").text("Your final score is "+ score);   
+   $("#finalScoreButton").css("position","absolute");
+   $("#finalScoreButton").css("left",45+"%");
+   $("#finalScoreButton").css("top",15+"%");
+   $("#finalScoreButton").css("height",6+"%");
+   $("#finalScoreButton").css("width", 20+"%");
+   $("#finalScoreButton").css("border-radius",10);
