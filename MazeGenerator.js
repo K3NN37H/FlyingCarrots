@@ -5,13 +5,13 @@ function startGame(){
 }
 
 var mazeSize=15;
-var numEnemies=15;
+var numZombie=10;
+var numBull=5;
 var maze=[mazeSize];
-var enemyPos=[numEnemies]
 var endX, endY, endCounter;
 var playerX;
 var playerY;
-createMaze();
+
 function createMaze()
 {
     endCounter=-1;
@@ -31,6 +31,7 @@ function createMaze()
     maze[0][1]="player";
     maze[endX][endY]="kite";
     inputEnemies();
+    mazeDrawer()
 }
 function makeMaze (cx,cy,counter)
 {
@@ -360,7 +361,7 @@ function deadEnd(cx,cy, counter)
 function inputEnemies()
 {
     var enemyplaced=false;
-    for(var i=0;i<numEnemies;i++)
+    for(var i=0;i<numZombie;i++)
     {
         enemyplaced=false;
         while(enemyplaced===false)
@@ -369,7 +370,22 @@ function inputEnemies()
             var eneY=Math.floor(Math.random()*(mazeSize-1));
             if(maze[eneX][eneY]==="floor")
             {
-                maze[eneX][eneY]="enemy";
+                maze[eneX][eneY]="zombie";
+                enemyplaced=true;
+            }
+        }
+    }
+    var enemyplaced=false;
+    for(var i=0;i<numBull;i++)
+    {
+        enemyplaced=false;
+        while(enemyplaced===false)
+        {
+            var eneX=Math.floor(Math.random()*(mazeSize-1));
+            var eneY=Math.floor(Math.random()*(mazeSize-1));
+            if(maze[eneX][eneY]==="floor")
+            {
+                maze[eneX][eneY]="bull";
                 enemyplaced=true;
             }
         }

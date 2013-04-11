@@ -1,7 +1,7 @@
 var currentLocal="floor";
-var prevX, prevY;
+var prevX, prevY, prevO;
 var recentmove="right";
-mazeDrawer();
+
 $(document).keydown(mover);
 $("#up").click(function () {
     mover({which:"38"});
@@ -29,6 +29,7 @@ function mover(event)
                 maze[playerX][playerY-1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY--;
                 recentmove="up";
             }
@@ -42,6 +43,7 @@ function mover(event)
                 maze[playerX][playerY+1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY++;
                 recentmove="down";
             }
@@ -55,6 +57,7 @@ function mover(event)
                 maze[playerX-1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX--;
                 recentmove="left";
             }
@@ -68,6 +71,7 @@ function mover(event)
                 maze[playerX+1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX++;
                 recentmove="right";
             }
@@ -84,6 +88,7 @@ function mover(event)
                 maze[playerX][playerY-1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY--;
                 recentmove="up";
             }
@@ -97,6 +102,7 @@ function mover(event)
                 maze[playerX][playerY+1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY++;
                 recentmove="down";
             }
@@ -110,6 +116,7 @@ function mover(event)
                 maze[playerX-1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX--;
                 recentmove="left";
             }
@@ -123,6 +130,7 @@ function mover(event)
                 maze[playerX+1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX++;
                 recentmove="right";
             }
@@ -139,6 +147,7 @@ function mover(event)
                 maze[playerX][playerY-1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY--;
                 recentmove="up";
             }
@@ -152,6 +161,7 @@ function mover(event)
                 maze[playerX][playerY+1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY++;
                 recentmove="down";
             }
@@ -165,6 +175,7 @@ function mover(event)
                 maze[playerX-1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX--;
                 recentmove="left";
             }
@@ -174,12 +185,12 @@ function mover(event)
             
             if(maze[playerX+1][playerY]!=="wall")
             {
-                console.log("entered");
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX+1][playerY];
                 maze[playerX+1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX++;
                 recentmove="right";
             }
@@ -196,6 +207,7 @@ function mover(event)
                 maze[playerX][playerY-1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY--;
                 recentmove="up";
             }
@@ -209,6 +221,7 @@ function mover(event)
                 maze[playerX][playerY+1]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerY++;
                 recentmove="down";
             }
@@ -222,6 +235,7 @@ function mover(event)
                 maze[playerX-1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX--;
                 recentmove="left";
             }
@@ -235,16 +249,23 @@ function mover(event)
                 maze[playerX+1][playerY]="player";
                 prevX=playerX;
                 prevY=playerY;
+                prevO=recentmove;
                 playerX++;
                 recentmove="right";
             }
         }
     }
-    console.log(recentmove);
-    if(currentLocal==="enemy")
+    if(currentLocal==="zombie")
     {
-        subtraction();
+        typeQuestion(difficulty);
         $("#controlButtons").hide();
+        $("#scoreDisplay").hide();
+    }
+    if(currentLocal==="bull")
+    {
+        typeQuestion(difficulty);
+        $("#controlButtons").hide();
+        $("#scoreDisplay").hide();
     }
     mazeDrawer();
     setImg();
@@ -254,7 +275,6 @@ function mover(event)
 
 function mazeDrawer()
 {
-    console.log("entered drawer");
     $("#mapContainer").empty();
     var mapHtml = "";
     for(var i=0;i<mazeSize;i++)
@@ -281,9 +301,13 @@ function mazeDrawer()
                     mapHtml += '<td class="floor">></td>';
                 }
             }
-            if(maze[j][i]==="enemy")
+            else if(maze[j][i]==="zombie")
             {
-                mapHtml += '<td class="floor">◙</td>';
+                mapHtml += '<td class="floor">Z</td>';
+            }
+            else if(maze[j][i]==="bull")
+            {
+                mapHtml += '<td class="floor">B</td>';
             }
             else if(maze[j][i]==="kite")
             {
@@ -314,6 +338,7 @@ function endGame()
             $("#controlButtons").hide();
             $("#multipleChoice").hide();
             $("#mapContainer").hide();
+            $("#scoreDisplay").hide();
             $("#endGame").show();
             currentLocal="floor";
             recentmove="right";
@@ -323,3 +348,11 @@ function endGame()
         }
     }
 }
+   $("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
+   $("#finalScoreButton").text("Your final score is "+ score);   
+   $("#finalScoreButton").css("position","absolute");
+   $("#finalScoreButton").css("left",45+"%");
+   $("#finalScoreButton").css("top",15+"%");
+   $("#finalScoreButton").css("height",6+"%");
+   $("#finalScoreButton").css("width", 20+"%");
+   $("#finalScoreButton").css("border-radius",10);
