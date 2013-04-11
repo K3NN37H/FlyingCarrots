@@ -33,8 +33,8 @@ body
 .moveButtons
 {
 	position:absolute;
-	width:25px;
-	height:25px;
+	width:35px;
+	height:35px;
 }
 #carrot
 {
@@ -43,23 +43,23 @@ body
 }
 #up
 {
-	left:25px;
-	bottom:50px;
+	left:35px;
+	bottom:70px;
 }
 #down
 {
-	left:25px;
+	left:35px;
 	bottom:0px;
 }
 #left
 {
 	left:0px;
-	bottom:25px;
+	bottom:35px;
 }
 #right
 {
-	left:50px;
-	bottom:25px;
+	left:70px;
+	bottom:35px;
 }
 
 #startgame{
