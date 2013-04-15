@@ -360,6 +360,22 @@ function deadEnd(cx,cy, counter)
 }
 function inputEnemies()
 {
+    if(maze[endX+1][endY]==="floor")
+    {
+        maze[endX+1][endY]="bunny";
+    }
+    else if(maze[endX-1][endY]==="floor")
+    {
+        maze[endX-1][endY]="bunny";
+    }
+    else if(maze[endX][endY+1]==="floor")
+    {
+        maze[endX][endY+1]="bunny";
+    }
+    else if(maze[endX][endY-1]==="floor")
+    {
+        maze[endX][endY-1]="bunny";
+    }
     var enemyplaced=false;
     for(var i=0;i<numZombie;i++)
     {

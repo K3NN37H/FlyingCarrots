@@ -255,13 +255,7 @@ function mover(event)
             }
         }
     }
-    if(currentLocal==="zombie")
-    {
-        typeQuestion(difficulty);
-        $("#controlButtons").hide();
-        $("#scoreDisplay").hide();
-    }
-    if(currentLocal==="bull")
+    if(currentLocal==="zombie"||currentLocal==="bull"||currentLocal==="bunny")
     {
         typeQuestion(difficulty);
         $("#controlButtons").hide();
@@ -308,6 +302,10 @@ function mazeDrawer()
             else if(maze[j][i]==="bull")
             {
                 mapHtml += '<td class="floor">B</td>';
+            }
+            else if(maze[j][i]==="bunny")
+            {
+                mapHtml += '<td class="floor">R</td>';
             }
             else if(maze[j][i]==="kite")
             {

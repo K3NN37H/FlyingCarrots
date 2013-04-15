@@ -36,6 +36,12 @@ body
 	width:35px;
 	height:35px;
 }
+.puchaseButtons
+{
+    position:absolute;
+    width:10%;
+    height:5%;
+}
 #carrot
 {
 	height:10px;
@@ -101,7 +107,14 @@ body
     width:30%;
     height:15%;
 }
-
+#shopButton
+{
+    position:absolute;
+    top:95%;
+    left:90%;
+    width:10%;
+    height:5%;
+}
 #backgroundContainer
 {
 	z-index:-10;
@@ -110,4 +123,24 @@ body
 	height:100%;
 	left:0%;
 	top:0%;
+}
+#buymap
+{
+    top: 40%;
+    left:5%;
+}
+#buybulldozer
+{
+    top:40%;
+    left:20%;
+}
+#buymoreCarrot
+{
+    top: 60%;
+    left:5%;
+}
+#buyfireCarrot
+{
+    top: 60%;
+    left:20%;
 }

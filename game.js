@@ -412,26 +412,31 @@ function gameButtonClick()
         numQuestion++;
         $("#scoreDisplay").hide();
     }
+    if(currentLocal=="bunny"&&numQuestion<2)
+    {
+        typeQuestion(difficulty);
+        numQuestion++;
+    }
     else
     {
-        numQuestion=0;
-//		initBattle();
-        
-    if(currentLocal=="zombie"){
-        score+=100;
-        totalScore+=100;
-        $("#scorebutton").text("Your score is "+ score);
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
-    }
-    if(currentLocal=="bull"){
-        score+=300;
-        totalScore+=300;
-        $("#scorebutton").text("Your score is "+ score); 
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
-    }
-        currentLocal="floor"; 
+            numQuestion=0;
+    //		initBattle();
+            
+        if(currentLocal=="zombie"){
+            score+=100;
+            totalScore+=100;
+            $("#scorebutton").text("Your score is "+ score);
+            $("#finalScoreButton").text("Your final score is "+ score); 
+            $("#totalScoreButton").text("Your total score is "+ totalScore);   
+        }
+        if(currentLocal=="bull"){
+            score+=300;
+            totalScore+=300;
+            $("#scorebutton").text("Your score is "+ score); 
+            $("#finalScoreButton").text("Your final score is "+ score); 
+            $("#totalScoreButton").text("Your total score is "+ totalScore);   
+        }
+            currentLocal="floor"; 
     }
 
 }
