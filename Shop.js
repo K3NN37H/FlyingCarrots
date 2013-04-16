@@ -11,7 +11,7 @@ function enterShop()
 {
     hideGame();
     $("#shop").show();
-    $("#shopBackButton").show();
+    $("#shopBackDuringTheGame").show();
     $("#totalScoreButton").show();
 }
 function purchase(item)
@@ -21,7 +21,7 @@ function purchase(item)
 
 function exitShop(){
     $("#shop").hide();  
-    $("#shopBackButton").hide();
+    $("#shopBackDuringTheGame").hide();
     $("#controlButtons").show();
     $("#mapContainer").show();
     $("#scoreDisplay").show();

@@ -21,7 +21,7 @@ function hideGame()
     $("#optionPage").hide();
     $("#scoreDisplay").hide();
     $("#shop").hide();
-    $("#shopBackButton").hide();
+    $("#shopBackDuringTheGame").hide();
     $("#menuShopBack").hide();
 
 }
