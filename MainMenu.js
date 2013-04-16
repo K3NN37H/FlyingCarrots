@@ -21,7 +21,9 @@ function hideGame()
     $("#optionPage").hide();
     $("#scoreDisplay").hide();
     $("#shop").hide();
-    
+    $("#shopBackButton").hide();
+    $("#menuShopBack").hide();
+
 }
 function showGame()
 {
@@ -36,6 +38,7 @@ function showGame()
 }
 function optionShowGame(){
     $("#optionPage").hide();
+
     $("#totalScoreButton").hide();
     $("#controlButtons").show();
     $("#mapContainer").show();
@@ -163,6 +166,7 @@ function optionBack(){
    $("#scorebutton").css("width", 20+"%");
    $("#scorebutton").css("border-radius",10);
 
+
    $("#mainBody").append('<button class="gamebutton" id=totalScoreButton></button>');
    $("#totalScoreButton").text("Your total score is "+ totalScore);   
    $("#totalScoreButton").css("position","absolute");
@@ -171,3 +175,4 @@ function optionBack(){
    $("#totalScoreButton").css("height",6+"%");
    $("#totalScoreButton").css("width", 20+"%");
    $("#totalScoreButton").css("border-radius",10);
+

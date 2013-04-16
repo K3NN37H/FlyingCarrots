@@ -73,23 +73,31 @@ body
     top:30%;
     left:35%;
     width:30%;
-    height:15%;
+    height:10%;
 }
 
 #option{
     position:absolute;
-    top:70%;
+    top:60%;
     left:35%;
     width:30%;
-    height:15%;
+    height:10%;
 }
 
 #continue{
     position:absolute;
-    top:50%;
+    top:45%;
     left:35%;
     width:30%;
-    height:15%;
+    height:10%;
+}
+
+#menuShop{
+    position:absolute;
+    top:75%;
+    left:35%;
+    width:30%;
+    height:10%;
 }
 
 #battleInterface
@@ -143,4 +151,21 @@ body
 {
     top: 60%;
     left:20%;
+}
+
+#menuShopBackButton
+{
+    position:absolute;
+    top: 95%;
+    left:90%;
+    width:10%;
+    height:5%;
+}
+#shopBackDuringTheGame
+{
+    position:absolute;
+    top: 95%;
+    left:90%;
+    width:10%;
+    height:5%;
 }
