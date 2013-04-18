@@ -1,7 +1,7 @@
 hideGame();
 
 var score = 0;
-var totalScore = 0;
+var totalScore = 1000000;
 
 $("#startgame").click(startGame);
 $("#back").click(restartGame);
@@ -23,6 +23,7 @@ function hideGame()
     $("#shop").hide();
     $("#shopBackDuringTheGame").hide();
     $("#menuShopBack").hide();
+    $("#Inventory").hide();
 
 }
 function showGame()
@@ -32,6 +33,7 @@ function showGame()
     $("#controlButtons").show();
     $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
+    $("#Inventory").show();
     createMaze();
     mazeDrawer();
 }

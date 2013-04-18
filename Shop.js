@@ -5,7 +5,8 @@ var FLAMECARROT="1";
 var MAP="2";
 var BULLDOZER="3";
 var LEVELSKIP="4";
-for(var i=0;i<numItems;i++)
+inventory[0]=10;
+for(var i=1;i<numItems;i++)
 {
     inventory[i]=0;
 }
@@ -24,6 +25,7 @@ function enterShop()
     $("#shop").show();
     $("#shopBackDuringTheGame").show();
     $("#totalScoreButton").show();
+    $("#Inventory").show();
 }
 function purchase(item)
 {
@@ -32,11 +34,15 @@ function purchase(item)
     {
         totalScore-=10000;
         inventory[MAP]++;
+        $("#buyMapDisplay").text("Map: "+ inventory[MAP]);
+        $("#totalScoreButton").text("Your total score is "+ totalScore);   
     }
     if(item=="bulldozer"&&totalScore>=10000)
     {
         totalScore-=10000;
         inventory[BULLDOZER]++;
+        $("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
+        $("#totalScoreButton").text("Your total score is "+ totalScore);   
     }
     
 }
@@ -53,6 +59,7 @@ function exitShop(){
 function menuEnterShop(){
     $("#menuPage").hide();
     $("#shop").show();
+    $("#Inventory").show();
     $("#menuShopBack").show();
     $("#difficultyDisplay").hide();
 }
@@ -60,6 +67,7 @@ function menuEnterShop(){
 function menuExitShop(){
     $("#shop").hide();
     $("#menuPage").show();
+    $("#Inventory").hide();
     $("#menuShopBack").hide();
     $("#difficultyDisplay").show();
 
