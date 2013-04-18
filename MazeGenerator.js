@@ -31,7 +31,7 @@ function createMaze()
     maze[0][1]="player";
     maze[endX][endY]="kite";
     inputEnemies();
-    mazeDrawer()
+    mazeDrawer();
 }
 function makeMaze (cx,cy,counter)
 {

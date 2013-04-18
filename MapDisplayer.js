@@ -261,8 +261,6 @@ function mover(event)
         $("#controlButtons").hide();
         $("#scoreDisplay").hide();
     }
-
-    mazeDrawer();
     setImg();
     endGame();
 }

@@ -1,3 +1,14 @@
+var numItems= 5;
+var inventory = [numItems];
+var MORECARROT="0";
+var FLAMECARROT="1";
+var MAP="2";
+var BULLDOZER="3";
+var LEVELSKIP="4";
+for(var i=0;i<numItems;i++)
+{
+    inventory[i]=0;
+}
 $("#shopButton").click(enterShop);
 $("#shopBackButton").click(exitShop);
 $("#buymap").click(function(){purchase("map")});
@@ -17,6 +28,17 @@ function enterShop()
 function purchase(item)
 {
     console.log(item);
+    if(item=="map"&&totalScore>=10000)
+    {
+        totalScore-=10000;
+        inventory[MAP]++;
+    }
+    if(item=="bulldozer"&&totalScore>=10000)
+    {
+        totalScore-=10000;
+        inventory[BULLDOZER]++;
+    }
+    
 }
 
 function exitShop(){
@@ -40,4 +62,5 @@ function menuExitShop(){
     $("#menuPage").show();
     $("#menuShopBack").hide();
     $("#difficultyDisplay").show();
+
 }

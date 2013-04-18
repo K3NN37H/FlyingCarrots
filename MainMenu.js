@@ -30,7 +30,6 @@ function showGame()
     $("#menuPage").hide();
     $("#totalScoreButton").hide();
     $("#controlButtons").show();
-    $("#mapContainer").show();
     $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
     createMaze();
@@ -41,7 +40,6 @@ function optionShowGame(){
 
     $("#totalScoreButton").hide();
     $("#controlButtons").show();
-    $("#mapContainer").show();
     $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
     createMaze();
