@@ -14,8 +14,8 @@ $("#shopButton").click(enterShop);
 $("#shopBackButton").click(exitShop);
 $("#buymap").click(function(){purchase("map")});
 $("#buybulldozer").click(function(){purchase("bulldozer")});
-$("#buymorecarrot").click(function(){purchase("morecarrot")});
-$("#buyfirecarrot").click(function(){purchase("firecarrot")});
+$("#buymoreCarrot").click(function(){purchase("morecarrot")});
+$("#buyfireCarrot").click(function(){purchase("flamecarrot")});
 $("#menuShop").click(menuEnterShop);
 $("#menuShopBackButton").click(menuExitShop);
 
@@ -30,6 +30,7 @@ function enterShop()
 function purchase(item)
 {
     console.log(item);
+    
     if(item=="map"&&totalScore>=10000)
     {
         totalScore-=10000;
@@ -37,14 +38,34 @@ function purchase(item)
         $("#buyMapDisplay").text("Map: "+ inventory[MAP]);
         $("#totalScoreButton").text("Your total score is "+ totalScore);   
     }
-    if(item=="bulldozer"&&totalScore>=10000)
+    else if(item=="bulldozer"&&totalScore>=10000)
     {
-        totalScore-=10000;
+    	totalScore-=10000;
         inventory[BULLDOZER]++;
         $("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
         $("#totalScoreButton").text("Your total score is "+ totalScore);   
     }
-    
+    else if(item=="morecarrot"&&totalScore>=500)
+    {
+    	totalScore-=500;
+    	inventory[MORECARROT]+=10;
+    	$("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    	$("#totalScoreButton").text("Your total score is "+ totalScore);  
+    }
+    else if(item=="flamecarrot"&&totalScore>=2000)
+    {
+    	totalScore-=2000;
+    	inventory[FLAMECARROT]+=5;
+    	$("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]); 
+    	$("#totalScoreButton").text("Your total score is "+ totalScore);
+    }
+    else if(item=="levelskip"&&totalScore>=2000)
+    {
+    	totalScore-=2000;
+    	inventory[LEVELSKIP]+=5;
+    	$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
+    	$("#totalScoreButton").text("Your total score is "+ totalScore);
+    }
 }
 
 function exitShop(){
