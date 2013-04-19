@@ -1,7 +1,6 @@
 body
 {
     background:#000000;
-	
 	background-repeat:no-repeat;
 	background-size:100%;
 }
@@ -36,11 +35,20 @@ body
 	width:35px;
 	height:35px;
 }
+
 .puchaseButtons
 {
     position:absolute;
     width:10%;
     height:5%;
+}
+.areas
+{
+	position:absolute;
+	text-align:center;
+	left:45%;
+	border:3px solid black;
+	z-index:1;
 }
 #carrot
 {
@@ -100,21 +108,16 @@ body
     height:10%;
 }
 
-#battleInterface
+/* End game button */
+#back
 {
-	position:absolute;
-	width:97%;
-	height:33%;
-	bottom:0%;
-}
-
-#back{
     position:absolute;
     top:80%;
     left:70%;
     width:30%;
     height:15%;
 }
+
 #shopButton
 {
     position:absolute;
@@ -123,6 +126,8 @@ body
     width:10%;
     height:5%;
 }
+
+/* Background image container */
 #backgroundContainer
 {
 	z-index:-10;
@@ -132,6 +137,7 @@ body
 	left:0%;
 	top:0%;
 }
+
 #buymap
 {
     top: 40%;
@@ -169,3 +175,13 @@ body
     width:10%;
     height:5%;
 }
+
+#battleInterface
+{
+	display:none;
+	position:absolute;
+	width:97%;
+	height:33%;
+	bottom:3%;
+}
+

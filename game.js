@@ -423,7 +423,8 @@ function gameButtonClick()
     else
     {
             numQuestion=0;
-        }
+	initBattle();
+    }
 
     if(currentLocal=="zombie"){
         score+=50;
