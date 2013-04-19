@@ -413,7 +413,7 @@ function gameButtonClick()
         $("#scoreDisplay").hide();
         $("#controlButtons").hide();   
     }
-    if(currentLocal=="bunny"&&numQuestion<2)
+    else if(currentLocal=="bunny"&&numQuestion<2)
     {
         typeQuestion(difficulty);
         numQuestion++;
@@ -422,34 +422,32 @@ function gameButtonClick()
     }
     else
     {
-            numQuestion=0;
-	initBattle();
-    }
-
-    if(currentLocal=="zombie"){
-        score+=50;
-        totalScore+=50;
-        $("#scorebutton").text("Your score is "+ score);
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
-    }
-    if(currentLocal=="bull"){
-        score+=200;
-        totalScore+=200;
-        $("#scorebutton").text("Your score is "+ score); 
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
-    }
-    if(currentLocal=="bunny"){
-        score+=500;
-        totalScore+=500;
-        $("#scorebutton").text("Your score is "+ score); 
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
-    }
+        numQuestion=0;
+        initbattle
+        if(currentLocal=="zombie")
+        {
+        	score+=50;
+        	totalScore+=50;
+        	$("#scorebutton").text("Your score is "+ score);
+        	$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bull"){
+       		score+=200;
+       		totalScore+=200;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bunny"){
+       		score+=500;
+       		totalScore+=500;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
         currentLocal="floor"; 
-
-
+    }
 }
 
 
