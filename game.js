@@ -422,8 +422,9 @@ function gameButtonClick()
     }
     else
     {
-            numQuestion=0;
-	initBattle();
+		numQuestion=0;
+		$("#controlButtons").hide();
+		initBattle();
     }
 
     if(currentLocal=="zombie"){

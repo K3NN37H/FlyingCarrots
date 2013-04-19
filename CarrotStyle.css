@@ -183,5 +183,6 @@ body
 	width:97%;
 	height:33%;
 	bottom:3%;
+	z-index:5;
 }
 

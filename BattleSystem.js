@@ -65,6 +65,7 @@ function initBattle()
 			destroyBattle();
 			$("#controlButtons").show();
 		});
+		$(this).off();
 	});
 	var blah = document.getElementById("slingshot");
 	var bcan = blah.getContext("2d");
@@ -73,7 +74,7 @@ function initBattle()
 	bcan.moveTo(0,10);
 	bcan.lineTo(xSize,10);
 	bcan.stroke();
-	if (currentLocal === "zombie")
+	if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
 	{
 		$("body").append('<div id="areas" style="position:absolute;height:65%;width:100%;"></div>');
 		$("#areas").append('<div class="areas" id="headArea" style="width:100px;height:33%;"></div>');
