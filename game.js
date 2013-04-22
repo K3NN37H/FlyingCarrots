@@ -445,16 +445,10 @@ function gameButtonClick()
        		$("#scorebutton").text("Your score is "+ score); 
        		$("#finalScoreButton").text("Your final score is "+ score); 
         	$("#totalScoreButton").text("Your total score is "+ totalScore);   
-<<<<<<< Updated upstream
     	}
-        currentLocal="floor"; 
-=======
-    	}
-    	console.log("changing to floor");
         currentLocal="floor";  
         $("#controlButtons").show();
     	$("#scoreDisplay").show();
->>>>>>> Stashed changes
     }
 }
 
