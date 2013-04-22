@@ -72,7 +72,6 @@ function exitShop(){
     $("#shop").hide();  
     $("#shopBackDuringTheGame").hide();
     $("#controlButtons").show();
-    $("#mapContainer").show();
     $("#scoreDisplay").show();
     $("#totalScoreButton").hide();
 }
