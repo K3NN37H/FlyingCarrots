@@ -339,6 +339,7 @@ function endGame()
             $("#mapContainer").hide();
             $("#scoreDisplay").hide();
             $("#endGame").show();
+            $("#Inventory").hide();
             currentLocal="floor";
             recentmove="right";
             createMaze();

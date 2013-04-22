@@ -449,7 +449,10 @@ function gameButtonClick()
         currentLocal="floor";  
         $("#controlButtons").show();
     	$("#scoreDisplay").show();
+        inventory[0]--;
+        $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
     }
+gameLose()
 }
 
 
@@ -468,4 +471,25 @@ function wrongbutton(){
     setImg();
     answer=""
     numQuestion=0;
+    inventory[0]--;
+    $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    gameLose()
+}
+
+function gameLose(){
+    if(inventory[0] === 0 ){
+            $("#controlButtons").hide();
+            $("#multipleChoice").hide();
+            $("#mapContainer").hide();
+            $("#scoreDisplay").hide();
+            $("#endGame").show();
+            $("#Inventory").hide();
+            currentLocal="floor";
+            recentmove="right";
+            createMaze();
+            mazeDrawer();
+            setImg();
+            inventory[0]=10
+            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    }
 }

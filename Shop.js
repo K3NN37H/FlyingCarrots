@@ -16,6 +16,7 @@ $("#buymap").click(function(){purchase("map")});
 $("#buybulldozer").click(function(){purchase("bulldozer")});
 $("#buymoreCarrot").click(function(){purchase("morecarrot")});
 $("#buyfireCarrot").click(function(){purchase("flamecarrot")});
+$("#buyLevelSkip").click(function(){purchase("levelskip")});
 $("#menuShop").click(menuEnterShop);
 $("#menuShopBackButton").click(menuExitShop);
 

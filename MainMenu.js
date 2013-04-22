@@ -54,6 +54,7 @@ function restartGame(){
     $("#endGame").hide();
     $("#menuPage").show();
     $("#difficultyDisplay").show();
+    $("#totalScoreButton").show();
 }
 
 function changeMazeSize(){
