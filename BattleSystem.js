@@ -60,7 +60,7 @@ function initBattle()
 		{
 			alert("HIT Leg");
 		}
-		$("#battleInterface").append('<button id="leaveBattle">OK</button>');
+		$("#battleInterface").append('<button id="leaveBattle" style="position:absolute;top:50%;left:50%;">OK</button>');
 		$("#leaveBattle").click(function (e) {
 			destroyBattle();
 			$("#controlButtons").show();
