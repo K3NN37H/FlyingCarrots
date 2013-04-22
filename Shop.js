@@ -13,10 +13,9 @@ for(var i=1;i<numItems;i++)
 $("#shopButton").click(enterShop);
 $("#shopBackButton").click(exitShop);
 $("#buymap").click(function(){purchase("map")});
-$("#buybulldozer").click(function(){purchase("bulldozer")});
+$("#buybulldozer").click(function(){purchase 	("bulldozer")});
 $("#buymoreCarrot").click(function(){purchase("morecarrot")});
 $("#buyfireCarrot").click(function(){purchase("flamecarrot")});
-$("#buyLevelSkip").click(function(){purchase("levelskip")});
 $("#menuShop").click(menuEnterShop);
 $("#menuShopBackButton").click(menuExitShop);
 
@@ -77,6 +76,7 @@ function exitShop(){
     $("#controlButtons").show();
     $("#scoreDisplay").show();
     $("#totalScoreButton").hide();
+    $("#buyMapDisplay").removeAttr("disabled","");
 }
 
 function menuEnterShop(){
@@ -94,5 +94,5 @@ function menuExitShop(){
     $("#Inventory").hide();
     $("#menuShopBack").hide();
     $("#difficultyDisplay").show();
-
+	$("#buyMapDisplay").removeAttr("disabled","");
 }
