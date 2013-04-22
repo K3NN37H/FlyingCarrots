@@ -126,7 +126,15 @@ body
     width:10%;
     height:5%;
 }
-
+#toggleMapButton
+{
+	position:absolute;
+	display:none;
+    top:88%;
+    left:90%;
+    width:10%;
+    height:5%;
+}
 /* Background image container */
 #backgroundContainer
 {

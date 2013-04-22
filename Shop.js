@@ -27,6 +27,8 @@ function enterShop()
     $("#shopBackDuringTheGame").show();
     $("#totalScoreButton").show();
     $("#Inventory").show();
+    console.log("entered");
+    $("#buyMapDisplay").attr("disabled","disabled");
 }
 function purchase(item)
 {
@@ -82,6 +84,7 @@ function menuEnterShop(){
     $("#shop").show();
     $("#Inventory").show();
     $("#menuShopBack").show();
+    $("#buyMapDisplay").attr("disabled","disabled");
     $("#difficultyDisplay").hide();
 }
 
