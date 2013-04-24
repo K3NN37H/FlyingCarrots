@@ -47,6 +47,7 @@ function hideGame()
     $("#shopBackDuringTheGame").hide();
     $("#menuShopBack").hide();
     $("#Inventory").hide();
+	$("#bullDozer").hide();
 
 }
 function showGame()

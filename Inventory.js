@@ -7,8 +7,42 @@ function useItem(item)
 		inventory[MAP]--;
 		$("#buyMapDisplay").text("Map: "+ inventory[MAP]);
 	}
+	else if(item==="bulldozer"&&inventory[BULLDOZER]>0)
+	{
+		inventory[BULLDOZER]--;
+		$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]);
+		bulldozer();
+	}
 }
-
+function bulldozer()
+{
+	console.log("entered");
+	$("bullDozer").show();
+	if(leftWall===true&&rightWall===true&&forewardWall===false)//straight corridor
+    {
+    }
+    else if(forewardWall===true&&leftWall===true&&rightWall===false)//corner right corridor
+    {
+    }
+    else if(forewardWall===true&&leftWall===false&&rightWall===true)//corner left corridor
+    {
+    }
+    else if(forewardWall===true&&leftWall===false&&rightWall===false)//3 way front corridor
+    {
+    }
+    else if(forewardWall===false&&leftWall===true&&rightWall===false)//3 way right corridor
+    {
+    }
+    else if(forewardWall===false&&leftWall===false&&rightWall===true)//3 way left corridor
+    {
+    }
+    else if(forewardWall===false&&leftWall===false&&rightWall===false)//4 way corridor
+    {
+    }
+    else if(forewardWall===true&&leftWall===true&&rightWall===true)//dead end corridor
+    {
+    }
+}
 $("#toggleMapButton").click(toggleMap)
 var mapToggle=0;
 function toggleMap()
@@ -41,6 +75,7 @@ $("#bullDozerDisplay").css("left",50+"%");
 $("#bullDozerDisplay").css("top",94+"%");
 $("#bullDozerDisplay").css("height",6+"%");
 $("#bullDozerDisplay").css("width", 10+"%");
+$("#bullDozerDisplay").click(function(){useItem("bulldozer")});
 
 
 $("#Inventory").append('<button class="gamebutton" id=flameCarrotDisplay></button>');
