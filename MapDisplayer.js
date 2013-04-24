@@ -345,6 +345,7 @@ function endGame()
             createMaze();
             mazeDrawer();
             setImg();
+            levelFinish()
         }
     }
 }
@@ -357,3 +358,10 @@ function endGame()
 	$("#finalScoreButton").css("width", 20+"%");
 	$("#finalScoreButton").css("border-radius",10);	
 	
+function levelFinish(){
+    if(difficulty<4){
+        difficulty++
+        LevelDisplay="Level"+difficulty
+        $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+    }
+}

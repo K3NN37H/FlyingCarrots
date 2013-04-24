@@ -16,6 +16,7 @@ $("#buymap").click(function(){purchase("map")});
 $("#buybulldozer").click(function(){purchase 	("bulldozer")});
 $("#buymoreCarrot").click(function(){purchase("morecarrot")});
 $("#buyfireCarrot").click(function(){purchase("flamecarrot")});
+$("#buyLevelSkip").click(function(){purchase("levelskip")});
 $("#menuShop").click(menuEnterShop);
 $("#menuShopBackButton").click(menuExitShop);
 
@@ -61,10 +62,10 @@ function purchase(item)
     	$("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]); 
     	$("#totalScoreButton").text("Your total score is "+ totalScore);
     }
-    else if(item=="levelskip"&&totalScore>=2000)
+    else if(item=="levelskip"&&totalScore>=20000)
     {
-    	totalScore-=2000;
-    	inventory[LEVELSKIP]+=5;
+    	totalScore-=20000;
+    	inventory[LEVELSKIP]++;
     	$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
     	$("#totalScoreButton").text("Your total score is "+ totalScore);
     }

@@ -7,27 +7,7 @@ var numQuestion=0;
 //var correctNumber=2;
 var question;
 var answer = "";
-var difficulty = 2
-function typeQuestion(difficulty)
-{
-    var level=Math.floor((Math.random()*difficulty)+1);
-    if(level===1)
-    {
-        addition();
-    }
-    else if(level===2)
-    {
-        subtraction();
-    }
-    else if(level===3)
-    {
-        multiplication();
-    }
-    else if(level===4)
-    {
-        division();
-    }
-}
+
 function addition(){
 	a= Math.floor((Math.random()*50)+1);
 	b= Math.floor((Math.random()*50)+1);
@@ -254,7 +234,25 @@ function buttonMaker()
       enterAnswer();
    });
 
-
+   $("#multipleChoice").append('<button class="gamebutton" id=useFlameCarrot>'+"Flame Carrots"+'</button>');
+   $("#useFlameCarrot").css("position","absolute");
+   $("#useFlameCarrot").css("left",25+"%");
+   $("#useFlameCarrot").css("top",85+"%");
+   $("#useFlameCarrot").css("height",6+"%");
+   $("#useFlameCarrot").css("width", 6+"%");
+   $("#useFlameCarrot").css("border-radius",10);
+   $("#useFlameCarrot").click(function (){
+      if(inventory[1]>0){
+          numQuestion=3;
+          gameButtonClick();
+          inventory[1]--;
+          inventory[0]++;
+         $("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]);
+         $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+        $("#controlButtons").show();
+        $("#scoreDisplay").show();
+          }
+   });
 //    var d = Math.floor((Math.random()*3)+1);
 //    var e = Math.floor((Math.random()*3)+1);
 
@@ -423,7 +421,7 @@ function gameButtonClick()
     {
         numQuestion=0;
 		$("#controlButtons").hide();
-        initBattle();
+       initBattle();
         if(currentLocal=="zombie")
         {
         	score+=50;
@@ -492,4 +490,35 @@ function gameLose(){
             inventory[0]=10
             $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
     }
+}
+
+function skipQuestion(){
+    $("#multipleChoice").empty();
+    $("#mathAnswer").empty();
+    
+       answer="";
+       if(currentLocal=="zombie")
+        {
+            score+=50;
+        	totalScore+=50;
+        	$("#scorebutton").text("Your score is "+ score);
+        	$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bull"){
+       		score+=200;
+       		totalScore+=200;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bunny"){
+       		score+=500;
+       		totalScore+=500;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);  
+        $("#controlButtons").show();
+        $("#scoreDisplay").show();
+    	}
 }

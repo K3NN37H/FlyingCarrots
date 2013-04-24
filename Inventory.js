@@ -1,3 +1,4 @@
+
 function useItem(item)
 {
 	if(item==="map"&&inventory[MAP]>0)
@@ -60,11 +61,19 @@ $("#buyMapDisplay").css("height",6+"%");
 $("#buyMapDisplay").css("width", 10+"%");
 $("#buyMapDisplay").click(function(){useItem("map")});
 
-$("#Inventory").append('<button class="gamebutton" id=levelSkipDisplay></button>');
-$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
-$("#levelSkipDisplay").css("position","absolute");
-$("#levelSkipDisplay").css("left",60+"%");
-$("#levelSkipDisplay").css("top",94+"%");
-$("#levelSkipDisplay").css("height",6+"%");
-$("#levelSkipDisplay").css("width", 10+"%");
+
+	
+	$("#Inventory").append('<button class="gamebutton" id=levelSkipDisplay></button>');
+	$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
+	$("#levelSkipDisplay").css("position","absolute");
+	$("#levelSkipDisplay").css("left",60+"%");
+	$("#levelSkipDisplay").css("top",94+"%");
+	$("#levelSkipDisplay").css("height",6+"%");
+	$("#levelSkipDisplay").css("width", 10+"%");
+    $("#levelSkipDisplay").click(function (){
+       if(inventory[LEVELSKIP]>0)
+       {levelFinish();
+       inventory[LEVELSKIP]--
+       $("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); }
+    });
 
