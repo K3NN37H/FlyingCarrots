@@ -1,7 +1,7 @@
 hideGame();
 
 var score = 0;
-var totalScore = 1000000;
+var totalScore = 100000;
 
 var difficulty = 1
 function typeQuestion(difficulty)

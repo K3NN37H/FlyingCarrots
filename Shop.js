@@ -53,7 +53,12 @@ function purchase(item)
     	totalScore-=500;
     	inventory[MORECARROT]+=10;
     	$("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
-    	$("#totalScoreButton").text("Your total score is "+ totalScore);  
+    	$("#totalScoreButton").text("Your total score is "+ totalScore); 
+        $("#shopBackButton").removeAttr("disabled","");
+        $("#buymap").removeAttr("disabled","");
+        $("#buybulldozer").removeAttr("disabled","");
+        $("#buyfireCarrot").removeAttr("disabled","");
+        $("#buyLevelSkip").removeAttr("disabled","");
     }
     else if(item=="flamecarrot"&&totalScore>=2000)
     {

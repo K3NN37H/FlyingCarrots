@@ -43,7 +43,7 @@ function subtraction(){
 
 function multiplication(){
     
-    a= Math.floor((Math.random()*10)+1);
+    a= Math.floor((Math.random()*20)+1);
     b= Math.floor((Math.random()*10)+1);
     c= a * b;
 
@@ -58,7 +58,7 @@ $("#mathAnswer").show();
 
 function division(){
     a= Math.floor((Math.random()*10)+1);
-    c= Math.floor((Math.random()*10)+1);
+    c= Math.floor((Math.random()*20)+1);
     b = a * c;
     
    question="What is the answer for "+ b +" ÷ " + a + " ?";
@@ -421,7 +421,7 @@ function gameButtonClick()
     {
         numQuestion=0;
 		$("#controlButtons").hide();
-       initBattle();
+       //initBattle();
         if(currentLocal=="zombie")
         {
         	score+=50;
@@ -476,6 +476,7 @@ function wrongbutton(){
 
 function gameLose(){
     if(inventory[0] === 0 ){
+            if(totalScore<500){
             $("#controlButtons").hide();
             $("#multipleChoice").hide();
             $("#mapContainer").hide();
@@ -487,8 +488,17 @@ function gameLose(){
             createMaze();
             mazeDrawer();
             setImg();
+            difficulty=1
             inventory[0]=10
-            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);}
+            else{
+                enterShop();
+                $("#shopBackButton").attr("disabled","disabled");
+                $("#buymap").attr("disabled","disabled");
+                $("#buybulldozer").attr("disabled","disabled");
+                $("#buyfireCarrot").attr("disabled","disabled");
+                $("#buyLevelSkip").attr("disabled","disabled");
+            }
     }
 }
 
