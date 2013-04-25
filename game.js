@@ -7,27 +7,7 @@ var numQuestion=0;
 //var correctNumber=2;
 var question;
 var answer = "";
-var difficulty = 2
-function typeQuestion(difficulty)
-{
-    var level=Math.floor((Math.random()*difficulty)+1);
-    if(level===1)
-    {
-        addition();
-    }
-    else if(level===2)
-    {
-        subtraction();
-    }
-    else if(level===3)
-    {
-        multiplication();
-    }
-    else if(level===4)
-    {
-        division();
-    }
-}
+
 function addition(){
 	a= Math.floor((Math.random()*50)+1);
 	b= Math.floor((Math.random()*50)+1);
@@ -109,7 +89,7 @@ function buttonMaker()
    $("#answerDisplay").css("width", 30+"%");
    $("#answerDisplay").css("border-radius",10);
 
-      $("#multipleChoice").append('<button class="gamebutton" id=one>'+"1"+'</button>');
+   $("#multipleChoice").append('<button class="gamebutton" id=one>'+"1"+'</button>');
    $("#one").css("position","absolute");
    $("#one").css("left",65+"%");
    $("#one").css("top",55+"%");
@@ -254,7 +234,25 @@ function buttonMaker()
       enterAnswer();
    });
 
-
+   $("#multipleChoice").append('<button class="gamebutton" id=useFlameCarrot>'+"Flame Carrots"+'</button>');
+   $("#useFlameCarrot").css("position","absolute");
+   $("#useFlameCarrot").css("left",25+"%");
+   $("#useFlameCarrot").css("top",85+"%");
+   $("#useFlameCarrot").css("height",6+"%");
+   $("#useFlameCarrot").css("width", 6+"%");
+   $("#useFlameCarrot").css("border-radius",10);
+   $("#useFlameCarrot").click(function (){
+      if(inventory[1]>0){
+          numQuestion=3;
+          gameButtonClick();
+          inventory[1]--;
+          inventory[0]++;
+         $("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]);
+         $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+        $("#controlButtons").show();
+        $("#scoreDisplay").show();
+          }
+   });
 //    var d = Math.floor((Math.random()*3)+1);
 //    var e = Math.floor((Math.random()*3)+1);
 
@@ -403,37 +401,56 @@ function gameButtonClick()
 {
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
-    $("#controlButtons").show();
-    $("#scoreDisplay").show();
+    
     answer="";
     if(currentLocal=="bull"&&numQuestion<1)
     {
         typeQuestion(difficulty);
         numQuestion++;
         $("#scoreDisplay").hide();
+        $("#controlButtons").hide();   
+    }
+    else if(currentLocal=="bunny"&&numQuestion<2)
+    {
+        typeQuestion(difficulty);
+        numQuestion++;
+        $("#scoreDisplay").hide();
+        $("#controlButtons").hide();   
     }
     else
     {
         numQuestion=0;
-//		initBattle();
-        
-    if(currentLocal=="zombie"){
-        score+=100;
-        totalScore+=100;
-        $("#scorebutton").text("Your score is "+ score);
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
+		$("#controlButtons").hide();
+       initBattle();
+        if(currentLocal=="zombie")
+        {
+        	score+=50;
+        	totalScore+=50;
+        	$("#scorebutton").text("Your score is "+ score);
+        	$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bull"){
+       		score+=200;
+       		totalScore+=200;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bunny"){
+       		score+=500;
+       		totalScore+=500;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+        currentLocal="floor";  
+        $("#controlButtons").show();
+    	$("#scoreDisplay").show();
+        inventory[0]--;
+        $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
     }
-    if(currentLocal=="bull"){
-        score+=300;
-        totalScore+=300;
-        $("#scorebutton").text("Your score is "+ score); 
-        $("#finalScoreButton").text("Your final score is "+ score); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
-    }
-        currentLocal="floor"; 
-    }
-
+gameLose()
 }
 
 
@@ -452,4 +469,56 @@ function wrongbutton(){
     setImg();
     answer=""
     numQuestion=0;
+    inventory[0]--;
+    $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    gameLose()
+}
+
+function gameLose(){
+    if(inventory[0] === 0 ){
+            $("#controlButtons").hide();
+            $("#multipleChoice").hide();
+            $("#mapContainer").hide();
+            $("#scoreDisplay").hide();
+            $("#endGame").show();
+            $("#Inventory").hide();
+            currentLocal="floor";
+            recentmove="right";
+            createMaze();
+            mazeDrawer();
+            setImg();
+            inventory[0]=10
+            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    }
+}
+
+function skipQuestion(){
+    $("#multipleChoice").empty();
+    $("#mathAnswer").empty();
+    
+       answer="";
+       if(currentLocal=="zombie")
+        {
+            score+=50;
+        	totalScore+=50;
+        	$("#scorebutton").text("Your score is "+ score);
+        	$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bull"){
+       		score+=200;
+       		totalScore+=200;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bunny"){
+       		score+=500;
+       		totalScore+=500;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);  
+        $("#controlButtons").show();
+        $("#scoreDisplay").show();
+    	}
 }

@@ -1,7 +1,30 @@
 hideGame();
 
 var score = 0;
-var totalScore = 0;
+var totalScore = 1000000;
+
+var difficulty = 1
+function typeQuestion(difficulty)
+{
+    var level=Math.floor((Math.random()*difficulty)+1);
+    if(level===1)
+    {
+        addition();
+    }
+    else if(level===2)
+    {
+        subtraction();
+    }
+    else if(level===3)
+    {
+        multiplication();
+    }
+    else if(level===4)
+    {
+        division();
+    }
+}
+
 
 $("#startgame").click(startGame);
 $("#back").click(restartGame);
@@ -20,21 +43,29 @@ function hideGame()
     $("#endGame").hide();
     $("#optionPage").hide();
     $("#scoreDisplay").hide();
+    $("#shop").hide();
+    $("#shopBackDuringTheGame").hide();
+    $("#menuShopBack").hide();
+    $("#Inventory").hide();
+	$("#bullDozer").hide();
+
 }
 function showGame()
 {
     $("#menuPage").hide();
+    $("#totalScoreButton").hide();
     $("#controlButtons").show();
-    $("#mapContainer").show();
     $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
+    $("#Inventory").show();
     createMaze();
     mazeDrawer();
 }
 function optionShowGame(){
     $("#optionPage").hide();
+    $("#Inventory").show();
+    $("#totalScoreButton").hide();
     $("#controlButtons").show();
-    $("#mapContainer").show();
     $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
     createMaze();
@@ -47,6 +78,7 @@ function restartGame(){
     $("#endGame").hide();
     $("#menuPage").show();
     $("#difficultyDisplay").show();
+    $("#totalScoreButton").show();
 }
 
 function changeMazeSize(){
@@ -104,10 +136,9 @@ function changeMazeSize(){
 function easyLevelOption(){
     mazeSize=11;
     numZombie=6;
-    numBull=3;
-    difficulty=1    
-    LevelDisplay="Easy";
-   $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
+    numBull=3;   
+    ModeDisplay="Easy";
+   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();
     mazeDrawer();
 }
@@ -116,9 +147,8 @@ function normalLevelOption(){
     mazeSize=15;
     numZombie=10;
     numBull=5;
-    difficulty=2
-    LevelDisplay="Normal";
-    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
+    ModeDisplay="Normal";
+   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();
     mazeDrawer();
 }
@@ -127,9 +157,8 @@ function hardLevelOption(){
     mazeSize=21;
     numZombie=14;
     numBull=8;
-    difficulty=4
-    LevelDisplay="Hard";
-    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay); 
+    ModeDisplay="Hard";
+   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();
     mazeDrawer();
 }
@@ -139,7 +168,8 @@ function optionBack(){
     $("#menuPage").show();
 }
    
-   var LevelDisplay="Normal";
+   var LevelDisplay="Level"+difficulty;
+   var ModeDisplay ="Normal"
    
    $("#difficultyDisplay").append('<button class="gamebutton" id=difficultybutton></button>');
    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);   
@@ -159,7 +189,8 @@ function optionBack(){
    $("#scorebutton").css("width", 20+"%");
    $("#scorebutton").css("border-radius",10);
 
-   $("#menuPage").append('<button class="gamebutton" id=totalScoreButton></button>');
+
+   $("#mainBody").append('<button class="gamebutton" id=totalScoreButton></button>');
    $("#totalScoreButton").text("Your total score is "+ totalScore);   
    $("#totalScoreButton").css("position","absolute");
    $("#totalScoreButton").css("left",75+"%");
@@ -167,3 +198,12 @@ function optionBack(){
    $("#totalScoreButton").css("height",6+"%");
    $("#totalScoreButton").css("width", 20+"%");
    $("#totalScoreButton").css("border-radius",10);
+
+   $("#optionPage").append('<button class="gamebutton" id=modebutton></button>');
+   $("#modebutton").text("Current mode is "+ ModeDisplay);   
+   $("#modebutton").css("position","absolute");
+   $("#modebutton").css("left",75+"%");
+   $("#modebutton").css("top",23+"%");
+   $("#modebutton").css("height",6+"%");
+   $("#modebutton").css("width", 20+"%");
+   $("#modebutton").css("border-radius",10);

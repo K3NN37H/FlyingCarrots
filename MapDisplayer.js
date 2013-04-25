@@ -2,6 +2,7 @@ var currentLocal="floor";
 var prevX, prevY, prevO;
 var recentmove="right";
 
+
 $(document).keydown(mover);
 $("#up").click(function () {
     mover({which:"38"});
@@ -32,6 +33,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="40")
@@ -46,6 +48,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="37")
@@ -60,6 +63,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="39")
@@ -74,6 +78,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }    
@@ -91,6 +96,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="38")
@@ -105,6 +111,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="39")
@@ -119,6 +126,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="37")
@@ -133,6 +141,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }   
@@ -150,6 +159,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="37")
@@ -164,6 +174,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="38")
@@ -178,6 +189,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="40")
@@ -193,6 +205,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }
@@ -210,6 +223,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="39")
@@ -224,6 +238,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="40")
@@ -238,6 +253,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="38")
@@ -252,23 +268,17 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }
-    if(currentLocal==="zombie")
-    {
-        typeQuestion(difficulty);
-        $("#controlButtons").hide();
-        $("#scoreDisplay").hide();
-    }
-    if(currentLocal==="bull")
+    if(currentLocal==="zombie"||currentLocal==="bull"||currentLocal==="bunny")
     {
         typeQuestion(difficulty);
         $("#controlButtons").hide();
         $("#scoreDisplay").hide();
     }
     mazeDrawer();
-    setImg();
     endGame();
 }
 
@@ -309,6 +319,10 @@ function mazeDrawer()
             {
                 mapHtml += '<td class="floor">B</td>';
             }
+            else if(maze[j][i]==="bunny")
+            {
+                mapHtml += '<td class="floor">R</td>';
+            }
             else if(maze[j][i]==="kite")
             {
                  mapHtml += '<td class="floor">◊</td>';
@@ -340,19 +354,29 @@ function endGame()
             $("#mapContainer").hide();
             $("#scoreDisplay").hide();
             $("#endGame").show();
+            $("#Inventory").hide();
             currentLocal="floor";
             recentmove="right";
             createMaze();
             mazeDrawer();
             setImg();
+            levelFinish()
         }
     }
 }
-   $("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
-   $("#finalScoreButton").text("Your final score is "+ score);   
-   $("#finalScoreButton").css("position","absolute");
-   $("#finalScoreButton").css("left",45+"%");
-   $("#finalScoreButton").css("top",15+"%");
-   $("#finalScoreButton").css("height",6+"%");
-   $("#finalScoreButton").css("width", 20+"%");
-   $("#finalScoreButton").css("border-radius",10);
+	$("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
+	$("#finalScoreButton").text("Your final score is "+ score);   
+	$("#finalScoreButton").css("position","absolute");
+	$("#finalScoreButton").css("left",45+"%");
+	$("#finalScoreButton").css("top",15+"%");
+	$("#finalScoreButton").css("height",6+"%");
+	$("#finalScoreButton").css("width", 20+"%");
+	$("#finalScoreButton").css("border-radius",10);	
+	
+function levelFinish(){
+    if(difficulty<4){
+        difficulty++
+        LevelDisplay="Level"+difficulty
+        $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+    }
+}
