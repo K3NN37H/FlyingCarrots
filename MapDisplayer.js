@@ -33,6 +33,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="40")
@@ -47,6 +48,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="37")
@@ -61,6 +63,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="39")
@@ -75,6 +78,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }    
@@ -92,6 +96,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="38")
@@ -106,6 +111,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="39")
@@ -120,6 +126,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="37")
@@ -134,6 +141,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }   
@@ -151,6 +159,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="37")
@@ -165,6 +174,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="38")
@@ -179,6 +189,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="40")
@@ -194,6 +205,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }
@@ -211,6 +223,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
+				setImg();
             }
         }
         else if(text=="39")
@@ -225,6 +238,7 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
+				setImg();
             }
         }
         else if(text=="40")
@@ -239,6 +253,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
+				setImg();
             }
         }
         else if(text=="38")
@@ -253,6 +268,7 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
+				setImg();
             }
         }
     }
@@ -263,7 +279,6 @@ function mover(event)
         $("#scoreDisplay").hide();
     }
     mazeDrawer();
-    setImg();
     endGame();
 }
 

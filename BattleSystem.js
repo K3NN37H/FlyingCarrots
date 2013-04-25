@@ -46,17 +46,19 @@ function initBattle()
 		{
 			$("body").append('<div id="carrot" style="position:absolute;background-color:red;"></div>');
 		}
-		$("#carrot").css("left",$("body").width()/2+(xSize/2-x));
-		$("#carrot").css("top",$("#battleInterface").offset().top-(y-10)*2);
-		if ($("#headArea").offset().left < $("#carrot").offset().left && $("#headArea").offset().top < $("#carrot").offset().top && $("#headArea").offset().left+$("#headArea").width() > $("#carrot").offset().left && $("#headArea").offset().top+$("#headArea").height() > $("#carrot").offset().top)
+		$("#carrot").css("left", orig.changedTouches[0].pageX);
+		$("#carrot").css("top", orig.changedTouches[0].pageY);
+		$("#carrot").animate({left:$("body").width()/2+(xSize/2-x),top:$("#battleInterface").offset().top-(y-10)*2},500, function () {});
+		window.setTimeout(function () {
+		if ($("#headArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#headArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#headArea").offset().left+$("#headArea").width() > $("body").width()/2+(xSize/2-x) && $("#headArea").offset().top+$("#headArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
 			alert("HIT Head");
 		}
-		else if ($("#bodyArea").offset().left < $("#carrot").offset().left && $("#bodyArea").offset().top < $("#carrot").offset().top && $("#bodyArea").offset().left+$("#bodyArea").width() > $("#carrot").offset().left && $("#bodyArea").offset().top+$("#bodyArea").height() > $("#carrot").offset().top)
+		else if ($("#bodyArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#bodyArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#bodyArea").offset().left+$("#bodyArea").width() > $("body").width()/2+(xSize/2-x) && $("#bodyArea").offset().top+$("#bodyArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
 			alert("HIT Body");
 		}
-		else if ($("#legArea").offset().left < $("#carrot").offset().left && $("#legArea").offset().top < $("#carrot").offset().top && $("#legArea").offset().left+$("#legArea").width() > $("#carrot").offset().left && $("#legArea").offset().top+$("#legArea").height() > $("#carrot").offset().top)
+		else if ($("#legArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#legArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#legArea").offset().left+$("#legArea").width() > $("body").width()/2+(xSize/2-x) && $("#legArea").offset().top+$("#legArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
 			alert("HIT Leg");
 		}
@@ -65,6 +67,7 @@ function initBattle()
 			destroyBattle();
 			$("#controlButtons").show();
 		});
+		},1000);
 		$(this).off();
 	});
 	var blah = document.getElementById("slingshot");
