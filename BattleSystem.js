@@ -92,5 +92,33 @@ function destroyBattle()
 	$("#battleInterface").hide();
 	$("#areas").empty();
 	$("#areas").remove();
-	$("#carrot").remove();
+	$("#carrot").remove();     
+           if(currentLocal=="zombie")
+        {
+            score+=50;
+            totalScore+=50;
+            $("#scorebutton").text("Your score is "+ score);
+        	$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bull"){
+       		score+=200;
+       		totalScore+=200;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+   		if(currentLocal=="bunny"){
+       		score+=500;
+       		totalScore+=500;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+    	}
+        currentLocal="floor"; 
+        $("#controlButtons").show();
+    	$("#scoreDisplay").show();
+        inventory[0]--;
+        $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+        gameLose()
 }

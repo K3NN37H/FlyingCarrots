@@ -272,14 +272,18 @@ function mover(event)
             }
         }
     }
-    if(currentLocal==="zombie"||currentLocal==="bull"||currentLocal==="bunny")
-    {
-        typeQuestion(difficulty);
-        $("#controlButtons").hide();
-        $("#scoreDisplay").hide();
-    }
+    if(text=="37"||text=="38"||text=="39"||text=="40"){
+        if(currentLocal==="zombie"||currentLocal==="bull"||currentLocal==="bunny")
+        {   
+           $("#multipleChoice").empty();
+           $("#mathAnswer").empty();
+            typeQuestion(difficulty);
+            $("#controlButtons").hide();
+            $("#scoreDisplay").hide();
+        }
+    
     mazeDrawer();
-    endGame();
+    endGame();}
 }
 
 
