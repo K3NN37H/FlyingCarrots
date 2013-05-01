@@ -7,48 +7,65 @@
         <meta charset="UTF-8">
 	</head>
 	<body id="mainBody">
-	<div id="backgroundContainer">
-		<img class="backImg" id="backgroundImg1" src="Images/forwardcorridor.jpg" height="100%" width="100%" alt="back" />
-		<img class="backImg" id="backgroundImg2" src="Images/forwardcorridor.jpg" height="100%" width="100%" alt="back" style="opacity:0" />
-	</div>
-    <table border="1" id="mapContainer">
-        </table>
-        
-        <div id="menuPage">
-        <button id="startgame">
-            START GAME
-        </button>
-        <button id="continue">
-            CONTINUE
-        </button>
-        <button id="option">
-            OPTION
-        </button>
-        <button id="menuShop">
-            Shop
-        </button>
-        </div>        
-        <div id="endGame">
-            <p>Congratulations! You cleared the maze!</p>
-        <button id="back">
-            BACK
-        </button>
-        </div>
-		<div id="controlButtons">
-			<button class="moveButtons" id="up">^</button>
-			<button class="moveButtons" id="down">v</button>
-			<button class="moveButtons" id="left">&#60;</button>
-			<button class="moveButtons" id="right">&#62;</button>
-            <button id="shopButton">Shop</button>
-            <button id="toggleMapButton">Toggle Map</button> 
+		<div id="backgroundContainer">
+			<img class="backImg" id="backgroundImg1" src="Images/forwardcorridor.jpg" height="100%" width="100%" alt="back" />
+			<img class="backImg" id="backgroundImg2" src="Images/forwardcorridor.jpg" height="100%" width="100%" alt="back" style="opacity:0" />
 		</div>
         
-        <div id="mathAnswer">
-            
+        <div id="menuPage">
+			<button id="startgame">
+				START GAME
+			</button>
+			<button id="continue">
+				CONTINUE
+			</button>
+			<button id="option">
+				OPTION
+			</button>
+			<button id="menuShop">
+				Shop
+			</button>
         </div>
+		
+		<div id="gamePage">
+			<table border="1" id="mapContainer">
+			</table>
+			<div id="controlButtons">
+				<button class="moveButtons" id="up">^</button>
+				<button class="moveButtons" id="down">v</button>
+				<button class="moveButtons" id="left">&#60;</button>
+				<button class="moveButtons" id="right">&#62;</button>
+				<button id="shopButton">Shop</button>
+				<button id="toggleMapButton">Toggle Map</button> 
+			</div>
+			<div id="mathAnswer">
+            
+			</div>
+			
+			<div id="multipleChoice">
+            
+			</div>
+			
+			<div id="bullDozer">
+				<button class="bullButton" id="leftBull">&#60;</button>
+				<button class="bullButton" id="rightBull">&#62;</button>
+				<button class="bullButton" id="upBull">^</button>
+			</div>
+			
+			<div id="battleInterface"></div>
+			
+			<div id="endGame">
+				<p>Congratulations! You cleared the maze!</p>
+				<button id="back">
+					BACK
+				</button>
+			</div>
+		</div>
+		
         <div id="inventory">
             
         </div>
+		
         <div id="shop">
             <button class="puchaseButtons" id="buymap">Map</button>
             <button class="puchaseButtons" id="buybulldozer">Bulldozer</button>
@@ -58,15 +75,13 @@
         </div>
         
         <div id = "shopBackDuringTheGame">
-                <button id="shopBackButton">Back</button>
+            <button id="shopBackButton">Back</button>
         </div>
         <div id = "menuShopBack">
-                <button id="menuShopBackButton">Back</button>
+            <button id="menuShopBackButton">Back</button>
         </div>
         
-        <div id="multipleChoice">
-            
-        </div>
+        
         <div id="optionPage">
             
         </div>
@@ -81,16 +96,10 @@
         <div id="Inventory">
            
         </div>
-        <div id="bullDozer">
-        	<button class="bullButton" id="leftBull">&#60;</button>
-        	<button class="bullButton" id="rightBull">&#62;</button>
-        	<button class="bullButton" id="upBull">^</button>
-        </div>
-        <script src="MainMenu.js"></script>
         
+        <script src="MainMenu.js"></script>
         <script src="game.js"></script>
         <script src="Shop.js"></script>
-		<div id="battleInterface" style="display:none;position:absolute;width:97%;height:33%;bottom:3%;"></div>
         <script src="MazeGenerator.js"></script>
         <script src="MapDisplayer.js"></script>
         <script src="Inventory.js"></script>
