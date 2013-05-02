@@ -29,6 +29,7 @@ function enterShop()
     $("#Inventory").show();
     console.log("entered");
     $("#buyMapDisplay").attr("disabled","disabled");
+    $("#backgroundImg"+backgroundCount).attr("src","Images/Shop.png");
 }
 function purchase(item)
 {
@@ -83,6 +84,7 @@ function exitShop(){
     $("#scoreDisplay").show();
     $("#totalScoreButton").hide();
     $("#buyMapDisplay").removeAttr("disabled","");
+    setImg()
 }
 
 function menuEnterShop(){
@@ -92,6 +94,7 @@ function menuEnterShop(){
     $("#menuShopBack").show();
     $("#buyMapDisplay").attr("disabled","disabled");
     $("#difficultyDisplay").hide();
+    $("#backgroundImg"+backgroundCount).attr("src","Images/Shop.png");
 }
 
 function menuExitShop(){
@@ -101,4 +104,5 @@ function menuExitShop(){
     $("#menuShopBack").hide();
     $("#difficultyDisplay").show();
 	$("#buyMapDisplay").removeAttr("disabled","");
+    $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
 }

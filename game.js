@@ -249,8 +249,6 @@ function buttonMaker()
           inventory[0]++;
          $("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]);
          $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
-        $("#controlButtons").show();
-        $("#scoreDisplay").show();
           }
    });
 //    var d = Math.floor((Math.random()*3)+1);
@@ -472,35 +470,4 @@ function gameLose(){
                 $("#buyLevelSkip").attr("disabled","disabled");
             }
     }
-}
-
-function skipQuestion(){
-    $("#multipleChoice").empty();
-    $("#mathAnswer").empty();
-    
-       answer="";
-       if(currentLocal=="zombie")
-        {
-            score+=50;
-        	totalScore+=50;
-        	$("#scorebutton").text("Your score is "+ score);
-        	$("#finalScoreButton").text("Your final score is "+ score); 
-        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
-    	}
-   		if(currentLocal=="bull"){
-       		score+=200;
-       		totalScore+=200;
-       		$("#scorebutton").text("Your score is "+ score); 
-       		$("#finalScoreButton").text("Your final score is "+ score); 
-        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
-    	}
-   		if(currentLocal=="bunny"){
-       		score+=500;
-       		totalScore+=500;
-       		$("#scorebutton").text("Your score is "+ score); 
-       		$("#finalScoreButton").text("Your final score is "+ score); 
-        	$("#totalScoreButton").text("Your total score is "+ totalScore);  
-        $("#controlButtons").show();
-        $("#scoreDisplay").show();
-    	}
 }

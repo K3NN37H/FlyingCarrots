@@ -58,6 +58,7 @@ function showGame()
     $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
     $("#Inventory").show();
+    $("#backgroundImg"+backgroundCount).attr("src","Images/forwardcorridor.jpg");
     createMaze();
     mazeDrawer();
 }

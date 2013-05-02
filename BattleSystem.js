@@ -1,5 +1,6 @@
 function initBattle()
 {
+    $("#Inventory").hide();
 	if (disableSlingshot) {
 		destroyBattle();
 		return;
@@ -94,6 +95,7 @@ function destroyBattle()
 {
 	$("#battleInterface").empty();
 	$("#battleInterface").hide();
+    $("#Inventory").show();
 	$("#areas").empty();
 	$("#areas").remove();
 	$("#carrot").remove();     

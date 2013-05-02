@@ -380,6 +380,7 @@ function endGame()
             createMaze();
             mazeDrawer();
             setImg();
+            $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
             levelFinish()
         }
     }
