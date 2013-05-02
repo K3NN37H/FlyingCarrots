@@ -1,3 +1,4 @@
+
 /*global maze, playerX, playerY */
 var leftWall,rightWall,forewardWall,backwardWall;
 var backgroundCount = 1;
@@ -5,7 +6,11 @@ function setImg()
 {
     numWalls();
 	// fade out the first image
-	$("#backgroundImg"+backgroundCount).animate({opacity:0,width:"200%",height:"200%",left:"-50%",top:"-25%"},1000,function () {$("#backgroundImg"+backgroundCount).css({left:"0%",top:"0%",height:"100%",width:"100%"});});
+	if (disableMoveAnim){
+		$("#backgroundImg"+backgroundCount).css("opacity", "0");
+	} else {
+		$("#backgroundImg"+backgroundCount).animate({opacity:0,width:"200%",height:"200%",left:"-50%",top:"-25%"},1000,function () {$("#backgroundImg"+backgroundCount).css({left:"0%",top:"0%",height:"100%",width:"100%"});});
+	}
 	if (backgroundCount === 1) {
 		backgroundCount = 2;
 	}
@@ -44,8 +49,13 @@ function setImg()
     {
         $("#backgroundImg"+backgroundCount).attr("src","Images/deadendp.jpg");
     }
+	
 	$("#backgroundImg"+backgroundCount).css({left:"0%",top:"0%",height:"100%",width:"100%"});
-	$("#backgroundImg"+backgroundCount).animate({opacity:1},1000,function () {});
+	if (disableMoveAnim){
+		$("#backgroundImg"+backgroundCount).css("opacity", "1");
+	} else {
+		$("#backgroundImg"+backgroundCount).animate({opacity:1},1000,function () {});
+	}
 }
 function numWalls()
 {

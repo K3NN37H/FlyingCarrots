@@ -1,5 +1,9 @@
 function initBattle()
 {
+	if (disableSlingshot) {
+		destroyBattle();
+		return;
+	}
 	var xSize = $("#battleInterface").width();
 	var ySize = $("#battleInterface").height();
 	$("#battleInterface").show();
