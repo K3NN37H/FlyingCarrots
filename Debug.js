@@ -16,10 +16,7 @@ $("#disMoveAnim").click(function () {
 });
 
 $("#pointsAdd").click(function () {
-	score += 10000;
-	totalScore += 10000;
-	$("#totalScoreButton").text("Your total score is "+totalScore);
-	$("#scorebutton").text("Your score is "+score);
+	addScore(10000);
 });
 
 $("#debugOption").click(function () {

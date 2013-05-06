@@ -1,8 +1,5 @@
 hideGame();
 
-var score = 0;
-var totalScore = 100000;
-
 var difficulty = 1
 function typeQuestion(difficulty)
 {
@@ -192,10 +189,10 @@ function optionBack(){
 
 
    $("#mainBody").append('<button class="gamebutton" id=totalScoreButton></button>');
-   $("#totalScoreButton").text("Your total score is "+ totalScore);   
+   $("#totalScoreButton").text("Your total score is "+ points);   
    $("#totalScoreButton").css("position","absolute");
    $("#totalScoreButton").css("left",75+"%");
-   $("#totalScoreButton").css("top",5+"%");
+   $("#sButton").css("top",5+"%");
    $("#totalScoreButton").css("height",6+"%");
    $("#totalScoreButton").css("width", 20+"%");
    $("#totalScoreButton").css("border-radius",10);

@@ -35,45 +35,40 @@ function purchase(item)
 {
     console.log(item);
     
-    if(item=="map"&&totalScore>=10000)
+    if(item=="map"&&points>=10000)
     {
-        totalScore-=10000;
+        spendPoints(10000);
         inventory[MAP]++;
-        $("#buyMapDisplay").text("Map: "+ inventory[MAP]);
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
+        $("#buyMapDisplay").text("Map: "+ inventory[MAP]); 
     }
-    else if(item=="bulldozer"&&totalScore>=10000)
+    else if(item=="bulldozer"&&points>=10000)
     {
-    	totalScore-=10000;
+    	spendPoints(10000);
         inventory[BULLDOZER]++;
-        $("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
-        $("#totalScoreButton").text("Your total score is "+ totalScore);   
+        $("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]);  
     }
-    else if(item=="morecarrot"&&totalScore>=500)
+    else if(item=="morecarrot"&&points>=500)
     {
-    	totalScore-=500;
+    	spendPoints(500);
     	inventory[MORECARROT]+=10;
     	$("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
-    	$("#totalScoreButton").text("Your total score is "+ totalScore); 
         $("#shopBackButton").removeAttr("disabled","");
         $("#buymap").removeAttr("disabled","");
         $("#buybulldozer").removeAttr("disabled","");
         $("#buyfireCarrot").removeAttr("disabled","");
         $("#buyLevelSkip").removeAttr("disabled","");
     }
-    else if(item=="flamecarrot"&&totalScore>=2000)
+    else if(item=="flamecarrot"&&points>=2000)
     {
-    	totalScore-=2000;
+    	spendPoints(2000);
     	inventory[FLAMECARROT]+=5;
     	$("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]); 
-    	$("#totalScoreButton").text("Your total score is "+ totalScore);
     }
-    else if(item=="levelskip"&&totalScore>=20000)
+    else if(item=="levelskip"&&points>=20000)
     {
-    	totalScore-=20000;
+    	spendPoints(20000);
     	inventory[LEVELSKIP]++;
     	$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
-    	$("#totalScoreButton").text("Your total score is "+ totalScore);
     }
 }
 
