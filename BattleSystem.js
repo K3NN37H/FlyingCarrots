@@ -86,13 +86,34 @@ function initBattle()
 	bcan.moveTo(0,10);
 	bcan.lineTo(xSize,10);
 	bcan.stroke();
-	if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
-	{
-		$("body").append('<div id="areas" style="position:absolute;height:65%;width:100%;"></div>');
-		$("#areas").append('<div class="areas" id="headArea" style="width:100px;height:33%;"></div>');
-		$("#areas").append('<div class="areas" id="bodyArea" style="width:100px;height:33%;top:33%"></div>');
-		$("#areas").append('<div class="areas" id="legArea" style="width:100px;height:33%;top:66%"></div>');
-	}
+	// if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
+	// {
+	// 	var imgSrc
+	// 	if(currentLocal==="zombie")
+	// 	{
+	// 		if(Math.round(Math.random())===1)
+	// 		{
+	// 			imgSrc="Zombie_female shrunk.png";
+	// 		{	
+	// 		else
+	// 		{
+	// 			imgSrc="Zombie_male shrunk.png";
+	// 		}
+	// 	}
+	// 	else if(currentLocal==="bull")
+	// 	{
+	// 		imgSrc="bull img shrunk.png";
+	// 	}
+	// 	else if(currentLocal==="bunny")
+	// 	{
+	// 		imgSrce="bunny size fix.png";
+	// 	}
+	// 	$("body").append('<div id="areas" style="position:absolute;height:65%;width:100%;"></div>');
+	// 	$("#areas").append('<img id="monsterImg" style=""')
+	// 	$("#areas").append('<div class="areas" id="headArea" style="width:100px;height:33%;"></div>');
+	// 	$("#areas").append('<div class="areas" id="bodyArea" style="width:100px;height:33%;top:33%"></div>');
+	// 	$("#areas").append('<div class="areas" id="legArea" style="width:100px;height:33%;top:66%"></div>');
+	// }
 }
 
 function destroyBattle()
