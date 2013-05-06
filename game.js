@@ -8,7 +8,8 @@ var numQuestion=0;
 var question;
 var answer = "";
 
-function addition(){
+function addition()
+{
 	a= Math.floor((Math.random()*50)+1);
 	b= Math.floor((Math.random()*50)+1);
     c = a + b;
@@ -67,7 +68,37 @@ function division(){
 $("#multipleChoice").show();
 $("#mathAnswer").show();
 }
-
+function monsterDrawer()
+{
+	if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
+	{
+		var imgSrc
+		if(currentLocal==="zombie")
+		{
+			if(Math.round(Math.random())===1)
+			{
+				imgSrc="Zombie_female shrunk copy.png";
+			}	
+			else
+			{
+				imgSrc="Zombie_male shrunk copy.png";
+			}
+		}
+		else if(currentLocal==="bull")
+		{
+			imgSrc="bull img shrunk copy.png";
+		}
+		else if(currentLocal==="bunny")
+		{
+			imgSrc="bunny size fix copy.png";
+		}
+		$("body").append('<div id="areas" style="position:absolute;height:65%;width:100%;z-index:-1"></div>');
+		$("#areas").append('<img id="monsterImg" src="Images/'+imgSrc+'"></img>')
+		$("#areas").append('<div class="areas" id="headArea" style="width:100px;height:33%;"></div>');
+		$("#areas").append('<div class="areas" id="bodyArea" style="width:100px;height:33%;top:33%"></div>');
+		$("#areas").append('<div class="areas" id="legArea" style="width:100px;height:33%;top:66%"></div>');
+	}
+}
 function buttonMaker()
 {
    $("#multipleChoice").append('<button class="gamebutton" id=question>'+question+'</button>');
@@ -399,7 +430,6 @@ function gameButtonClick()
 {
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
-    
     answer="";
     if(currentLocal=="bull"&&numQuestion<1)
     {
@@ -407,6 +437,7 @@ function gameButtonClick()
         numQuestion++;
         $("#scoreDisplay").hide();
         $("#controlButtons").hide();   
+        
     }
     else if(currentLocal=="bunny"&&numQuestion<2)
     {
@@ -414,6 +445,7 @@ function gameButtonClick()
         numQuestion++;
         $("#scoreDisplay").hide();
         $("#controlButtons").hide();   
+        
     }
     else
     {
@@ -425,6 +457,7 @@ function gameButtonClick()
 
 
 function wrongbutton(){
+	$("#areas").empty();
     maze[playerX][playerY]=currentLocal;
     playerX=prevX;
     playerY=prevY;
