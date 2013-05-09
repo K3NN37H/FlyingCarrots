@@ -73,6 +73,12 @@ function monsterDrawer()
 	if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
 	{
 		var imgSrc
+		var left = Math.round(Math.random()*40+22);
+		var bottom = Math.round(Math.random()*5);
+		$("body").append('<div id="areas" style="position:absolute;height:65%;width:100%;z-index:-1"></div>');
+		$("#areas").append('<div class="area" id="headArea"></div>');
+		$("#areas").append('<div class="area" id="bodyArea"></div>');
+		$("#areas").append('<div class="area" id="legArea"></div>');
 		if(currentLocal==="zombie")
 		{
 			if(Math.round(Math.random())===1)
@@ -92,11 +98,72 @@ function monsterDrawer()
 		{
 			imgSrc="bunny size fix copy.png";
 		}
-		$("body").append('<div id="areas" style="position:absolute;height:65%;width:100%;z-index:-1"></div>');
-		$("#areas").append('<img id="monsterImg" src="Images/'+imgSrc+'"></img>')
-		$("#areas").append('<div class="areas" id="headArea" style="width:100px;height:33%;"></div>');
-		$("#areas").append('<div class="areas" id="bodyArea" style="width:100px;height:33%;top:33%"></div>');
-		$("#areas").append('<div class="areas" id="legArea" style="width:100px;height:33%;top:66%"></div>');
+		
+		$("#areas").append('<img id="monsterImg" src="Images/'+imgSrc+'"></img>');
+		$("#monsterImg").css("left",left+"%");
+		$("#monsterImg").css("bottom",bottom+"%");
+		if(currentLocal==="zombie")
+		{
+			$("#monsterImg").css("width","10%");
+			$("#monsterImg").css("height","70%");
+			
+			$("#legArea").css("left", (left+2)+"%");
+			$("#legArea").css("bottom",bottom+"%");
+			$("#legArea").css("width","5%");
+			$("#legArea").css("height","25%");
+			
+			$("#bodyArea").css("left", left+"%");
+			$("#bodyArea").css("bottom",(bottom+25)+"%");
+			$("#bodyArea").css("width","10%");
+			$("#bodyArea").css("height","30%");
+			
+			$("#headArea").css("left", left+"%");
+			$("#headArea").css("bottom",(bottom+50)+"%");
+			$("#headArea").css("width","10%");
+			$("#headArea").css("height","20%");
+		}
+		if(currentLocal==="bull")
+		{
+			$("#monsterImg").css("width","35%");
+			$("#monsterImg").css("height","60%");
+			
+			$("#legArea").css("left", (left+5)+"%");
+			$("#legArea").css("bottom",bottom+"%");
+			$("#legArea").css("width","20%");
+			$("#legArea").css("height","17%");
+			
+			$("#bodyArea").css("left", (left+2)+"%");
+			$("#bodyArea").css("bottom",(bottom+19)+"%");
+			$("#bodyArea").css("width","25%");
+			$("#bodyArea").css("height","20%");
+			
+			$("#headArea").css("left", left+"%");
+			$("#headArea").css("bottom",(bottom+40)+"%");
+			$("#headArea").css("width","13%");
+			$("#headArea").css("height","20%");
+		}
+		if(currentLocal ==="bunny")
+		{
+			$("#monsterImg").css("width","10%");
+			$("#monsterImg").css("height","50%");
+			
+			$("#legArea").css("left", (left)+"%");
+			$("#legArea").css("bottom",bottom+"%");
+			$("#legArea").css("width","9%");
+			$("#legArea").css("height","5%");
+			
+			$("#bodyArea").css("left", (left)+"%");
+			$("#bodyArea").css("bottom",(bottom+5)+"%");
+			$("#bodyArea").css("width","10%");
+			$("#bodyArea").css("height","22%");
+			
+			$("#headArea").css("left", (left+1)+"%");
+			$("#headArea").css("bottom",(bottom+27)+"%");
+			$("#headArea").css("width","8%");
+			$("#headArea").css("height","22%");
+		}
+		
+		
 	}
 }
 function buttonMaker()

@@ -16,7 +16,11 @@ body
     left:-2px;
     top:-2px;
 }
-
+.area
+{
+	position:absolute;
+	border-width:1px;
+}
 .bullButton
 {
 	position:absolute;
@@ -227,4 +231,7 @@ body
 	bottom:3%;
 	z-index:5;
 }
-
+#monsterImg
+{
+	position:absolute;
+}

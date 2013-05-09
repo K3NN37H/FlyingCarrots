@@ -5,6 +5,7 @@ function useItem(item)
 		$("#toggleMapButton").css("display","inline");
 		inventory[MAP]--;
 		$("#buyMapDisplay").text("Map: "+ inventory[MAP]);
+		$("#buyMapDisplay").attr("disabled","disabled");
 	}
 	else if(item==="bulldozer"&&inventory[BULLDOZER]>0)
 	{
