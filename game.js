@@ -23,7 +23,9 @@ function addition()
 //else {
 //     wrongbutton()
 //}
-
+   $("#difficultyDisplay").hide();
+   $("#mapContainer").hide(); 
+   mapToggle=0;
     buttonMaker();
 
     $("#multipleChoice").show();
@@ -37,6 +39,9 @@ function subtraction(){
     
     question="What is the answer for "+ b +" - " + a + " ?";
     
+       $("#difficultyDisplay").hide();
+   $("#mapContainer").hide(); 
+   mapToggle=0;
     buttonMaker();
    $("#multipleChoice").show();
    $("#mathAnswer").show();
@@ -49,6 +54,10 @@ function multiplication(){
     c= a * b;
 
     question="What is the answer for "+ a +" × " + b + " ?";
+    
+       $("#difficultyDisplay").hide();
+   $("#mapContainer").hide(); 
+   mapToggle=0;
 
     buttonMaker();
 $("#multipleChoice").show();
@@ -63,7 +72,10 @@ function division(){
     b = a * c;
     
    question="What is the answer for "+ b +" ÷ " + a + " ?";
-    
+
+$("#difficultyDisplay").hide();
+   $("#mapContainer").hide(); 
+   mapToggle=0;
    buttonMaker();
 $("#multipleChoice").show();
 $("#mathAnswer").show();
@@ -536,6 +548,7 @@ function wrongbutton(){
     $("#mathAnswer").empty();
     $("#controlButtons").show();
     $("#scoreDisplay").show();
+    $("#difficultyDisplay").show();
     setImg();
     answer=""
     numQuestion=0;
@@ -551,7 +564,7 @@ function gameLose(){
             $("#multipleChoice").hide();
             $("#mapContainer").hide();
             $("#scoreDisplay").hide();
-            $("#endGame").show();
+            $("#loseGame").show();
             $("#Inventory").hide();
             currentLocal="floor";
             recentmove="right";
@@ -560,7 +573,8 @@ function gameLose(){
             setImg();
             difficulty=1
             inventory[0]=10
-            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);}
+            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+            $("#finalScoreButton2").text("Your final score is "+ score);}
             else{
                 enterShop();
                 $("#shopBackButton").attr("disabled","disabled");
@@ -571,3 +585,11 @@ function gameLose(){
             }
     }
 }
+    $("#loseGame").append('<button class="gamebutton" id=finalScoreButton2></button>');
+    $("#finalScoreButton2").text("Your final score is "+ score);   
+	$("#finalScoreButton2").css("position","absolute");
+	$("#finalScoreButton2").css("left",45+"%");
+	$("#finalScoreButton2").css("top",15+"%");
+	$("#finalScoreButton2").css("height",5+"%");
+	$("#finalScoreButton2").css("width", 20+"%");
+	$("#finalScoreButton2").css("border-radius",10);	

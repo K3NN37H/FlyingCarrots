@@ -11,6 +11,7 @@ function initBattle()
 	}
 	var xSize = $("#battleInterface").width();
 	var ySize = $("#battleInterface").height();
+    var hitTheEnemy = false
 	$("#battleInterface").show();
 	$("#battleInterface").append('<canvas id="slingshot" width="'+xSize+'px" height="'+ySize+'px"></canvas>');
 	$("#slingshot").on("touchstart touchmove", function(e) {
@@ -62,19 +63,30 @@ function initBattle()
 		if ($("#headArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#headArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#headArea").offset().left+$("#headArea").width() > $("body").width()/2+(xSize/2-x) && $("#headArea").offset().top+$("#headArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
 			alert("HIT Head");
+            hitTheEnemy = true
 		}
 		else if ($("#bodyArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#bodyArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#bodyArea").offset().left+$("#bodyArea").width() > $("body").width()/2+(xSize/2-x) && $("#bodyArea").offset().top+$("#bodyArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
 			alert("HIT Body");
+            hitTheEnemy = true
 		}
 		else if ($("#legArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#legArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#legArea").offset().left+$("#legArea").width() > $("body").width()/2+(xSize/2-x) && $("#legArea").offset().top+$("#legArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
 			alert("HIT Leg");
+            hitTheEnemy = true
 		}
+        else{
+            alert("You missed it");
+        }
 		$("#battleInterface").append('<button id="leaveBattle" style="position:absolute;top:50%;left:50%;">OK</button>');
 		$("#leaveBattle").click(function (e) {
+            if(hitTheEnemy===true){
+        	 hitEnemy()   
+			}
+            else {
+                wrongbutton()
+            }
 			destroyBattle();
-			$("#controlButtons").show();
 		});
 		},1000);
 		$(this).off();
@@ -118,25 +130,42 @@ function initBattle()
 
 function destroyBattle()
 {
-	$("#battleInterface").empty();
+    $("#battleInterface").empty();
 	$("#battleInterface").hide();
     $("#Inventory").show();
 	$("#areas").empty();
 	$("#areas").remove();
-	$("#carrot").remove();     
-		if(currentLocal=="zombie")
+	$("#carrot").remove();    
+    $("#controlButtons").show();
+    $("#scoreDisplay").show();
+    $("#difficultyDisplay").show();
+}
+
+function hitEnemy(){
+               if(currentLocal=="zombie")
         {
-			addScore(50);
+            score+=50;
+            totalScore+=50;
+            $("#scorebutton").text("Your score is "+ score);
+            $("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
     	}
    		if(currentLocal=="bull"){
-			addScore(200);
+       		score+=200;
+       		totalScore+=200;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
     	}
    		if(currentLocal=="bunny"){
-			addScore(500);
+       		score+=500;
+       		totalScore+=500;
+       		$("#scorebutton").text("Your score is "+ score); 
+       		$("#finalScoreButton").text("Your final score is "+ score); 
+        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
     	}
         currentLocal="floor"; 
-        $("#controlButtons").show();
-    	$("#scoreDisplay").show();
+
         inventory[0]--;
         $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
         gameLose()

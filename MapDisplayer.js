@@ -380,7 +380,9 @@ function endGame()
             recentmove="right";
             createMaze();
             mazeDrawer();
+            mapToggle=0;
             setImg();
+            $("#toggleMapButton").css("display","none");
             $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
             levelFinish()
         }

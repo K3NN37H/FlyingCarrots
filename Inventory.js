@@ -11,7 +11,15 @@ function useItem(item)
 	{
 		inventory[BULLDOZER]--;
 		$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]);
-		bulldozer();
+		$("#buyMapDisplay").attr("disabled","disabled");
+        $("#bullDozerDisplay").attr("disabled","disabled");
+        $("#levelSkipDisplay").attr("disabled","disabled");
+        $("#up").attr("disabled","disabled");
+        $("#down").attr("disabled","disabled");
+        $("#right").attr("disabled","disabled");
+        $("#left").attr("disabled","disabled");
+        $("#shopButton").attr("disabled","disabled");
+        bulldozer();
 	}
 }
 function bulldozer()
@@ -122,6 +130,14 @@ function resetBull(direction)
 	$("#upBull").show();
     $("#rightBull").show();
     $("#leftBull").show();
+    $("#buyMapDisplay").removeAttr("disabled","");
+    $("#bullDozerDisplay").removeAttr("disabled","");
+    $("#levelSkipDisplay").removeAttr("disabled","");
+    $("#up").removeAttr("disabled","disabled");
+    $("#down").removeAttr("disabled","disabled");
+    $("#right").removeAttr("disabled","disabled");
+    $("#left").removeAttr("disabled","disabled");
+    $("#shopButton").removeAttr("disabled","disabled");
 }
 $("#upBull").click(function(){resetBull("up");});
 $("#rightBull").click(function(){resetBull("right");});
@@ -186,4 +202,18 @@ $("#levelSkipDisplay").css("left",60+"%");
 $("#levelSkipDisplay").css("top",94+"%");
 $("#levelSkipDisplay").css("height",6+"%");
 $("#levelSkipDisplay").css("width", 10+"%");
-
+    $("#levelSkipDisplay").click(function (){
+       if(inventory[LEVELSKIP]>0)
+       {levelFinish();
+       inventory[LEVELSKIP]--
+       $("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
+        currentLocal="floor";
+        recentmove="right";
+        createMaze();
+        mazeDrawer();
+        setImg();
+        $("#toggleMapButton").css("display","none");
+        mapToggle=0;
+        $("#mapContainer").hide();
+        }
+    });

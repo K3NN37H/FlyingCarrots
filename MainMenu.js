@@ -25,16 +25,33 @@ function typeQuestion(difficulty)
 
 $("#startgame").click(startGame);
 $("#back").click(restartGame);
+$("#loseBack").click(restartGame);
 $("#option").click(changeMazeSize);
+$("#instruction").click(gameInstruction);
+$("#instructionback").click(exitinstruction);
 function startGame()
 {
     showGame();
     
 }    
+function gameInstruction(){
+    $("#menuPage").hide();
+    $("#instructionpage").show();
+    $("#totalScoreButton").hide();
+    $("#difficultyDisplay").hide();
+}
+
+function exitinstruction(){
+    $("#menuPage").show();
+    $("#instructionpage").hide();
+    $("#totalScoreButton").show();
+    $("#difficultyDisplay").show();
+}
 function hideGame()
 {
     $("#controlButtons").hide();
     $("#mathAnswer").hide();
+    $("#instructionpage").hide();
     $("#multipleChoice").hide();
     $("#mapContainer").hide();
     $("#endGame").hide();
@@ -45,6 +62,7 @@ function hideGame()
     $("#menuShopBack").hide();
     $("#Inventory").hide();
 	$("#bullDozer").hide();
+    $("#loseGame").hide();
 
 }
 function showGame()
@@ -173,8 +191,8 @@ function optionBack(){
    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);   
    $("#difficultybutton").css("position","absolute");
    $("#difficultybutton").css("left",75+"%");
-   $("#difficultybutton").css("top",15+"%");
-   $("#difficultybutton").css("height",6+"%");
+   $("#difficultybutton").css("top",8+"%");
+   $("#difficultybutton").css("height",5+"%");
    $("#difficultybutton").css("width", 20+"%");
    $("#difficultybutton").css("border-radius",10);
 
@@ -183,7 +201,7 @@ function optionBack(){
    $("#scorebutton").css("position","absolute");
    $("#scorebutton").css("left",75+"%");
    $("#scorebutton").css("top",13+"%");
-   $("#scorebutton").css("height",6+"%");
+   $("#scorebutton").css("height",5+"%");
    $("#scorebutton").css("width", 20+"%");
    $("#scorebutton").css("border-radius",10);
 
@@ -192,8 +210,8 @@ function optionBack(){
    $("#totalScoreButton").text("Your total score is "+ points);   
    $("#totalScoreButton").css("position","absolute");
    $("#totalScoreButton").css("left",75+"%");
-   $("#sButton").css("top",5+"%");
-   $("#totalScoreButton").css("height",6+"%");
+   $("#totalScoreButton").css("top",1+"%");
+   $("#totalScoreButton").css("height",5+"%");
    $("#totalScoreButton").css("width", 20+"%");
    $("#totalScoreButton").css("border-radius",10);
 
@@ -202,6 +220,6 @@ function optionBack(){
    $("#modebutton").css("position","absolute");
    $("#modebutton").css("left",75+"%");
    $("#modebutton").css("top",23+"%");
-   $("#modebutton").css("height",6+"%");
+   $("#modebutton").css("height",5+"%");
    $("#modebutton").css("width", 20+"%");
    $("#modebutton").css("border-radius",10);

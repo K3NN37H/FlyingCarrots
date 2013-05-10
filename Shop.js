@@ -21,7 +21,7 @@ $("#menuShop").click(menuEnterShop);
 $("#menuShopBackButton").click(menuExitShop);
 
 function enterShop()
-{
+{    mapToggle=0;
     hideGame();
     $("#shop").show();
     $("#shopBackDuringTheGame").show();
@@ -29,6 +29,8 @@ function enterShop()
     $("#Inventory").show();
     console.log("entered");
     $("#buyMapDisplay").attr("disabled","disabled");
+        $("#bullDozerDisplay").attr("disabled","disabled");
+    $("#levelSkipDisplay").attr("disabled","disabled");
     $("#backgroundImg"+backgroundCount).attr("src","Images/Shop.png");
 }
 function purchase(item)
@@ -79,6 +81,8 @@ function exitShop(){
     $("#scoreDisplay").show();
     $("#totalScoreButton").hide();
     $("#buyMapDisplay").removeAttr("disabled","");
+    $("#bullDozerDisplay").removeAttr("disabled","");
+    $("#levelSkipDisplay").removeAttr("disabled","");
     setImg()
 }
 
