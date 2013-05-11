@@ -1,4 +1,4 @@
-gitvar currentLocal="floor";
+var currentLocal="floor";
 var prevX, prevY, prevO;
 var recentmove="right";
 

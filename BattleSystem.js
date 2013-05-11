@@ -144,25 +144,13 @@ function destroyBattle()
 function hitEnemy(){
                if(currentLocal=="zombie")
         {
-            score+=50;
-            totalScore+=50;
-            $("#scorebutton").text("Your score is "+ score);
-            $("#finalScoreButton").text("Your final score is "+ score); 
-        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+            addScore(50);
     	}
    		if(currentLocal=="bull"){
-       		score+=200;
-       		totalScore+=200;
-       		$("#scorebutton").text("Your score is "+ score); 
-       		$("#finalScoreButton").text("Your final score is "+ score); 
-        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+       		addScore(200);
     	}
    		if(currentLocal=="bunny"){
-       		score+=500;
-       		totalScore+=500;
-       		$("#scorebutton").text("Your score is "+ score); 
-       		$("#finalScoreButton").text("Your final score is "+ score); 
-        	$("#totalScoreButton").text("Your total score is "+ totalScore);   
+       		addScore(500);  
     	}
         currentLocal="floor"; 
 
