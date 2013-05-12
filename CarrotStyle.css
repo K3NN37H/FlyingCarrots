@@ -16,7 +16,11 @@ body
     left:-2px;
     top:-2px;
 }
-
+.area
+{
+	position:absolute;
+	border-width:1px;
+}
 .bullButton
 {
 	position:absolute;
@@ -106,38 +110,61 @@ body
 
 #startgame{
     position:absolute;
-    top:30%;
-    left:35%;
-    width:30%;
-    height:10%;
+    top:14%;
+    left:22%;
+    width:58%;
+    height:17%;
 }
 
 #option{
     position:absolute;
-    top:60%;
-    left:35%;
-    width:30%;
-    height:10%;
+    top:95%;
+    left:95%;
+    width:3%;
+    height:3%;
 }
 
+#instruction{
+    position:absolute;
+    top:53%;
+    left:16%;
+    width:64%;
+    height:12%;
+}
 #continue{
     position:absolute;
-    top:45%;
-    left:35%;
-    width:30%;
-    height:10%;
+    top:32%;
+    left:22%;
+    width:58%;
+    height:14%;
 }
 
 #menuShop{
     position:absolute;
-    top:75%;
-    left:35%;
+    top:67%;
+    left:16%;
+    width:64%;
+    height:7%;
+}
+#instructionback
+{
+    position:absolute;
+    top:80%;
+    left:70%;
     width:30%;
     height:10%;
 }
 
 /* End game button */
 #back
+{
+    position:absolute;
+    top:80%;
+    left:70%;
+    width:30%;
+    height:15%;
+}
+#loseBack
 {
     position:absolute;
     top:80%;
@@ -177,29 +204,40 @@ body
 
 #buymap
 {
-    top: 40%;
-    left:5%;
+    top: 60%;
+    left:36%;
+     width:17%;
+    height:25%;
 }
 #buybulldozer
 {
-    top:40%;
-    left:20%;
+    top:60%;
+    left:53%;
+    width:17%;
+    height:25%;
 }
 #buymoreCarrot
 {
     top: 60%;
-    left:5%;
+    left:22%;
+    width:14%;
+    height:25%;
 }
 #buyfireCarrot
 {
     top: 60%;
-    left:20%;
+    left:10%;
+    width:12%;
+    height:25%;
 }
 #buyLevelSkip
 {
-    top: 40%;
-    left:35%;
+    top: 60%;
+    left:70%;
+    width:17%;
+    height:25%;
 }
+
 
 #menuShopBackButton
 {
@@ -227,4 +265,7 @@ body
 	bottom:3%;
 	z-index:5;
 }
-
+#monsterImg
+{
+	position:absolute;
+}

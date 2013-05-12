@@ -33,7 +33,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="40")
@@ -48,7 +49,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="37")
@@ -63,7 +65,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="39")
@@ -78,7 +81,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
-				setImg();
+                    setImg();
+
             }
         }
     }    
@@ -96,7 +100,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="38")
@@ -111,7 +116,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="39")
@@ -126,7 +132,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="37")
@@ -141,7 +148,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
-				setImg();
+                    setImg();
+
             }
         }
     }   
@@ -159,7 +167,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY--;
                 recentmove="up";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="37")
@@ -174,7 +183,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="38")
@@ -189,7 +199,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="40")
@@ -205,7 +216,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
-				setImg();
+                    setImg();
+
             }
         }
     }
@@ -224,6 +236,7 @@ function mover(event)
                 playerY--;
                 recentmove="up";
 				setImg();
+
             }
         }
         else if(text=="39")
@@ -238,7 +251,8 @@ function mover(event)
                 prevO=recentmove;
                 playerY++;
                 recentmove="down";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="40")
@@ -253,7 +267,8 @@ function mover(event)
                 prevO=recentmove;
                 playerX--;
                 recentmove="left";
-				setImg();
+                    setImg();
+
             }
         }
         else if(text=="38")
@@ -268,18 +283,24 @@ function mover(event)
                 prevO=recentmove;
                 playerX++;
                 recentmove="right";
-				setImg();
+                    setImg();
+
             }
         }
     }
-    if(currentLocal==="zombie"||currentLocal==="bull"||currentLocal==="bunny")
-    {
-        typeQuestion(difficulty);
-        $("#controlButtons").hide();
-        $("#scoreDisplay").hide();
-    }
+    if(text=="37"||text=="38"||text=="39"||text=="40"){
+        if(currentLocal==="zombie"||currentLocal==="bull"||currentLocal==="bunny")
+        {   
+           $("#multipleChoice").empty();
+           $("#mathAnswer").empty();
+           monsterDrawer();
+            typeQuestion(difficulty);
+            $("#controlButtons").hide();
+            $("#scoreDisplay").hide();
+        }
+    
     mazeDrawer();
-    endGame();
+    endGame();}
 }
 
 
@@ -359,7 +380,10 @@ function endGame()
             recentmove="right";
             createMaze();
             mazeDrawer();
+            mapToggle=0;
             setImg();
+            $("#toggleMapButton").css("display","none");
+            $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
             levelFinish()
         }
     }
