@@ -4,9 +4,9 @@
    version="1.0.0">
  
    <name>Flying Carrots</name>
-   <description>GG</description>
+   <description>Find your kite!</description>
    <content src="index.html"/>
-   <rim:orientation mode="portrait"/>
-   <author>Chocolate Noodles</author>
+   <rim:orientation mode="landscape"/>
+   <author>Le Studio d'espace</author>
  
 </widget>
