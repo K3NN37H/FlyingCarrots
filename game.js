@@ -95,20 +95,20 @@ function monsterDrawer()
 		{
 			if(Math.round(Math.random())===1)
 			{
-				imgSrc="Zombie_female shrunk copy.png";
+				imgSrc="Zombiefemaleshrunkcopy.png";
 			}	
 			else
 			{
-				imgSrc="Zombie_male shrunk copy.png";
+				imgSrc="Zombiemaleshrunkcopy.png";
 			}
 		}
 		else if(currentLocal==="bull")
 		{
-			imgSrc="bull img shrunk copy.png";
+			imgSrc="bullimgshrunkcopy.png";
 		}
 		else if(currentLocal==="bunny")
 		{
-			imgSrc="bunny size fix copy.png";
+			imgSrc="bunnysizefixcopy.png";
 		}
 		
 		$("#areas").append('<img id="monsterImg" src="Images/'+imgSrc+'"></img>');
