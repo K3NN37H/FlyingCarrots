@@ -403,4 +403,17 @@ function levelFinish(){
         LevelDisplay="Level"+difficulty
         $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
     }
+    UnlockLevelButton()
+}
+
+function UnlockLevelButton(){
+    if (difficulty===2){
+        $("#LevelTwo").removeAttr("disabled","");
+    }
+    if (difficulty===3){
+        $("#LevelThree").removeAttr("disabled","");
+    }
+    if (difficulty===4){
+        $("#LevelFour").removeAttr("disabled","");
+    }
 }

@@ -215,5 +215,6 @@ $("#levelSkipDisplay").css("width", 10+"%");
         $("#toggleMapButton").css("display","none");
         mapToggle=0;
         $("#mapContainer").hide();
+            $("#buyMapDisplay").removeAttr("disabled","");
         }
     });

@@ -1,4 +1,7 @@
 hideGame();
+$("#LevelTwo").attr("disabled","disabled");
+$("#LevelThree").attr("disabled","disabled");
+$("#LevelFour").attr("disabled","disabled");
 
 var difficulty = 1
 function typeQuestion(difficulty)
@@ -29,11 +32,47 @@ $("#loseBack").click(restartGame);
 $("#option").click(changeMazeSize);
 $("#instruction").click(gameInstruction);
 $("#instructionback").click(exitinstruction);
+$("#LevelOne").click(startLevelOne);
+$("#LevelTwo").click(startLevelTwo);
+$("#LevelThree").click(startLevelThree);
+$("#LevelFour").click(startLevelFour);
+
 function startGame()
 {
-    showGame();
+    $("#menuPage").hide();
+    $("#totalScoreButton").hide();
+    $("#levelChoosing").show();
     
-}    
+} 
+function startLevelOne(){
+    difficulty=1
+    $("#levelChoosing").hide();
+    showGame()
+    LevelDisplay="Level"+difficulty
+    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+}
+function startLevelTwo(){
+    difficulty=2
+    $("#levelChoosing").hide();
+    showGame()
+    LevelDisplay="Level"+difficulty
+    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+}
+function startLevelThree(){
+    difficulty=3
+    $("#levelChoosing").hide();
+    showGame()
+    LevelDisplay="Level"+difficulty
+    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+}
+function startLevelFour(){
+    difficulty=4
+    $("#levelChoosing").hide();
+    showGame()
+    LevelDisplay="Level"+difficulty
+    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+}
+
 function gameInstruction(){
     $("#menuPage").hide();
     $("#instructionpage").show();
@@ -63,14 +102,13 @@ function hideGame()
     $("#Inventory").hide();
 	$("#bullDozer").hide();
     $("#loseGame").hide();
+    $("#levelChoosing").hide();
 
 }
 function showGame()
 {
-    $("#menuPage").hide();
     $("#totalScoreButton").hide();
     $("#controlButtons").show();
-    $("#difficultyDisplay").hide();
     $("#scoreDisplay").show();
     $("#Inventory").show();
     $("#backgroundImg"+backgroundCount).attr("src","Images/forwardcorridor.jpg");
@@ -79,13 +117,7 @@ function showGame()
 }
 function optionShowGame(){
     $("#optionPage").hide();
-    $("#Inventory").show();
-    $("#totalScoreButton").hide();
-    $("#controlButtons").show();
-    $("#difficultyDisplay").hide();
-    $("#scoreDisplay").show();
-    createMaze();
-    mazeDrawer();
+    $("#levelChoosing").show();
 }
 function restartGame(){
     score = 0;

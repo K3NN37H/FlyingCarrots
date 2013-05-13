@@ -269,3 +269,39 @@ body
 {
 	position:absolute;
 }
+
+#LevelOne
+{
+    position:absolute;
+    top: 30%;
+    left:10%;
+    width:10%;
+    height:5%;
+}
+
+#LevelTwo
+{
+    position:absolute;
+    top: 30%;
+    left:25%;
+    width:10%;
+    height:5%;
+}
+
+#LevelThree
+{
+    position:absolute;
+    top: 30%;
+    left:40%;
+    width:10%;
+    height:5%;
+}
+
+#LevelFour
+{
+    position:absolute;
+    top: 30%;
+    left:55%;
+    width:10%;
+    height:5%;
+}

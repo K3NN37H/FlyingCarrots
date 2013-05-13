@@ -29,7 +29,7 @@ function enterShop()
     $("#Inventory").show();
     console.log("entered");
     $("#buyMapDisplay").attr("disabled","disabled");
-        $("#bullDozerDisplay").attr("disabled","disabled");
+    $("#bullDozerDisplay").attr("disabled","disabled");
     $("#levelSkipDisplay").attr("disabled","disabled");
     $("#backgroundImg"+backgroundCount).attr("src","Images/Shop.png");
 }
