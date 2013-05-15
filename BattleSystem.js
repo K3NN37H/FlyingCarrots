@@ -54,7 +54,8 @@ function initBattle()
 		var y = orig.changedTouches[0].pageY - $(this).offset().top;
 		if ($("#carrot").length === 0)
 		{
-			$("body").append('<div id="carrot" style="position:absolute;background-color:red;"></div>');
+			$("body").append('<div id="carrot" style="position:absolute;"></div>');
+			$("#carrot").append('<img id=carrotimg src="Images/carrotcopy.png"></img>');
 		}
 		$("#carrot").css("left", orig.changedTouches[0].pageX);
 		$("#carrot").css("top", orig.changedTouches[0].pageY);
@@ -139,6 +140,7 @@ function destroyBattle()
     $("#controlButtons").show();
     $("#scoreDisplay").show();
     $("#difficultyDisplay").show();
+    $("#Inventory").show();
 }
 
 function hitEnemy(){
@@ -156,5 +158,5 @@ function hitEnemy(){
 
         inventory[0]--;
         $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
-        gameLose()
+        gameLose();
 }

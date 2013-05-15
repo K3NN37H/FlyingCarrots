@@ -293,6 +293,7 @@ function mover(event)
         {   
            $("#multipleChoice").empty();
            $("#mathAnswer").empty();
+           $("#Inventory").hide();
            monsterDrawer();
             typeQuestion(difficulty);
             $("#controlButtons").hide();
