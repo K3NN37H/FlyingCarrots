@@ -140,18 +140,18 @@ function monsterDrawer()
 			$("#monsterImg").css("height","60%");
 			
 			$("#legArea").css("left", (left+5)+"%");
-			$("#legArea").css("bottom",bottom+"%");
+			$("#legArea").css("bottom",bottom+3+"%");
 			$("#legArea").css("width","20%");
 			$("#legArea").css("height","17%");
 			
-			$("#bodyArea").css("left", (left+2)+"%");
+			$("#bodyArea").css("left", (left+4)+"%");
 			$("#bodyArea").css("bottom",(bottom+19)+"%");
-			$("#bodyArea").css("width","25%");
-			$("#bodyArea").css("height","20%");
+			$("#bodyArea").css("width","21%");
+			$("#bodyArea").css("height","18%");
 			
-			$("#headArea").css("left", left+"%");
-			$("#headArea").css("bottom",(bottom+40)+"%");
-			$("#headArea").css("width","13%");
+			$("#headArea").css("left", (left+1)+"%");
+			$("#headArea").css("bottom",(bottom+37)+"%");
+			$("#headArea").css("width","10%");
 			$("#headArea").css("height","20%");
 		}
 		if(currentLocal ==="bunny")
