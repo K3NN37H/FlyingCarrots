@@ -300,8 +300,75 @@ body
 #LevelFour
 {
     position:absolute;
-    top: 30%;
-    left:55%;
+    top: 40%;
+    left:10%;
+    width:10%;
+    height:5%;
+}
+#LevelFive
+{
+    position:absolute;
+    top: 40%;
+    left:25%;
+    width:10%;
+    height:5%;
+}
+
+#LevelSix
+{
+    position:absolute;
+    top: 40%;
+    left:40%;
+    width:10%;
+    height:5%;
+}
+#LevelSeven
+{
+    position:absolute;
+    top: 50%;
+    left:10%;
+    width:10%;
+    height:5%;
+}
+#LevelEight
+{
+    position:absolute;
+    top: 50%;
+    left:25%;
+    width:10%;
+    height:5%;
+}
+
+#LevelNine
+{
+    position:absolute;
+    top: 50%;
+    left:40%;
+    width:10%;
+    height:5%;
+}
+#LevelTen
+{
+    position:absolute;
+    top: 60%;
+    left:10%;
+    width:10%;
+    height:5%;
+}
+#LevelEleven
+{
+    position:absolute;
+    top: 60%;
+    left:25%;
+    width:10%;
+    height:5%;
+}
+
+#LevelTwelve
+{
+    position:absolute;
+    top: 60%;
+    left:40%;
     width:10%;
     height:5%;
 }

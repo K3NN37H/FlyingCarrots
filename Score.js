@@ -1,5 +1,5 @@
 var score = 0;
-var points = 100000
+var points = 1000000
 
 function addScore(amount) {
 	score += amount;

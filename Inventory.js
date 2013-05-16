@@ -212,8 +212,39 @@ $("#levelSkipDisplay").css("width", 10+"%");
         currentLocal="floor";
         usedMap=false;
         recentmove="right";
-        createMaze();
-        mazeDrawer();
+    if (difficulty===1&&difficultyMode===2){
+        startLevelTwo()
+    }
+    if (difficulty===1&&difficultyMode===3){
+        startLevelThree()
+    }
+    if (difficulty===2&&difficultyMode===1){
+        startLevelFour()
+    }
+    if (difficulty===2&&difficultyMode===2){
+        startLevelFive()
+    }
+    if (difficulty===2&&difficultyMode===3){
+        startLevelSix()
+    }
+    if (difficulty===3&&difficultyMode===1){
+        startLevelSeven()
+    }
+    if (difficulty===3&&difficultyMode===2){
+        startLevelEight()
+    }
+    if (difficulty===3&&difficultyMode===3){
+        startLevelNine()
+    }
+    if (difficulty===4&&difficultyMode===1){
+        startLevelTen()
+    }
+    if (difficulty===4&&difficultyMode===2){
+       startLevelEleven()
+    }
+    if (difficulty===4&&difficultyMode===3){
+        startLevelTwelve()
+    }
         setImg();
         $("#toggleMapButton").css("display","none");
         mapToggle=0;

@@ -400,22 +400,46 @@ function endGame()
 	$("#finalScoreButton").css("border-radius",10);	
 	
 function levelFinish(){
-    if(difficulty<4){
+    difficultyMode++
+    if(difficultyMode===4&&difficulty<4){
+        difficultyMode=1
         difficulty++
-        LevelDisplay="Level"+difficulty
-        $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
     }
     UnlockLevelButton()
 }
 
 function UnlockLevelButton(){
-    if (difficulty===2){
+    if (difficulty===1&&difficultyMode===2){
         $("#LevelTwo").removeAttr("disabled","");
     }
-    if (difficulty===3){
+    if (difficulty===1&&difficultyMode===3){
         $("#LevelThree").removeAttr("disabled","");
     }
-    if (difficulty===4){
+    if (difficulty===2&&difficultyMode===1){
         $("#LevelFour").removeAttr("disabled","");
+    }
+    if (difficulty===2&&difficultyMode===2){
+        $("#LevelFive").removeAttr("disabled","");
+    }
+    if (difficulty===2&&difficultyMode===3){
+        $("#LevelSix").removeAttr("disabled","");
+    }
+    if (difficulty===3&&difficultyMode===1){
+        $("#LevelSeven").removeAttr("disabled","");
+    }
+    if (difficulty===3&&difficultyMode===2){
+        $("#LevelEight").removeAttr("disabled","");
+    }
+    if (difficulty===3&&difficultyMode===3){
+        $("#LevelNine").removeAttr("disabled","");
+    }
+    if (difficulty===4&&difficultyMode===1){
+        $("#LevelEleven").removeAttr("disabled","");
+    }
+    if (difficulty===4&&difficultyMode===2){
+        $("#LevelTwelve").removeAttr("disabled","");
+    }
+    if (difficulty===4&&difficultyMode===3){
+        $("#LevelSix").removeAttr("disabled","");
     }
 }

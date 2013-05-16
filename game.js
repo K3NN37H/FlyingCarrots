@@ -572,6 +572,18 @@ function gameLose(){
             mazeDrawer();
             setImg();
             difficulty=1
+            difficultyMode = 1
+            $("#LevelTwo").attr("disabled","disabled");
+            $("#LevelThree").attr("disabled","disabled");
+            $("#LevelFour").attr("disabled","disabled");
+            $("#LevelFive").attr("disabled","disabled");
+            $("#LevelSix").attr("disabled","disabled");
+            $("#LevelSeven").attr("disabled","disabled");
+            $("#LevelEight").attr("disabled","disabled");
+            $("#LevelNine").attr("disabled","disabled");
+            $("#LevelTen").attr("disabled","disabled");
+            $("#LevelEleven").attr("disabled","disabled");
+            $("#LevelTwelve").attr("disabled","disabled");
             inventory[0]=10
             $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
             $("#finalScoreButton2").text("Your final score is "+ score);}

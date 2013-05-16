@@ -2,8 +2,18 @@ hideGame();
 $("#LevelTwo").attr("disabled","disabled");
 $("#LevelThree").attr("disabled","disabled");
 $("#LevelFour").attr("disabled","disabled");
+$("#LevelFive").attr("disabled","disabled");
+$("#LevelSix").attr("disabled","disabled");
+$("#LevelSeven").attr("disabled","disabled");
+$("#LevelEight").attr("disabled","disabled");
+$("#LevelNine").attr("disabled","disabled");
+$("#LevelTen").attr("disabled","disabled");
+$("#LevelEleven").attr("disabled","disabled");
+$("#LevelTwelve").attr("disabled","disabled");
+
 
 var difficulty = 1
+var difficultyMode = 1
 function typeQuestion(difficulty)
 {
     var level=Math.floor((Math.random()*difficulty)+1);
@@ -46,31 +56,100 @@ function startGame()
 } 
 function startLevelOne(){
     difficulty=1
-    $("#levelChoosing").hide();
+    difficultyMode = 1
+    LevelDisplay=1
+    easyLevelOption()
+    levelChoosingHide()
     showGame()
-    LevelDisplay="Level"+difficulty
-    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
 }
 function startLevelTwo(){
-    difficulty=2
-    $("#levelChoosing").hide();
+    difficulty=1
+    difficultyMode = 2
+    LevelDisplay=2
+    normalLevelOption()
+    levelChoosingHide()
     showGame()
-    LevelDisplay="Level"+difficulty
-    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
 }
 function startLevelThree(){
-    difficulty=3
-    $("#levelChoosing").hide();
+    difficulty=1
+    difficultyMode = 3
+    LevelDisplay=3
+    hardLevelOption()
+    levelChoosingHide()
     showGame()
-    LevelDisplay="Level"+difficulty
-    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
 }
 function startLevelFour(){
-    difficulty=4
-    $("#levelChoosing").hide();
+    difficulty=2
+    difficultyMode = 1
+    LevelDisplay=4
+    easyLevelOption()
+    levelChoosingHide()
     showGame()
-    LevelDisplay="Level"+difficulty
-    $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);
+}
+function startLevelFive(){
+    difficulty=2
+    difficultyMode = 2
+    LevelDisplay=5
+    normalLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+
+function startLevelSix(){
+    difficulty=2
+    difficultyMode = 3
+    LevelDisplay=6
+    hardLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+function startLevelSeven(){
+    difficulty=3
+    difficultyMode = 1
+    LevelDisplay=7
+    easyLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+function startLevelEight(){
+    difficulty=3
+    difficultyMode = 2
+    LevelDisplay=8
+    normalLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+function startLevelNine(){
+    difficulty=3
+    difficultyMode = 3
+    LevelDisplay=9
+    hardLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+function startLevelTen(){
+    difficulty=4
+    difficultyMode = 1
+    LevelDisplay=10
+    easyLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+function startLevelEleven(){
+    difficulty=4
+    difficultyMode = 2
+    LevelDisplay=11
+    normalLevelOption()
+    levelChoosingHide()
+    showGame()
+}
+function startLevelTwelve(){
+    difficulty=4
+    difficultyMode = 3
+    LevelDisplay=12
+    hardLevelOption()
+    levelChoosingHide()
+    showGame()
 }
 
 function gameInstruction(){
@@ -78,6 +157,10 @@ function gameInstruction(){
     $("#instructionpage").show();
     $("#totalScoreButton").hide();
     $("#difficultyDisplay").hide();
+}
+function levelChoosingHide(){
+    $("#levelChoosing").hide();
+    $("#difficultybutton").text("Current difficulty is Level "+ LevelDisplay);
 }
 
 function exitinstruction(){
@@ -216,11 +299,11 @@ function optionBack(){
     $("#menuPage").show();
 }
    
-   var LevelDisplay="Level"+difficulty;
-   var ModeDisplay ="Normal"
+   var LevelDisplay=1;
+//   var ModeDisplay ="Normal"
    
    $("#difficultyDisplay").append('<button class="gamebutton" id=difficultybutton></button>');
-   $("#difficultybutton").text("Current difficulty is "+ LevelDisplay);   
+   $("#difficultybutton").text("Current difficulty is Level "+ LevelDisplay);   
    $("#difficultybutton").css("position","absolute");
    $("#difficultybutton").css("left",75+"%");
    $("#difficultybutton").css("top",8+"%");
@@ -247,11 +330,11 @@ function optionBack(){
    $("#totalScoreButton").css("width", 20+"%");
    $("#totalScoreButton").css("border-radius",10);
 
-   $("#optionPage").append('<button class="gamebutton" id=modebutton></button>');
-   $("#modebutton").text("Current mode is "+ ModeDisplay);   
-   $("#modebutton").css("position","absolute");
-   $("#modebutton").css("left",75+"%");
-   $("#modebutton").css("top",23+"%");
-   $("#modebutton").css("height",5+"%");
-   $("#modebutton").css("width", 20+"%");
-   $("#modebutton").css("border-radius",10);
+//   $("#optionPage").append('<button class="gamebutton" id=modebutton></button>');
+//   $("#modebutton").text("Current mode is "+ ModeDisplay);   
+//   $("#modebutton").css("position","absolute");
+ //  $("#modebutton").css("left",75+"%");
+//   $("#modebutton").css("top",23+"%");
+//  $("#modebutton").css("height",5+"%");
+//   $("#modebutton").css("width", 20+"%");
+//   $("#modebutton").css("border-radius",10);
