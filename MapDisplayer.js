@@ -379,13 +379,14 @@ function endGame()
             $("#Inventory").hide();
             currentLocal="floor";
             recentmove="right";
+            usedMap=false;
             createMaze();
             mazeDrawer();
             mapToggle=0;
             setImg();
             $("#toggleMapButton").css("display","none");
             $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
-            levelFinish()
+            levelFinish();
         }
     }
 }

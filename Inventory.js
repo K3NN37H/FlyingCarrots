@@ -1,3 +1,4 @@
+var usedMap=false;
 function useItem(item)
 {
 	if(item==="map"&&inventory[MAP]>0)
@@ -6,6 +7,7 @@ function useItem(item)
 		inventory[MAP]--;
 		$("#buyMapDisplay").text("Map: "+ inventory[MAP]);
 		$("#buyMapDisplay").attr("disabled","disabled");
+		usedMap=true;
 	}
 	else if(item==="bulldozer"&&inventory[BULLDOZER]>0)
 	{
@@ -205,9 +207,10 @@ $("#levelSkipDisplay").css("width", 10+"%");
     $("#levelSkipDisplay").click(function (){
        if(inventory[LEVELSKIP]>0)
        {levelFinish();
-       inventory[LEVELSKIP]--
+       inventory[LEVELSKIP]--;
        $("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
         currentLocal="floor";
+        usedMap=false;
         recentmove="right";
         createMaze();
         mazeDrawer();

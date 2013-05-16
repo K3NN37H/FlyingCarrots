@@ -80,7 +80,10 @@ function exitShop(){
     $("#controlButtons").show();
     $("#scoreDisplay").show();
     $("#totalScoreButton").hide();
-    $("#buyMapDisplay").removeAttr("disabled","");
+   	if(usedMap===false)
+   	{
+    	$("#buyMapDisplay").removeAttr("disabled","");
+   	}
     $("#bullDozerDisplay").removeAttr("disabled","");
     $("#levelSkipDisplay").removeAttr("disabled","");
     setImg()
