@@ -10,6 +10,12 @@ for(var i=1;i<numItems;i++)
 {
     inventory[i]=0;
 }
+$("#shop").append('<map name="shopnav" id="shopnav"></map>');
+$("#shopnav").append('<area id="buyfireCarrot" shape="rect" coords="'+Math.round(xBack*0.1)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.22)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buymoreCarrot" shape="rect" coords="'+Math.round(xBack*0.221)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.36)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buymap" shape="rect" coords="'+Math.round(xBack*0.361)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.53)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buybulldozer" shape="rect" coords="'+Math.round(xBack*0.531)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.7)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buyLevelSkip" shape="rect" coords="'+Math.round(xBack*0.701)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.87)+','+Math.round(yBack*0.85)+'">');
 $("#shopButton").click(enterShop);
 $("#shopBackButton").click(exitShop);
 $("#buymap").click(function(){purchase("map")});
@@ -21,7 +27,9 @@ $("#menuShop").click(menuEnterShop);
 $("#menuShopBackButton").click(menuExitShop);
 
 function enterShop()
-{    mapToggle=0;
+{    
+	$(".backImg").attr("usemap","#shopnav");
+	mapToggle=0;
     hideGame();
     $("#shop").show();
     $("#shopBackDuringTheGame").show();
@@ -90,6 +98,7 @@ function exitShop(){
 }
 
 function menuEnterShop(){
+	$(".backImg").attr("usemap","#shopnav");
     $("#menuPage").hide();
     $("#shop").show();
     $("#Inventory").show();
@@ -107,4 +116,5 @@ function menuExitShop(){
     $("#difficultyDisplay").show();
 	$("#buyMapDisplay").removeAttr("disabled","");
     $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
+	$(".backImg").attr("usemap","#menunav");
 }

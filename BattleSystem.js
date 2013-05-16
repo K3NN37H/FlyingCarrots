@@ -33,9 +33,9 @@ function initBattle()
 		var bcan = blah.getContext("2d");
 		bcan.clearRect(0,0,xSize,ySize);
 		bcan.beginPath();
-		bcan.moveTo(0,10);
+		bcan.moveTo(xSize/2-150,5);
 		bcan.lineTo(x,y);
-		bcan.lineTo(xSize,10);
+		bcan.lineTo(xSize/2+150,5);
 		bcan.stroke();
 	});
 	$("#slingshot").on("touchend", function(e) {
@@ -45,8 +45,9 @@ function initBattle()
 		var bcan = blah.getContext("2d");
 		bcan.clearRect(0,0,xSize,ySize);
 		bcan.beginPath();
-		bcan.moveTo(0,10);
-		bcan.lineTo(xSize,10);
+		bcan.moveTo(xSize/2-150,5);
+		bcan.lineTo(xSize/2,10);
+		bcan.lineTo(xSize/2+150,5);
 		bcan.stroke();
 		//var x = e.pageX - $(this).offset().left;
 		//var y = e.pageY - $(this).offset().top;
@@ -96,8 +97,9 @@ function initBattle()
 	var bcan = blah.getContext("2d");
 	bcan.clearRect(0,0,xSize,ySize);
 	bcan.beginPath();
-	bcan.moveTo(0,10);
-	bcan.lineTo(xSize,10);
+	bcan.moveTo(xSize/2-150,5);
+	bcan.lineTo(xSize/2,10);
+	bcan.lineTo(xSize/2+150,5);
 	bcan.stroke();
 	// if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
 	// {
