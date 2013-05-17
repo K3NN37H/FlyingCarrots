@@ -48,7 +48,7 @@ $("#loseBack").click(restartGame);
 $("#option").click(changeMazeSize);
 $("#instruction").click(gameInstruction);
 $("#instructionback").click(exitinstruction);
-$("#LevelOne").click(startLevelOne);
+$("#LevelOne").click({diff:1,size:1,level:1},setLevel);
 $("#LevelTwo").click(startLevelTwo);
 $("#LevelThree").click(startLevelThree);
 $("#LevelFour").click(startLevelFour);
@@ -61,13 +61,43 @@ $("#LevelTen").click(startLevelTen);
 $("#LevelEleven").click(startLevelEleven);
 $("#LevelTwelve").click(startLevelTwelve);
 
+function showMainMenu(){
+	$("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
+	$("#menuPage").show();
+	$(".backImg").attr("usemap","#menunav");
+}
+
+function hideMainMenu(){
+	$("#menuPage").hide();
+	$(".backImg").removeAttr("usemap");
+}
+
 function startGame()
 {
-    $("#menuPage").hide();
+    hideMainMenu();
     $("#totalScoreButton").hide();
     $("#levelChoosing").show();
     
 } 
+
+function setLevel(event){
+	var diff = event.data.diff;
+	var size = event.data.size;
+	var level = event.data.level;
+	difficulty = diff;
+	difficultyMode = size;
+	LevelDisplay = level;
+	if (difficultyMode === 1){
+		easyLevelOption();
+	} else if (difficultyMode === 2){
+		normalLevelOption();
+	} else if (difficultyMode === 3){
+		hardLevelOption();
+	}
+	levelChoosingHide();
+	showGame();
+}
+
 function startLevelOne(){
     difficulty=1
     difficultyMode = 1
@@ -167,7 +197,7 @@ function startLevelTwelve(){
 }
 
 function gameInstruction(){
-    $("#menuPage").hide();
+    hideMainMenu();
     $("#instructionpage").show();
     $("#totalScoreButton").hide();
     $("#difficultyDisplay").hide();
@@ -178,7 +208,7 @@ function levelChoosingHide(){
 }
 
 function exitinstruction(){
-    $("#menuPage").show();
+    showMainMenu();
     $("#instructionpage").hide();
     $("#totalScoreButton").show();
     $("#difficultyDisplay").show();
@@ -221,13 +251,13 @@ function restartGame(){
     $("#scorebutton").text("Your score is "+ score); 
     $("#finalScoreButton").text("Your final score is "+ score); 
     $("#endGame").hide();
-    $("#menuPage").show();
+    showMainMenu();
     $("#difficultyDisplay").show();
     $("#totalScoreButton").show();
 }
 
 function changeMazeSize(){
-    $("#menuPage").hide();
+    hideMainMenu();
     $("#optionPage").show();
    
  
@@ -310,7 +340,7 @@ function hardLevelOption(){
 
 function optionBack(){
     $("#optionPage").hide();
-    $("#menuPage").show();
+    showMainMenu()
 }
    
    var LevelDisplay=1;
