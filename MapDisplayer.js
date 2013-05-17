@@ -434,12 +434,12 @@ function UnlockLevelButton(){
         $("#LevelNine").removeAttr("disabled","");
     }
     if (difficulty===4&&difficultyMode===1){
-        $("#LevelEleven").removeAttr("disabled","");
+        $("#LevelTen").removeAttr("disabled","");
     }
     if (difficulty===4&&difficultyMode===2){
-        $("#LevelTwelve").removeAttr("disabled","");
+        $("#LevelEleven").removeAttr("disabled","");
     }
     if (difficulty===4&&difficultyMode===3){
-        $("#LevelSix").removeAttr("disabled","");
+        $("#LevelTwelve").removeAttr("disabled","");
     }
 }

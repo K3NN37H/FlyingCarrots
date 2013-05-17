@@ -52,6 +52,14 @@ $("#LevelOne").click(startLevelOne);
 $("#LevelTwo").click(startLevelTwo);
 $("#LevelThree").click(startLevelThree);
 $("#LevelFour").click(startLevelFour);
+$("#LevelFive").click(startLevelFive);
+$("#LevelSix").click(startLevelSix);
+$("#LevelSeven").click(startLevelSeven);
+$("#LevelEight").click(startLevelEight);
+$("#LevelNine").click(startLevelNine);
+$("#LevelTen").click(startLevelTen);
+$("#LevelEleven").click(startLevelEleven);
+$("#LevelTwelve").click(startLevelTwelve);
 
 function startGame()
 {
