@@ -9,9 +9,8 @@ var numZombie=10;
 var numBull=5;
 var maze=[mazeSize];
 var endX, endY, endCounter;
-var playerX;
+var playerX=2;
 var playerY;
-
 function createMaze()
 {
     endCounter=-1;

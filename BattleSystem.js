@@ -14,6 +14,7 @@ function initBattle()
     var hitTheEnemy = false
 	$("#battleInterface").show();
 	$("#battleInterface").append('<canvas id="slingshot" width="'+xSize+'px" height="'+ySize+'px"></canvas>');
+	$("#slingshot").css("z-index","2");
 	$("#slingshot").on("touchstart touchmove", function(e) {
 		//Disable scrolling by preventing default touch behaviour
 		e.preventDefault();
@@ -37,6 +38,8 @@ function initBattle()
 		bcan.lineTo(x,y);
 		bcan.lineTo(xSize/2+150,5);
 		bcan.stroke();
+		$("#draggingCarrot").css("left",(x-15)+"px");
+		$("#draggingCarrot").css("top",(y-10)+"px");
 	});
 	$("#slingshot").on("touchend", function(e) {
 		e.preventDefault();
@@ -49,6 +52,7 @@ function initBattle()
 		bcan.lineTo(xSize/2,10);
 		bcan.lineTo(xSize/2+150,5);
 		bcan.stroke();
+		$("#draggingCarrot").hide();
 		//var x = e.pageX - $(this).offset().left;
 		//var y = e.pageY - $(this).offset().top;
 		var x = orig.changedTouches[0].pageX - $(this).offset().left;
@@ -101,6 +105,11 @@ function initBattle()
 	bcan.lineTo(xSize/2,10);
 	bcan.lineTo(xSize/2+150,5);
 	bcan.stroke();
+	$("#battleInterface").append('<img id="draggingCarrot" src="Images/carrotcopy.png"></img>');
+	$("#draggingCarrot").css("position","absolute");
+	$("#draggingCarrot").css("z-index","-1");
+	$("#draggingCarrot").css("left",(xSize/2-15)+"px");
+	$("#draggingCarrot").css("top","-10px");
 	// if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
 	// {
 	// 	var imgSrc
