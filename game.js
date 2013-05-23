@@ -544,11 +544,13 @@ function wrongbutton(){
     currentLocal=maze[playerX][playerY];
     maze[playerX][playerY]="player";
     mazeDrawer();
+    destroyBattle()
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
     $("#controlButtons").show();
     $("#scoreDisplay").show();
     $("#difficultyDisplay").show();
+    $("#Inventory").show();
     setImg();
     answer=""
     numQuestion=0;
@@ -566,6 +568,8 @@ function gameLose(){
             $("#scoreDisplay").hide();
             $("#loseGame").show();
             $("#Inventory").hide();
+            $("#backGround").show();
+            $("#backgroundContainer").hide();
             currentLocal="floor";
             recentmove="right";
             createMaze();
@@ -586,7 +590,9 @@ function gameLose(){
             $("#LevelTwelve").attr("disabled","disabled");
             inventory[0]=10
             $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
-            $("#finalScoreButton2").text("Your final score is "+ score);}
+            $("#finalScoreButton2").text("Your final score is "+ score);
+            $("#backgroundImage").attr("src","Images/Defeat.jpg");
+            }
             else{
                 enterShop();
                 $("#shopBackButton").attr("disabled","disabled");

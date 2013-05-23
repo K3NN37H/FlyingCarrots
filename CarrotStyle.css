@@ -32,7 +32,10 @@ body
 {
 	position:absolute;
 }
-
+.backImage
+{
+    position:absolute;
+}
 .wall
 {
     background-color:#000000;
@@ -201,7 +204,16 @@ body
 	left:0%;
 	top:0%;
 }
-
+#backGround
+{
+    z-index:-10;
+	position:absolute;
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	left:0%;
+	top:0%;
+}
 #buymap
 {
     top: 60%;

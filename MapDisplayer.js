@@ -383,9 +383,10 @@ function endGame()
             createMaze();
             mazeDrawer();
             mapToggle=0;
-            setImg();
             $("#toggleMapButton").css("display","none");
-            $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
+            $("#backgroundImage").attr("src","Images/Victory.jpg");
+            $("#backGround").show();
+            $("#backgroundContainer").hide();
             levelFinish();
         }
     }

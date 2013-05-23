@@ -230,6 +230,7 @@ function hideGame()
 	$("#bullDozer").hide();
     $("#loseGame").hide();
     $("#levelChoosing").hide();
+    $("#backGround").hide();
 
 }
 function showGame()
@@ -252,8 +253,12 @@ function restartGame(){
     $("#finalScoreButton").text("Your final score is "+ score); 
     $("#endGame").hide();
     showMainMenu();
+    $("#loseGame").hide();
+    $("#backGround").hide();
+    $("#backgroundContainer").show();
     $("#difficultyDisplay").show();
     $("#totalScoreButton").show();
+    $("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
 }
 
 function changeMazeSize(){
@@ -263,32 +268,32 @@ function changeMazeSize(){
  
 }
 
-   $("#optionPage").append('<button class="gamebutton" id=easyLevel>'+"Easy"+'</button>');
-   $("#easyLevel").css("position","absolute");
-   $("#easyLevel").css("left",25+"%");
-   $("#easyLevel").css("top",15+"%");
-   $("#easyLevel").css("height",6+"%");
-   $("#easyLevel").css("width", 6+"%");
-   $("#easyLevel").css("border-radius",10);
-   $("#easyLevel").click(easyLevelOption);
+//   $("#optionPage").append('<button class="gamebutton" id=easyLevel>'+"Easy"+'</button>');
+//   $("#easyLevel").css("position","absolute");
+//   $("#easyLevel").css("left",25+"%");
+//   $("#easyLevel").css("top",15+"%");
+//   $("#easyLevel").css("height",6+"%");
+//   $("#easyLevel").css("width", 6+"%");
+//   $("#easyLevel").css("border-radius",10);
+//   $("#easyLevel").click(easyLevelOption);
    
-   $("#optionPage").append('<button class="gamebutton" id=normalLevel>'+"Normal"+'</button>');
-   $("#normalLevel").css("position","absolute");
-   $("#normalLevel").css("left",45+"%");
-   $("#normalLevel").css("top",15+"%");
-   $("#normalLevel").css("height",6+"%");
-   $("#normalLevel").css("width", 6+"%");
-   $("#normalLevel").css("border-radius",10);
-   $("#normalLevel").click(normalLevelOption);
+//  $("#optionPage").append('<button class="gamebutton" id=normalLevel>'+"Normal"+'</button>');
+//   $("#normalLevel").css("position","absolute");
+//   $("#normalLevel").css("left",45+"%");
+//   $("#normalLevel").css("top",15+"%");
+//   $("#normalLevel").css("height",6+"%");
+//   $("#normalLevel").css("width", 6+"%");
+//   $("#normalLevel").css("border-radius",10);
+//   $("#normalLevel").click(normalLevelOption);
    
-   $("#optionPage").append('<button class="gamebutton" id=hardLevel>'+"Hard"+'</button>');
-   $("#hardLevel").css("position","absolute");
-   $("#hardLevel").css("left",65+"%");
-   $("#hardLevel").css("top",15+"%");
-   $("#hardLevel").css("height",6+"%");
-   $("#hardLevel").css("width", 6+"%");
-   $("#hardLevel").css("border-radius",10);
-   $("#hardLevel").click(hardLevelOption);
+//   $("#optionPage").append('<button class="gamebutton" id=hardLevel>'+"Hard"+'</button>');
+//   $("#hardLevel").css("position","absolute");
+//   $("#hardLevel").css("left",65+"%");
+//   $("#hardLevel").css("top",15+"%");
+//   $("#hardLevel").css("height",6+"%");
+//   $("#hardLevel").css("width", 6+"%");
+//   $("#hardLevel").css("border-radius",10);
+//   $("#hardLevel").click(hardLevelOption);
    
    $("#optionPage").append('<button class="gamebutton" id=backOption>'+"Back"+'</button>');
    $("#backOption").css("position","absolute");
