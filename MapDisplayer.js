@@ -23,7 +23,7 @@ function mover(event)
     {
         if(text=="38")
         {
-            if(maze[playerX][playerY-1]!=="wall")
+            if(maze[playerX][playerY-1]!=="wall"||maze[playerX][playerY-1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY-1];

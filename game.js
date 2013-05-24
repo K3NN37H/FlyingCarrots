@@ -1,7 +1,7 @@
 
 var a,b,c = 0;
 var numQuestion=0;
-
+var useFlameCarrot=false;
 //var random1=0;
 //var random2=1;
 //var correctNumber=2;
@@ -354,11 +354,13 @@ function buttonMaker()
    $("#useFlameCarrot").click(function (){
       if(inventory[1]>0){
           numQuestion=3;
+          useFlameCarrot=true;
           gameButtonClick();
           inventory[1]--;
           inventory[0]++;
          $("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]);
          $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+         
           }
    });
 //    var d = Math.floor((Math.random()*3)+1);

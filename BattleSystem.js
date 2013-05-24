@@ -60,7 +60,15 @@ function initBattle()
 		if ($("#carrot").length === 0)
 		{
 			$("body").append('<div id="carrot" style="position:absolute;"></div>');
-			$("#carrot").append('<img id=carrotimg src="Images/carrotcopy.png"></img>');
+			if(useFlameCarrot===false)
+			{
+				$("#carrot").append('<img id=carrotimg src="Images/carrotcopy.png"></img>');
+			}
+			else if(useFlameCarrot===true)
+			{
+				$("#carrot").append('<img id=carrotimg src="Images/flamecarrot.png"></img>');
+				useFlameCarrot=false;
+			}
 		}
 		$("#carrot").css("left", orig.changedTouches[0].pageX);
 		$("#carrot").css("top", orig.changedTouches[0].pageY);
@@ -105,7 +113,14 @@ function initBattle()
 	bcan.lineTo(xSize/2,10);
 	bcan.lineTo(xSize/2+150,5);
 	bcan.stroke();
-	$("#battleInterface").append('<img id="draggingCarrot" src="Images/carrotcopy.png"></img>');
+	if(useFlameCarrot===false)
+	{
+		$("#battleInterface").append('<img id="draggingCarrot" src="Images/carrotcopy.png"></img>');
+	}
+	else if(useFlameCarrot===true)
+	{	
+		$("#battleInterface").append('<img id="draggingCarrot" src="Images/flamecarrot.png"></img>');
+	}
 	$("#draggingCarrot").css("position","absolute");
 	$("#draggingCarrot").css("z-index","-1");
 	$("#draggingCarrot").css("left",(xSize/2-15)+"px");

@@ -23,7 +23,7 @@ function resetPoints() {
 }
 
 function refreshScore() {
-	$("#scorebutton").text("Your score is "+ score);
-	$("#finalScoreButton").text("Your final score is "+ score);
-	$("#totalScoreButton").text("Your total points is "+points);
+	$("#scorebutton").text("Votre score est "+ score);
+	$("#finalScoreButton").text("Votre score final est "+ score);
+	$("#totalScoreButton").text("Votre point est "+points);
 }

@@ -204,7 +204,7 @@ function gameInstruction(){
 }
 function levelChoosingHide(){
     $("#levelChoosing").hide();
-    $("#difficultybutton").text("Current difficulty is Level "+ LevelDisplay);
+    $("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);
 }
 
 function exitinstruction(){
@@ -352,7 +352,7 @@ function optionBack(){
 //   var ModeDisplay ="Normal"
    
    $("#difficultyDisplay").append('<button class="gamebutton" id=difficultybutton></button>');
-   $("#difficultybutton").text("Current difficulty is Level "+ LevelDisplay);   
+   $("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);   
    $("#difficultybutton").css("position","absolute");
    $("#difficultybutton").css("left",75+"%");
    $("#difficultybutton").css("top",8+"%");
@@ -361,7 +361,7 @@ function optionBack(){
    $("#difficultybutton").css("border-radius",10);
 
    $("#scoreDisplay").append('<button class="gamebutton" id=scorebutton></button>');
-   $("#scorebutton").text("Your score is "+ score);   
+   $("#scorebutton").text("Votre score est "+ score);   
    $("#scorebutton").css("position","absolute");
    $("#scorebutton").css("left",75+"%");
    $("#scorebutton").css("top",13+"%");
@@ -371,7 +371,7 @@ function optionBack(){
 
 
    $("#mainBody").append('<button class="gamebutton" id=totalScoreButton></button>');
-   $("#totalScoreButton").text("Your total score is "+ points);   
+   $("#totalScoreButton").text("Votre point est "+ points);   
    $("#totalScoreButton").css("position","absolute");
    $("#totalScoreButton").css("left",75+"%");
    $("#totalScoreButton").css("top",1+"%");

@@ -5,7 +5,7 @@ function useItem(item)
 	{
 		$("#toggleMapButton").css("display","inline");
 		inventory[MAP]--;
-		$("#buyMapDisplay").text("Map: "+ inventory[MAP]);
+		$("#buyMapDisplay").text("Carte: "+ inventory[MAP]);
 		$("#buyMapDisplay").attr("disabled","disabled");
 		usedMap=true;
 	}
@@ -161,7 +161,7 @@ function toggleMap()
 }
 
 $("#Inventory").append('<button class="gamebutton" id=carrotDisplay></button>');
-$("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]); 
+$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]); 
 $("#carrotDisplay").css("position","absolute");
 $("#carrotDisplay").css("left",20+"%");
 $("#carrotDisplay").css("top",94+"%");
@@ -180,7 +180,7 @@ $("#bullDozerDisplay").click(function(){useItem("bulldozer")});
 
 
 $("#Inventory").append('<button class="gamebutton" id=flameCarrotDisplay></button>');
-$("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]); 
+$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]); 
 $("#flameCarrotDisplay").css("position","absolute");
 $("#flameCarrotDisplay").css("left",30+"%");
 $("#flameCarrotDisplay").css("top",94+"%");
@@ -189,7 +189,7 @@ $("#flameCarrotDisplay").css("width", 10+"%");
 
 
 $("#Inventory").append('<button class="gamebutton" id=buyMapDisplay></button>');
-$("#buyMapDisplay").text("Map: "+ inventory[MAP]); 
+$("#buyMapDisplay").text("Carte: "+ inventory[MAP]); 
 $("#buyMapDisplay").css("position","absolute");
 $("#buyMapDisplay").css("left",40+"%");
 $("#buyMapDisplay").css("top",94+"%");
@@ -198,7 +198,7 @@ $("#buyMapDisplay").css("width", 10+"%");
 $("#buyMapDisplay").click(function(){useItem("map")});
 
 $("#Inventory").append('<button class="gamebutton" id=levelSkipDisplay></button>');
-$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
+$("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
 $("#levelSkipDisplay").css("position","absolute");
 $("#levelSkipDisplay").css("left",60+"%");
 $("#levelSkipDisplay").css("top",94+"%");
