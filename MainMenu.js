@@ -11,7 +11,7 @@ $("#LevelTen").attr("disabled","disabled");
 $("#LevelEleven").attr("disabled","disabled");
 $("#LevelTwelve").attr("disabled","disabled");
 
-
+var playing = false;
 var difficulty = 1
 var difficultyMode = 1
 function typeQuestion(difficulty)
@@ -64,7 +64,8 @@ $("#LevelTwelve").click(startLevelTwelve);
 function showMainMenu(){
 	$("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
 	$("#menuPage").show();
-	$(".backImg").attr("usemap","#menunav");
+	$("#backgroundImg2").css({left:"0%",top:"0%",height:"100%",width:"100%"});
+	$("#backgroundImg2").attr("usemap","#menunav");
 }
 
 function hideMainMenu(){
@@ -242,12 +243,14 @@ function showGame()
     $("#backgroundImg"+backgroundCount).attr("src","Images/forwardcorridor.jpg");
     createMaze();
     mazeDrawer();
+	playing = true;
 }
 function optionShowGame(){
     $("#optionPage").hide();
     $("#levelChoosing").show();
 }
 function restartGame(){
+	playing = false;
     score = 0;
     $("#scorebutton").text("Your score is "+ score); 
     $("#finalScoreButton").text("Your final score is "+ score); 
