@@ -197,11 +197,26 @@ function startLevelTwelve(){
     showGame()
 }
 
+function showPopup(){
+	$("#backgroundImg"+backgroundCount).css("opacity","0.65");
+	$("body").append('<div id="popup" style="position:absolute;top:20%;left:20%;width:60%;height:60%;background:white;border:solid 1px black;border-radius:10px;box-shadow: 10px 10px 5px #444444;"></div>');
+	$("#popup").append('<button id="closePopup" style="position:absolute;right:0%;bottom:0%;height:15%;width:15%">RECULER</button>');
+	$("#closePopup").click(hidePopup);
+}
+
+function hidePopup(){
+	$("#backgroundImg"+backgroundCount).css("opacity","1");
+	$("#popup").remove();
+	showMainMenu();
+}
+
 function gameInstruction(){
     hideMainMenu();
+	showPopup();
+	/*
     $("#instructionpage").show();
     $("#totalScoreButton").hide();
-    $("#difficultyDisplay").hide();
+    $("#difficultyDisplay").hide();*/
 }
 function levelChoosingHide(){
     $("#levelChoosing").hide();
@@ -210,9 +225,11 @@ function levelChoosingHide(){
 
 function exitinstruction(){
     showMainMenu();
+	hidePopup();
+	/*
     $("#instructionpage").hide();
     $("#totalScoreButton").show();
-    $("#difficultyDisplay").show();
+    $("#difficultyDisplay").show();*/
 }
 function hideGame()
 {
