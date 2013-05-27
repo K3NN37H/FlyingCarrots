@@ -14,7 +14,7 @@ function addition()
 	b= Math.floor((Math.random()*50)+1);
     c = a + b;
     
-    question="What is the answer for "+ a +" + " + b + " ?";
+    question="C'est quoi la réponse pour "+ a +" + " + b + " ?";
 
 //var answer=prompt( "What is the answer for "+ a +" + " + b + " ?")
 //if ( answer == c){
@@ -37,7 +37,7 @@ function subtraction(){
     c= Math.floor((Math.random()*100)+1);
     b= a + c;
     
-    question="What is the answer for "+ b +" - " + a + " ?";
+    question="C'est quoi la réponse pour "+ b +" - " + a + " ?";
     
        $("#difficultyDisplay").hide();
    $("#mapContainer").hide(); 
@@ -53,7 +53,7 @@ function multiplication(){
     b= Math.floor((Math.random()*10)+1);
     c= a * b;
 
-    question="What is the answer for "+ a +" × " + b + " ?";
+    question="C'est quoi la réponse pour "+ a +" × " + b + " ?";
     
        $("#difficultyDisplay").hide();
    $("#mapContainer").hide(); 
@@ -71,7 +71,7 @@ function division(){
     c= Math.floor((Math.random()*20)+1);
     b = a * c;
     
-   question="What is the answer for "+ b +" ÷ " + a + " ?";
+   question="C'est quoi la réponse pour "+ b +" ÷ " + a + " ?";
 
 $("#difficultyDisplay").hide();
    $("#mapContainer").hide(); 
@@ -191,7 +191,7 @@ function buttonMaker()
 
 
    $("#mathAnswer").append('<button class="gamebutton" id=answerDisplay></button>');
-   $("#answerDisplay").text("The answer is " + answer);
+   $("#answerDisplay").text("La réponse est " + answer);
    $("#answerDisplay").css("position","absolute");
    $("#answerDisplay").css("left",60+"%");
    $("#answerDisplay").css("top",20+"%");
@@ -320,7 +320,7 @@ function buttonMaker()
        numberInput(0);
    });
    
-   $("#multipleChoice").append('<button class="gamebutton" id=delete>'+"delete"+'</button>');
+   $("#multipleChoice").append('<button class="gamebutton" id=delete>'+"Effacer"+'</button>');
    $("#delete").css("position","absolute");
    $("#delete").css("left",65+"%");
    $("#delete").css("top",85+"%");
@@ -332,7 +332,7 @@ function buttonMaker()
       deleteAnswer();
    });
    
-   $("#multipleChoice").append('<button class="gamebutton" id=enterAnswer>'+"enter"+'</button>');
+   $("#multipleChoice").append('<button class="gamebutton" id=enterAnswer>'+"Inscrire"+'</button>');
    $("#enterAnswer").css("position","absolute");
    $("#enterAnswer").css("left",85+"%");
    $("#enterAnswer").css("top",85+"%");
@@ -344,7 +344,7 @@ function buttonMaker()
       enterAnswer();
    });
 
-   $("#multipleChoice").append('<button class="gamebutton" id=useFlameCarrot>'+"Flame Carrots"+'</button>');
+   $("#multipleChoice").append('<button class="gamebutton" id=useFlameCarrot>'+"Carottes Flamme"+'</button>');
    $("#useFlameCarrot").css("position","absolute");
    $("#useFlameCarrot").css("left",25+"%");
    $("#useFlameCarrot").css("top",85+"%");
@@ -485,7 +485,7 @@ function buttonMaker()
 function numberInput(event){
     answer += "" + event;
 
-   $("#answerDisplay").text("The answer is " + answer);
+   $("#answerDisplay").text("La réponse est " + answer);
 
 }
 
@@ -493,7 +493,7 @@ function deleteAnswer(){
 
     answer = answer.substring (0,answer.length-1);
 
-   $("#answerDisplay").text("The answer is " + answer);
+   $("#answerDisplay").text("La réponse est " + answer);
 
 }
 

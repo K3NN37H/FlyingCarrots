@@ -23,7 +23,7 @@ function mover(event)
     {
         if(text=="38")
         {
-            if(maze[playerX][playerY-1]!=="wall"||maze[playerX][playerY-1]!==undefined)
+            if(maze[playerX][playerY-1]!=="wall"&&maze[playerX][playerY-1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY-1];
@@ -39,7 +39,7 @@ function mover(event)
         }
         else if(text=="40")
         {
-            if(maze[playerX][playerY+1]!=="wall")
+            if(maze[playerX][playerY+1]!=="wall"&&maze[playerX][playerY+1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY+1];
@@ -55,7 +55,7 @@ function mover(event)
         }
         else if(text=="37")
         {
-            if(maze[playerX-1][playerY]!=="wall")
+            if(maze[playerX-1][playerY]!=="wall"&&maze[playerX-1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX-1][playerY];
@@ -71,7 +71,7 @@ function mover(event)
         }
         else if(text=="39")
         {
-            if(maze[playerX+1][playerY]!=="wall")
+            if(maze[playerX+1][playerY]!=="wall"&&maze[playerX+1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX+1][playerY];
@@ -90,7 +90,7 @@ function mover(event)
     {
         if(text=="40")
         {
-            if(maze[playerX][playerY-1]!=="wall")
+            if(maze[playerX][playerY-1]!=="wall"&&maze[playerX][playerY-1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY-1];
@@ -106,7 +106,7 @@ function mover(event)
         }
         else if(text=="38")
         {
-            if(maze[playerX][playerY+1]!=="wall")
+            if(maze[playerX][playerY+1]!=="wall"&&maze[playerX][playerY+1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY+1];
@@ -122,7 +122,7 @@ function mover(event)
         }
         else if(text=="39")
         {
-            if(maze[playerX-1][playerY]!=="wall")
+            if(maze[playerX-1][playerY]!=="wall"&&maze[playerX-1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX-1][playerY];
@@ -138,7 +138,7 @@ function mover(event)
         }
         else if(text=="37")
         {
-            if(maze[playerX+1][playerY]!=="wall")
+            if(maze[playerX+1][playerY]!=="wall"&&maze[playerX+1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX+1][playerY];
@@ -157,7 +157,7 @@ function mover(event)
     {
         if(text=="39")
         {
-            if(maze[playerX][playerY-1]!=="wall")
+            if(maze[playerX][playerY-1]!=="wall"&&maze[playerX][playerY-1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY-1];
@@ -173,7 +173,7 @@ function mover(event)
         }
         else if(text=="37")
         {
-            if(maze[playerX][playerY+1]!=="wall")
+            if(maze[playerX][playerY+1]!=="wall"&&maze[playerX][playerY+1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY+1];
@@ -189,7 +189,7 @@ function mover(event)
         }
         else if(text=="38")
         {
-            if(maze[playerX-1][playerY]!=="wall")
+            if(maze[playerX-1][playerY]!=="wall"&&maze[playerX-1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX-1][playerY];
@@ -206,7 +206,7 @@ function mover(event)
         else if(text=="40")
         {
             
-            if(maze[playerX+1][playerY]!=="wall")
+            if(maze[playerX+1][playerY]!=="wall"&&maze[playerX+1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX+1][playerY];
@@ -225,7 +225,7 @@ function mover(event)
     {
         if(text=="37")
         {
-            if(maze[playerX][playerY-1]!=="wall")
+            if(maze[playerX][playerY-1]!=="wall"&&maze[playerX][playerY-1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY-1];
@@ -241,7 +241,7 @@ function mover(event)
         }
         else if(text=="39")
         {
-            if(maze[playerX][playerY+1]!=="wall")
+            if(maze[playerX][playerY+1]!=="wall"&&maze[playerX][playerY+1]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX][playerY+1];
@@ -257,7 +257,7 @@ function mover(event)
         }
         else if(text=="40")
         {
-            if(maze[playerX-1][playerY]!=="wall")
+            if(maze[playerX-1][playerY]!=="wall"&&maze[playerX-1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX-1][playerY];
@@ -273,7 +273,7 @@ function mover(event)
         }
         else if(text=="38")
         {
-            if(maze[playerX+1][playerY]!=="wall")
+            if(maze[playerX+1][playerY]!=="wall"&&maze[playerX+1][playerY]!==undefined)
             {
                 maze[playerX][playerY]=currentLocal;
                 currentLocal=maze[playerX+1][playerY];

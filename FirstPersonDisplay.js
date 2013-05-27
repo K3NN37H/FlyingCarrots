@@ -67,140 +67,140 @@ function numWalls()
     {
         try
         {
-            if(maze[playerX][playerY-1]==="wall")
+            if(maze[playerX][playerY-1]==="wall"||maze[playerX][playerY-1]===undefined)
             {
                 forewardWall=true;
             }
         }
-        catch(err){}
+        catch(err){forewardWall=true;}
         try
         {
-            if(maze[playerX][playerY+1]==="wall")
+            if(maze[playerX][playerY+1]==="wall"||maze[playerX][playerY+1]===undefined)
             {
                 backwardWall=true;
             }
         }
-        catch(err){}
+        catch(err){backwardWall=true;}
         try
         {
-            if(maze[playerX-1][playerY]==="wall")
+            if(maze[playerX-1][playerY]==="wall"||maze[playerX-1][playerY]===undefined)
             {
                 leftWall=true;
             }
         }
-        catch(err){}
+        catch(err){leftWall=true;}
         try
         {
-            if(maze[playerX+1][playerY]==="wall")
+            if(maze[playerX+1][playerY]==="wall"||maze[playerX+1][playerY]===undefined)
             {
                 rightWall=true;
             }
         }
-        catch(err){}
+        catch(err){rightWall=true;}
     }
     else if(recentmove==="down")
     {
         try
         {
-            if(maze[playerX][playerY+1]==="wall")
+            if(maze[playerX][playerY+1]==="wall"||maze[playerX][playerY+1]===undefined)
             {
                 forewardWall=true;
             }
         }
-        catch(err){}
+        catch(err){forewardWall=true;}
         try
         {
-            if(maze[playerX][playerY-1]==="wall")
+            if(maze[playerX][playerY-1]==="wall"||maze[playerX][playerY-1]===undefined)
             {
                 backwardWall=true;
             }
         }
-        catch(err){}
+        catch(err){backwardWall=true;}
         try
         {
-            if(maze[playerX+1][playerY]==="wall")
+            if(maze[playerX+1][playerY]==="wall"||maze[playerX+1][playerY]===undefined)
             {
                 leftWall=true;
             }
         }
-        catch(err){}
+        catch(err){leftWall=true;}
         try
         {
-            if(maze[playerX-1][playerY]==="wall")
+            if(maze[playerX-1][playerY]==="wall"||maze[playerX-1][playerY]===undefined)
             {
                 rightWall=true;
             }
         }
-        catch(err){}
+        catch(err){rightWall=true;}
     }
     else if(recentmove==="left")
     {
         try
         {
-            if(maze[playerX-1][playerY]==="wall")
+            if(maze[playerX-1][playerY]==="wall"||maze[playerX-1][playerY]===undefined)
             {
                 forewardWall=true;
             }
         }
-        catch(err){}
+        catch(err){forewardWall=true;}
         try
         {
-            if(maze[playerX+1][playerY]==="wall")
+            if(maze[playerX+1][playerY]==="wall"||maze[playerX+1][playerY]===undefined)
             {
                 backwardWall=true;
             }
         }
-        catch(err){}
+        catch(err){backwardWall=true;}
         try
         {
-            if(maze[playerX][playerY+1]==="wall")
+            if(maze[playerX][playerY+1]==="wall"||maze[playerX][playerY-1]===undefined)
             {
                 leftWall=true;
             }
         }
-        catch(err){}
+        catch(err){leftWall=true;}
         try
         {
-            if(maze[playerX][playerY-1]==="wall")
+            if(maze[playerX][playerY-1]==="wall"||maze[playerX][playerY-1]===undefined)
             {
                 rightWall=true;
             }
         }
-        catch(err){}
+        catch(err){rightWall=true;}
     }
     else if(recentmove==="right")
     {
         try
         {
-            if(maze[playerX+1][playerY]==="wall")
+            if(maze[playerX+1][playerY]==="wall"||maze[playerX+1][playerY]===undefined)
             {
                 forewardWall=true;
             }
         }
-        catch(err){}
+        catch(err){forewardWall=true;}
         try
         {
-            if(maze[playerX-1][playerY]==="wall")
+            if(maze[playerX-1][playerY]==="wall"||maze[playerX-1][playerY]===undefined)
             {
                 backwardWall=true;
             }
         }
-        catch(err){}
+        catch(err){backwardWall=true;}
         try
         {
-            if(maze[playerX][playerY-1]==="wall")
+            if(maze[playerX][playerY-1]==="wall"||maze[playerX][playerY-1]===undefined)
             {
                 leftWall=true;
             }
         }
-        catch(err){}
+        catch(err){leftWall=true;}
         try
         {
-            if(maze[playerX][playerY+1]==="wall")
+            if(maze[playerX][playerY+1]==="wall"||maze[playerX][playerY+1]===undefined)
             {
                 rightWall=true;
             }
         }
-        catch(err){}
+        catch(err){rightWall=true;}
     }
 }

@@ -258,6 +258,9 @@ function showGame()
     $("#scoreDisplay").show();
     $("#Inventory").show();
     $("#backgroundImg"+backgroundCount).attr("src","Images/forwardcorridor.jpg");
+    usedMap=false;
+    $("#toggleMapButton").css("display","none");
+    $("#buyMapDisplay").removeAttr("disabled","");
     createMaze();
     mazeDrawer();
 	playing = true;
