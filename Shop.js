@@ -27,13 +27,16 @@ $("#menuShop").click(showShop);
 $("#menuShopBackButton").click(hideShop);
 
 function showShop(){
-	$("#backgroundImg"+backgroundCount).attr("src","Images/Shop.png");
-	$("#backgroundImg2").css({left:"0%",top:"0%",height:"100%",width:"100%"});
-	$("#backgroundImg2").attr("usemap","#shopnav");
+     $("#backGround").show();
+    $("#backgroundContainer").hide();
+	$("#backgroundImage").attr("src","Images/Shop.png");
+//	$("#backgroundImg2").css({left:"0%",top:"0%",height:"100%",width:"100%"});
+	$("#backgroundImage").attr("usemap","#shopnav");
 	$("#controlButtons").hide();
 	$("#shop").show();
 	$("#Inventory").show();
 	$("#totalScoreButton").show();
+    $("#mapContainer").hide();
 	$("#shopBackDuringTheGame").show();
 	$("#buyMapDisplay").attr("disabled","disabled");
     $("#bullDozerDisplay").attr("disabled","disabled");
@@ -93,6 +96,7 @@ function purchase(item)
         $("#buybulldozer").removeAttr("disabled","");
         $("#buyfireCarrot").removeAttr("disabled","");
         $("#buyLevelSkip").removeAttr("disabled","");
+        $("#shopHiders").hide();
     }
     else if(item=="flamecarrot"&&points>=2000)
     {
@@ -124,7 +128,7 @@ function exitShop(){
 }*/
 
 function hideShop(){
-	$(".backImg").removeAttr("usemap");
+	$("#backgroundImage").removeAttr("usemap");
 	$("#shop").hide();
 	$("#shopBackDuringTheGame").hide();
 	if (playing) {
@@ -146,6 +150,8 @@ function hideShop(){
 	$("#bullDozerDisplay").removeAttr("disabled","");
 	$("#levelSkipDisplay").removeAttr("disabled","");
 	$("#difficultyDisplay").show();
+    $("#backGround").hide();
+    $("#backgroundContainer").show();
 }
 /*
 function menuEnterShop(){

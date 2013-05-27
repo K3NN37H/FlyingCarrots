@@ -384,3 +384,27 @@ body
     width:10%;
     height:5%;
 }
+
+#shopHiders{
+    z-index:6;
+    display:none;
+    opacity: 0.5;
+}
+
+#leftHider{
+    position:absolute;
+    top: 60%;
+    left:10%;
+    width:12%;
+    height:30%;
+    background-color:black;
+}
+
+#rightHider{
+    position:absolute;
+    top: 60%;
+    left:36%;
+     width:51%;
+    height:30%;
+    background-color:black;
+}

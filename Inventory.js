@@ -242,12 +242,14 @@ $("#levelSkipDisplay").css("width", 10+"%");
     if (difficulty===4&&difficultyMode===2){
        startLevelEleven()
     }
-    if (difficulty===4&&difficultyMode===3){
+    if (difficulty===4&&difficultyMode>2){
         startLevelTwelve()
     }
         setImg();
         $("#toggleMapButton").css("display","none");
         mapToggle=0;
+        score=0
+        refreshScore();
         $("#mapContainer").hide();
             $("#buyMapDisplay").removeAttr("disabled","");
         }

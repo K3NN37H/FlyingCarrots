@@ -172,13 +172,13 @@ function destroyBattle()
 function hitEnemy(){
                if(currentLocal=="zombie")
         {
-            addScore(50);
+            addScore(50*difficulty);
     	}
    		if(currentLocal=="bull"){
-       		addScore(200);
+       		addScore(150+50*difficulty);
     	}
    		if(currentLocal=="bunny"){
-       		addScore(500);  
+       		addScore(400+100*difficulty);  
     	}
         currentLocal="floor"; 
 

@@ -596,12 +596,13 @@ function gameLose(){
             $("#backgroundImage").attr("src","Images/Defeat.jpg");
             }
             else{
-                enterShop();
+                showShop();
                 $("#shopBackButton").attr("disabled","disabled");
-                $("#buymap").attr("disabled","disabled");
-                $("#buybulldozer").attr("disabled","disabled");
-                $("#buyfireCarrot").attr("disabled","disabled");
-                $("#buyLevelSkip").attr("disabled","disabled");
+//                $("#buymap").attr("disabled","disabled");
+//                $("#buybulldozer").attr("disabled","disabled");
+//                $("#buyfireCarrot").attr("disabled","disabled");
+//                $("#buyLevelSkip").attr("disabled","disabled");
+                $("#shopHiders").show();
             }
     }
 }
