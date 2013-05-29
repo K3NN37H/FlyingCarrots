@@ -208,7 +208,7 @@ $("#levelSkipDisplay").css("width", 10+"%");
        if(inventory[LEVELSKIP]>0)
        {levelFinish();
        inventory[LEVELSKIP]--;
-       $("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
+       $("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
         currentLocal="floor";
         usedMap=false;
         recentmove="right";

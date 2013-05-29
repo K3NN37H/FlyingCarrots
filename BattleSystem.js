@@ -184,6 +184,6 @@ function hitEnemy(){
         currentLocal="floor"; 
 
         inventory[0]--;
-        $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+        $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
         gameLose();
 }

@@ -281,8 +281,8 @@ function optionShowGame(){
 function restartGame(){
 	playing = false;
     score = 0;
-    $("#scorebutton").text("Your score is "+ score); 
-    $("#finalScoreButton").text("Your final score is "+ score); 
+    $("#scorebutton").text("Votre score est "+ score); 
+    $("#finalScoreButton").text("Votre score final est "+ score); 
     $("#endGame").hide();
     showMainMenu();
     $("#loseGame").hide();
@@ -349,8 +349,8 @@ function easyLevelOption(){
     mazeSize=11;
     numZombie=6;
     numBull=3;   
-    ModeDisplay="Easy";
-   $("#modebutton").text("Current mode is "+ ModeDisplay);
+//    ModeDisplay="Easy";
+//   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();
     mazeDrawer();
 }
@@ -359,8 +359,8 @@ function normalLevelOption(){
     mazeSize=15;
     numZombie=10;
     numBull=5;
-    ModeDisplay="Normal";
-   $("#modebutton").text("Current mode is "+ ModeDisplay);
+//    ModeDisplay="Normal";
+//   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();
     mazeDrawer();
 }
@@ -369,8 +369,8 @@ function hardLevelOption(){
     mazeSize=21;
     numZombie=14;
     numBull=8;
-    ModeDisplay="Hard";
-   $("#modebutton").text("Current mode is "+ ModeDisplay);
+//    ModeDisplay="Hard";
+//   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();
     mazeDrawer();
 }

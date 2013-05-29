@@ -80,7 +80,7 @@ function purchase(item)
     {
         spendPoints(10000);
         inventory[MAP]++;
-        $("#buyMapDisplay").text("Map: "+ inventory[MAP]); 
+        $("#buyMapDisplay").text("Carte: "+ inventory[MAP]); 
     }
     else if(item=="bulldozer"&&points>=10000)
     {
@@ -92,7 +92,7 @@ function purchase(item)
     {
     	spendPoints(500);
     	inventory[MORECARROT]+=10;
-    	$("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    	$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
         $("#shopBackButton").removeAttr("disabled","");
         $("#buymap").removeAttr("disabled","");
         $("#buybulldozer").removeAttr("disabled","");
@@ -104,13 +104,13 @@ function purchase(item)
     {
     	spendPoints(2000);
     	inventory[FLAMECARROT]+=5;
-    	$("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]); 
+    	$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]); 
     }
     else if(item=="levelskip"&&points>=20000)
     {
     	spendPoints(20000);
     	inventory[LEVELSKIP]++;
-    	$("#levelSkipDisplay").text("Level Skip: "+ inventory[LEVELSKIP]); 
+    	$("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
     }
 }
 /*

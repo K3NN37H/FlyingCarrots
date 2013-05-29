@@ -358,8 +358,8 @@ function buttonMaker()
           gameButtonClick();
           inventory[1]--;
           inventory[0]++;
-         $("#flameCarrotDisplay").text("FlameCarrots: "+ inventory[FLAMECARROT]);
-         $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+         $("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]);
+         $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
          
           }
    });
@@ -557,7 +557,7 @@ function wrongbutton(){
     answer=""
     numQuestion=0;
     inventory[0]--;
-    $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
+    $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
     gameLose()
 }
 
@@ -591,8 +591,8 @@ function gameLose(){
             $("#LevelEleven").attr("disabled","disabled");
             $("#LevelTwelve").attr("disabled","disabled");
             inventory[0]=10
-            $("#carrotDisplay").text("Carrots: "+ inventory[MORECARROT]);
-            $("#finalScoreButton2").text("Your final score is "+ score);
+            $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
+            $("#finalScoreButton2").text("Votre score final est "+ score);
             $("#backgroundImage").attr("src","Images/Defeat.jpg");
             }
             else{
@@ -607,7 +607,7 @@ function gameLose(){
     }
 }
     $("#loseGame").append('<button class="gamebutton" id=finalScoreButton2></button>');
-    $("#finalScoreButton2").text("Your final score is "+ score);   
+    $("#finalScoreButton2").text("Votre score final est "+ score);   
 	$("#finalScoreButton2").css("position","absolute");
 	$("#finalScoreButton2").css("left",45+"%");
 	$("#finalScoreButton2").css("top",15+"%");

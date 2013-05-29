@@ -392,7 +392,7 @@ function endGame()
     }
 }
 	$("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
-	$("#finalScoreButton").text("Your final score is "+ score);   
+	$("#finalScoreButton").text("Votre score final est "+ score);   
 	$("#finalScoreButton").css("position","absolute");
 	$("#finalScoreButton").css("left",45+"%");
 	$("#finalScoreButton").css("top",15+"%");
