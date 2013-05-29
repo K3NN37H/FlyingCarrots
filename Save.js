@@ -1,7 +1,10 @@
 /*global playerX, playerY, prevX, prevY, prevO, maze, currentLocal, recentmove */
 
+loadPlayerData();
+
 function savePlayerData(){
 	"use strict";
+	localStorage.haveSave = true;
 	localStorage.score = score; // current score
 	localStorage.points = points; // spendable points
 	localStorage.inventory = inventory; // inventory
@@ -9,6 +12,9 @@ function savePlayerData(){
 
 function loadPlayerData(){
 	"use strict";
+	if(localStorage.haveSave !== "true"){
+		return;
+	}
 	score = parseInt(localStorage.score);
 	points = parseInt(localStorage.points);
 	var tempInv = localStorage.inventory.split(",");
@@ -18,9 +24,14 @@ function loadPlayerData(){
 	}
 }
 
-function saveMaze(){
+function saveGame(){
 	"use strict";
 	savePlayerData();
+	localStorage.mazeSize = mazeSize;
+	localStorage.usedMap = usedMap;
+	localStorage.difficulty = difficulty;
+	localStorage.difficultyMode = difficultyMode;
+	localStorage.LevelDisplay = LevelDisplay;
 	localStorage.playerX = playerX; // player X coordinates
 	localStorage.playerY = playerY; // player Y coordinates
 	localStorage.prevX = prevX; // previous X coords
@@ -33,7 +44,15 @@ function saveMaze(){
 
 function loadGame(){
 	"use strict";
+	if(localStorage.haveSave !== "true"){
+		return;
+	}
 	loadPlayerData();
+	difficulty = parseInt(localStorage.difficulty);
+	difficultyMode = parseInt(localStorage.difficultyMode);
+	LevelDisplay = parseInt(localStorage.LevelDisplay);
+	mazeSize = parseInt(localStorage.mazeSize);
+	usedMap = localStorage.usedMap;
 	playerX = parseInt(localStorage.playerX);
 	playerY = parseInt(localStorage.playerY);
 	prevX = parseInt(localStorage.prevX);
@@ -44,13 +63,15 @@ function loadGame(){
 	var k = 0;
 	var tempMaze = [];
 	var savedMaze = localStorage.maze.split(",");
-	for(var i = 0;i<15;i++){
+	for(var i = 0;i<mazeSize;i++){
 		tempMaze[i]=[];
-		for(var j=0;j<15;j++){
+		for(var j=0;j<mazeSize;j++){
 			tempMaze[i][j]=savedMaze[k];
 			k++;
 		}
 	}
 	maze = tempMaze;
+	setImg();
 	mazeDrawer();
+	playing = true; // this needs to be set for the shop to work properly
 }

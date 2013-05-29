@@ -2,6 +2,12 @@
 /*global maze, playerX, playerY */
 var leftWall,rightWall,forewardWall,backwardWall;
 var backgroundCount = 1;
+$("#saveButton").click(saveButton);
+function saveButton(){
+	saveGame();
+	alert("Game saved");
+}
+
 function setImg()
 {
     numWalls();

@@ -167,6 +167,7 @@ function destroyBattle()
     $("#scoreDisplay").show();
     $("#difficultyDisplay").show();
     $("#Inventory").show();
+	savePlayerData();
 }
 
 function hitEnemy(){

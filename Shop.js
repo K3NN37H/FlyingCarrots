@@ -6,6 +6,8 @@ var MAP="2";
 var BULLDOZER="3";
 var LEVELSKIP="4";
 inventory[0]=10;
+var xBack = $("#backgroundImg1").width();
+var yBack = $("#backgroundImg1").height();
 for(var i=1;i<numItems;i++)
 {
     inventory[i]=0;

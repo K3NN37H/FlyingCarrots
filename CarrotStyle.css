@@ -184,6 +184,13 @@ body
     width:10%;
     height:5%;
 }
+#saveButton{
+	position:absolute;
+	top:95%;
+	left:75%;
+	width:10%;
+	height:5%;
+}
 #toggleMapButton
 {
 	position:absolute;

@@ -45,6 +45,15 @@ $("#menunav").append('<area id="menuShop" shape="rect" coords="'+Math.round(xBac
 $("#startgame").click(startGame);
 $("#back").click(restartGame);
 $("#loseBack").click(restartGame);
+$("#continue").click(function () {
+	hideMainMenu();
+	loadGame();
+	$("#controlButtons").show();
+	$("#Inventory").show();
+	if(usedMap === "true"){
+		$("#toggleMapButton").show();
+	}
+});
 $("#option").click(changeMazeSize);
 $("#instruction").click(gameInstruction);
 $("#instructionback").click(exitinstruction);
