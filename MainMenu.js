@@ -14,7 +14,7 @@ $("#LevelTwelve").attr("disabled","disabled");
 var playing = false;
 var difficulty = 1;
 var difficultyMode = 1;
-bgm = new Audio('Images/The Path of the Goblin King.mp3');
+bgm = new Audio('Images/goblinking.mp3');
 bgm.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
