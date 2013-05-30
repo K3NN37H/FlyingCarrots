@@ -12,8 +12,14 @@ $("#LevelEleven").attr("disabled","disabled");
 $("#LevelTwelve").attr("disabled","disabled");
 
 var playing = false;
-var difficulty = 1
-var difficultyMode = 1
+var difficulty = 1;
+var difficultyMode = 1;
+bgm = new Audio('Images/The Path of the Goblin King.mp3');
+bgm.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        bgm.play();
 function typeQuestion(difficulty)
 {
     var level=Math.floor((Math.random()*difficulty)+1);
@@ -84,6 +90,7 @@ function hideMainMenu(){
 
 function startGame()
 {
+	bgm.pause();
     hideMainMenu();
     $("#totalScoreButton").hide();
     $("#levelChoosing").show();
@@ -207,8 +214,11 @@ function startLevelTwelve(){
 }
 
 function showPopup(){
+	hideMainMenu();
 	$("#backgroundImg"+backgroundCount).css("opacity","0.65");
-	$("body").append('<div id="popup" style="position:absolute;top:20%;left:20%;width:60%;height:60%;background:white;border:solid 1px black;border-radius:10px;box-shadow: 10px 10px 5px #444444;"></div>');
+	$("body").append('<div id="popup" style="position:absolute;top:15%;left:15%;width:60%;height:60%;background:#FFC8F2;border:solid 1px black;border-radius:10px;box-shadow: 10px 10px 5px #444444;"></div>');
+	$("#popup").append("<p>Un jour, tu joues avec ton cerf volante. Le vent est très fort et le vent prend le cerf volante dans une caverne.Les autre bonhomme de neige disent que cette caverne est remplis avec les monstres, qui vole les cerf volants. Ça c'est ton cerf volante favoris, alors tu décides de chercher pour ton cerf volante.</p><p>Le cerf volante est dans le centre de la labyrinthe. Quand tu racontes un monstre il y a une question de mathématique. Si tu types la correcte réponse, tu peux lancer une carotte. Si tu as un réponse incorrecte, tu perds une carotte. Pour lancer la carotte tu tires en arrière et laisser la corde. Tu commence avec 10 carottes. Si tu perds toutes tes carottes, et tu ne peut pas acheter des nouveau carrotes, tu as perdue, et besion de recommencer à niveau 1.</p>");
+	$("#popup").append("<p>Pour t'aider, il y a un magasin  ")
 	$("#popup").append('<button id="closePopup" style="position:absolute;right:0%;bottom:0%;height:15%;width:15%">RECULER</button>');
 	$("#closePopup").click(hidePopup);
 }
@@ -220,7 +230,6 @@ function hidePopup(){
 }
 
 function gameInstruction(){
-    hideMainMenu();
 	showPopup();
 	/*
     $("#instructionpage").show();
@@ -233,7 +242,6 @@ function levelChoosingHide(){
 }
 
 function exitinstruction(){
-    showMainMenu();
 	hidePopup();
 	/*
     $("#instructionpage").hide();
