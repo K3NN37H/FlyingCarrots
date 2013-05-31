@@ -387,6 +387,10 @@ function endGame()
             $("#backgroundImage").attr("src","Images/Victory.jpg");
             $("#backGround").show();
             $("#backgroundContainer").hide();
+            if(LevelDisplay>currentLevel)
+            {
+            	maxLevel=LevelDisplay;
+            }
             levelFinish();
         }
     }

@@ -1,4 +1,5 @@
 hideGame();
+maxLevel=1;
 $("#LevelTwo").attr("disabled","disabled");
 $("#LevelThree").attr("disabled","disabled");
 $("#LevelFour").attr("disabled","disabled");
@@ -218,7 +219,12 @@ function showPopup(){
 	$("#backgroundImg"+backgroundCount).css("opacity","0.65");
 	$("body").append('<div id="popup" style="position:absolute;top:15%;left:15%;width:60%;height:60%;background:#FFC8F2;border:solid 1px black;border-radius:10px;box-shadow: 10px 10px 5px #444444;"></div>');
 	$("#popup").append("<p>Un jour, tu joues avec ton cerf volante. Le vent est très fort et le vent prend le cerf volante dans une caverne.Les autre bonhomme de neige disent que cette caverne est remplis avec les monstres, qui vole les cerf volants. Ça c'est ton cerf volante favoris, alors tu décides de chercher pour ton cerf volante.</p><p>Le cerf volante est dans le centre de la labyrinthe. Quand tu racontes un monstre il y a une question de mathématique. Si tu types la correcte réponse, tu peux lancer une carotte. Si tu as un réponse incorrecte, tu perds une carotte. Pour lancer la carotte tu tires en arrière et laisser la corde. Tu commence avec 10 carottes. Si tu perds toutes tes carottes, et tu ne peut pas acheter des nouveau carrotes, tu as perdue, et besion de recommencer à niveau 1.</p>");
-	$("#popup").append("<p>Pour t'aider, il y a un magasin  ")
+	$("#popup").append("<p>Pour t'aider, il y a un magasin où tu peut acheter des objets pour t'aider dans la caverne. Dans le magasin, il y a:<p/>")
+	$("#popup").append("<p>-Carrottes flamme x5 : Tu peut utiliser pendant combat pour sauter les questions, et aller directement au le lance-pierre.</p>");
+	$("#popup").append("<p>-Carrottes x10: Tu besoin les carrottes pour combattre les monstres dans la caverne, si tu n'as pas des carrottes, et ne peut pas acheter plus, tu va perdre.</p>");
+	$("#popup").append("<p>-Carte: Avec la carte, tu peut voir le position des monstres et le cerf-volant pour le niveau courrant.</p>");
+	$("#popup").append("<p>-Bulldozer: Avec le bullzoder, tu peut l'utilister pour détruire un mur dans la caverne, alors tu peut marcher sure ce carreau.</p>");
+	$("#popup").append("<p>-Sauter un niveau: Laisser le jouer saute un niveau. Quand c'est utiliser, vous serrez remis au début de nouveu niveau.</p>");
 	$("#popup").append('<button id="closePopup" style="position:absolute;right:0%;bottom:0%;height:15%;width:15%">RECULER</button>');
 	$("#closePopup").click(hidePopup);
 }

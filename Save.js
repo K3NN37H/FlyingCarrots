@@ -5,7 +5,6 @@ loadPlayerData();
 function savePlayerData(){
 	"use strict";
 	localStorage.haveSave = true;
-	localStorage.score = score; // current score
 	localStorage.points = points; // spendable points
 	localStorage.inventory = inventory; // inventory
 }
@@ -15,18 +14,32 @@ function loadPlayerData(){
 	if(localStorage.haveSave !== "true"){
 		return;
 	}
-	score = parseInt(localStorage.score);
 	points = parseInt(localStorage.points);
 	var tempInv = localStorage.inventory.split(",");
 	inventory = [];
 	for (var i = 0; i < 5; i++){
 		inventory[i] = parseInt(tempInv[i]);
 	}
+	$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]); 
+	$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
+	$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]); 
+	$("#buyMapDisplay").text("Carte: "+ inventory[MAP]); 
+	$("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
+	if(inventory[0]<= 0 )
+	{
+		$(document).ready(function(){
+		$("#backGround").show();
+		showShop();
+        $("#shopBackButton").attr("disabled","disabled");
+		$("#shopHiders").show();
+		});
+	}
 }
 
 function saveGame(){
 	"use strict";
 	savePlayerData();
+	localStorage.score = score; // current score
 	localStorage.mazeSize = mazeSize;
 	localStorage.usedMap = usedMap;
 	localStorage.difficulty = difficulty;
@@ -48,6 +61,7 @@ function loadGame(){
 		return;
 	}
 	loadPlayerData();
+	score = parseInt(localStorage.score);
 	difficulty = parseInt(localStorage.difficulty);
 	difficultyMode = parseInt(localStorage.difficultyMode);
 	LevelDisplay = parseInt(localStorage.LevelDisplay);

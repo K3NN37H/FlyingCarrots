@@ -562,7 +562,7 @@ function wrongbutton(){
 }
 
 function gameLose(){
-    if(inventory[0] === 0 ){
+    if(inventory[0]<= 0 ){
             if(points<500){
             $("#controlButtons").hide();
             $("#multipleChoice").hide();
