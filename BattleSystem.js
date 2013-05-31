@@ -95,12 +95,13 @@ function initBattle()
 		$("#battleInterface").append('<button id="leaveBattle" style="position:absolute;top:50%;left:50%;">OK</button>');
 		$("#leaveBattle").click(function (e) {
             if(hitTheEnemy===true){
-        	 hitEnemy();
+				destroyBattle();
+        	 hitEnemy()   
 			}
             else {
+				destroyBattle();
                 wrongbutton();
             }
-			destroyBattle();
 		});
 		},1000);
 		$(this).off();

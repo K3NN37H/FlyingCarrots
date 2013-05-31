@@ -4,14 +4,14 @@ loadPlayerData();
 
 function savePlayerData(){
 	"use strict";
-	localStorage.haveSave = true;
+	localStorage.haveData = true;
 	localStorage.points = points; // spendable points
 	localStorage.inventory = inventory; // inventory
 }
 
 function loadPlayerData(){
 	"use strict";
-	if(localStorage.haveSave !== "true"){
+	if(localStorage.haveData !== "true"){
 		return;
 	}
 	points = parseInt(localStorage.points);
@@ -40,6 +40,7 @@ function saveGame(){
 	"use strict";
 	savePlayerData();
 	localStorage.score = score; // current score
+	localStorage.haveSave = true;
 	localStorage.mazeSize = mazeSize;
 	localStorage.usedMap = usedMap;
 	localStorage.difficulty = difficulty;
@@ -67,6 +68,11 @@ function loadGame(){
 	LevelDisplay = parseInt(localStorage.LevelDisplay);
 	mazeSize = parseInt(localStorage.mazeSize);
 	usedMap = localStorage.usedMap;
+	if (usedMap === "false"){
+		usedMap = false;
+	} else if(usedMap === "true"){
+		usedMap = true;
+	}
 	playerX = parseInt(localStorage.playerX);
 	playerY = parseInt(localStorage.playerY);
 	prevX = parseInt(localStorage.prevX);

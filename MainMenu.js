@@ -11,7 +11,7 @@ $("#LevelNine").attr("disabled","disabled");
 $("#LevelTen").attr("disabled","disabled");
 $("#LevelEleven").attr("disabled","disabled");
 $("#LevelTwelve").attr("disabled","disabled");
-
+var haveSave;
 var playing = false;
 var difficulty = 1;
 var difficultyMode = 1;
@@ -53,11 +53,15 @@ $("#startgame").click(startGame);
 $("#back").click(restartGame);
 $("#loseBack").click(restartGame);
 $("#continue").click(function () {
+	if (localStorage.haveSave !== "true"){
+		alert("No save data");
+		return;
+	}
 	hideMainMenu();
 	loadGame();
 	$("#controlButtons").show();
 	$("#Inventory").show();
-	if(usedMap === "true"){
+	if(usedMap === true){
 		$("#toggleMapButton").show();
 	}
 });
@@ -76,6 +80,13 @@ $("#LevelNine").click(startLevelNine);
 $("#LevelTen").click(startLevelTen);
 $("#LevelEleven").click(startLevelEleven);
 $("#LevelTwelve").click(startLevelTwelve);
+
+$("#logoSplash").click(function () {
+	$(this).hide();
+});
+window.setTimeout(function () {
+	$("#logoSplash").hide();
+}, 2500);
 
 function showMainMenu(){
 	$("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
