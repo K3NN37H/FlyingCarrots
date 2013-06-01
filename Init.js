@@ -2,17 +2,17 @@
 hideGame();
 
 $("#LevelOne").click({diff:1,size:1,level:1},setLevel);
-$("#LevelTwo").click(startLevelTwo);
-$("#LevelThree").click(startLevelThree);
-$("#LevelFour").click(startLevelFour);
-$("#LevelFive").click(startLevelFive);
-$("#LevelSix").click(startLevelSix);
-$("#LevelSeven").click(startLevelSeven);
-$("#LevelEight").click(startLevelEight);
-$("#LevelNine").click(startLevelNine);
-$("#LevelTen").click(startLevelTen);
-$("#LevelEleven").click(startLevelEleven);
-$("#LevelTwelve").click(startLevelTwelve);
+$("#LevelTwo").click({diff:1,size:2,level:2},setLevel);
+$("#LevelThree").click({diff:1,size:3,level:3},setLevel);
+$("#LevelFour").click({diff:2,size:1,level:4},setLevel);
+$("#LevelFive").click({diff:2,size:2,level:5},setLevel);
+$("#LevelSix").click({diff:2,size:3,level:6},setLevel);
+$("#LevelSeven").click({diff:3,size:1,level:7},setLevel);
+$("#LevelEight").click({diff:3,size:2,level:8},setLevel);
+$("#LevelNine").click({diff:3,size:3,level:9},setLevel);
+$("#LevelTen").click({diff:4,size:1,level:10},setLevel);
+$("#LevelEleven").click({diff:4,size:2,level:11},setLevel);
+$("#LevelTwelve").click({diff:4,size:3,level:12},setLevel);
 
 $("#LevelTwo").attr("disabled","disabled");
 $("#LevelThree").attr("disabled","disabled");
