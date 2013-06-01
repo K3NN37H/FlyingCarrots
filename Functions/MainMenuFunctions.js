@@ -1,11 +1,9 @@
 
 function startGame()
 {
-	bgm.pause();
     hideMainMenu();
     $("#totalScoreButton").hide();
-    $("#levelChoosing").show();
-    
+    $("#levelChoosing").show();   
 }
 
 function setLevel(event){
@@ -24,6 +22,7 @@ function setLevel(event){
 	}
 	levelChoosingHide();
 	showGame();
+	ingameMusic();
 }
 
 function gameInstruction(){
@@ -45,4 +44,3 @@ function levelChoosingHide(){
     $("#levelChoosing").hide();
     $("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);
 }
-
