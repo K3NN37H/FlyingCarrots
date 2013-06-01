@@ -1,7 +1,7 @@
 
 function startGame()
 {
-	// bgm.pause();
+	bgm.pause();
     hideMainMenu();
     $("#totalScoreButton").hide();
     $("#levelChoosing").show();

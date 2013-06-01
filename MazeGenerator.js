@@ -1,9 +1,3 @@
-$("#startgame").click(startGame);
-
-function startGame(){
-    $("#menuPage").hide();
-}
-
 var mazeSize=15;
 var numZombie=10;
 var numBull=5;
