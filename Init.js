@@ -50,6 +50,7 @@ $("#continue").click(function () {
 		return;
 	}
 	hideMainMenu();
+	$("#totalScoreButton").hide();
 	loadGame();
 	$("#controlButtons").show();
 	$("#Inventory").show();
