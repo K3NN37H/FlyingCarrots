@@ -7,7 +7,26 @@ var useFlameCarrot=false;
 //var correctNumber=2;
 var question;
 var answer = "";
-
+function typeQuestion(difficulty)
+{
+    var level=Math.floor((Math.random()*difficulty)+1);
+    if(level===1)
+    {
+        addition();
+    }
+    else if(level===2)
+    {
+        subtraction();
+    }
+    else if(level===3)
+    {
+        multiplication();
+    }
+    else if(level===4)
+    {
+        division();
+    }
+}
 function addition()
 {
 	a= Math.floor((Math.random()*50)+1);
