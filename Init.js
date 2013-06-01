@@ -1,6 +1,6 @@
 //Stuff From Main Menu
 hideGame();
-
+menuMusic();
 $("#LevelOne").click({diff:1,size:1,level:1},setLevel);
 $("#LevelTwo").click({diff:1,size:2,level:2},setLevel);
 $("#LevelThree").click({diff:1,size:3,level:3},setLevel);
@@ -33,12 +33,6 @@ window.setTimeout(function () {
 	$("#logoSplash").hide();
 }, 2500);
 
-bgm = new Audio('Images/goblinking.mp3');
-bgm.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-bgm.play();
 
 $(".backImg").attr("usemap","#menunav");
 $("#menuPage").append('<map name="menunav" id="menunav"></map>');
