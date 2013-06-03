@@ -431,3 +431,8 @@ body
 	text-align:center;
 	
 }
+.optionButton
+{
+	width:30%;
+	height:12%;
+}

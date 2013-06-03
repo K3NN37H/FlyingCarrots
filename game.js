@@ -374,12 +374,7 @@ function buttonMaker()
       if(inventory[1]>0){
           numQuestion=3;
           useFlameCarrot=true;
-          gameButtonClick();
-          inventory[1]--;
-          inventory[0]++;
-         $("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]);
-         $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
-         
+          gameButtonClick();         
           }
    });
 //    var d = Math.floor((Math.random()*3)+1);

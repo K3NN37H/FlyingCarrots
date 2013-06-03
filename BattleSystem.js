@@ -96,7 +96,7 @@ function initBattle()
 		$("#leaveBattle").click(function (e) {
             if(hitTheEnemy===true){
 				destroyBattle();
-        	 hitEnemy()   
+        	 hitEnemy();   
 			}
             else {
 				destroyBattle();
@@ -185,6 +185,12 @@ function hitEnemy(){
         currentLocal="floor"; 
 
         inventory[0]--;
+		if (useFlameCarrot){
+			inventory[1]--;
+			inventory[0]++;
+			$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]);
+			$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
+		}
         $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
         gameLose();
 }

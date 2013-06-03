@@ -40,6 +40,7 @@ $("#menunav").append('<area id="startgame" shape="rect" coords="'+Math.round(xBa
 $("#menunav").append('<area id="continue" shape="rect" coords="'+Math.round(xBack*0.217)+','+Math.round(yBack*0.323)+','+Math.round(xBack*0.783)+','+Math.round(yBack*0.48)+'">');
 $("#menunav").append('<area id="instruction" shape="rect" coords="'+Math.round(xBack*0.15)+','+Math.round(yBack*0.528)+','+Math.round(xBack*0.8)+','+Math.round(yBack*0.647)+'">');
 $("#menunav").append('<area id="menuShop" shape="rect" coords="'+Math.round(xBack*0.167)+','+Math.round(yBack*0.668)+','+Math.round(xBack*0.8)+','+Math.round(yBack*0.744)+'">');
+$("#menunav").append('<area id="options" shape="rect" coords="'+Math.round(xBack*0.025)+','+Math.round(yBack*0.0215)+','+Math.round(xBack*0.075)+','+Math.round(yBack*0.086)+'">');
 
 $("#startgame").click(startGame);
 $("#back").click(restartGame);
@@ -59,4 +60,5 @@ $("#continue").click(function () {
 	}
 });
 $("#instruction").click(gameInstruction);
+$("#options").click(showOptions);
 

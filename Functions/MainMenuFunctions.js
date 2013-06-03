@@ -40,6 +40,30 @@ function gameInstruction(){
     $("#difficultyDisplay").hide();*/
 }
 
+function showOptions(){
+	showPopup();
+	$("#popup").append('<button class="optionButton" id="animToggle">Movement Animations: ON</button>');
+	$("#animToggle").click(function () {
+		disableMoveAnim = !disableMoveAnim;
+		if (disableMoveAnim){
+			$(this).text("Movement Animations: OFF");
+		} else if (!disableMoveAnim){
+			$(this).text("Movement Animations: ON");
+		}
+	});
+	$("#popup").append('<br><button class="optionButton" id="musicToggle">Music: ON</button>');
+	$("#musicToggle").click(function () {
+		mute = !mute;
+		if (mute){
+			stopMusic();
+			$(this).text("Music: OFF");
+		} else if (!mute){
+			playMusic();
+			$(this).text("Music: ON");
+		}
+	});
+}
+
 function levelChoosingHide(){
     $("#levelChoosing").hide();
     $("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);
