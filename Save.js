@@ -7,6 +7,7 @@ function savePlayerData(){
 	localStorage.haveData = true;
 	localStorage.points = points; // spendable points
 	localStorage.inventory = inventory; // inventory
+	localStorage.maxLevel = maxLevel;
 }
 
 function loadPlayerData(){
@@ -34,6 +35,8 @@ function loadPlayerData(){
 		$("#shopHiders").show();
 		});
 	}
+	maxLevel = parseInt(localStorage.maxLevel);
+	
 }
 
 function saveGame(){

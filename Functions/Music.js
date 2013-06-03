@@ -5,6 +5,7 @@
 
 var song;
 var bgm = new Audio();
+var mute = false;
 
 bgm.addEventListener('ended', function() {
             this.currentTime = 0;
@@ -13,7 +14,7 @@ bgm.addEventListener('ended', function() {
 function ingameMusic()
 {
 	stopMusic();
-	bgm.src = 'Images/Adventure.mp3';
+	bgm.src = 'Images/Darkness.mp3';
 	playMusic();
 }
 function battleMusic()
@@ -25,7 +26,7 @@ function battleMusic()
 function menuMusic()
 {
 	stopMusic();
-	bgm.src = 'Images/Move.mp3'
+	bgm.src = 'Images/Adventure.mp3'
 	playMusic();
 }
 function levelMusic()
@@ -48,7 +49,10 @@ function victoryMusic()
 }
 function playMusic()
 {
-	bgm.play();
+	if(mute===false)
+	{
+		bgm.play();
+	}
 }
 function stopMusic()
 {

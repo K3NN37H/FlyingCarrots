@@ -299,7 +299,7 @@ body
 	position:absolute;
 }
 
-#LevelOne
+#Level1
 {
     position:absolute;
     top: 30%;
@@ -308,7 +308,7 @@ body
     height:5%;
 }
 
-#LevelTwo
+#Level2
 {
     position:absolute;
     top: 30%;
@@ -317,7 +317,7 @@ body
     height:5%;
 }
 
-#LevelThree
+#Level3
 {
     position:absolute;
     top: 30%;
@@ -326,7 +326,7 @@ body
     height:5%;
 }
 
-#LevelFour
+#Level4
 {
     position:absolute;
     top: 40%;
@@ -334,7 +334,7 @@ body
     width:10%;
     height:5%;
 }
-#LevelFive
+#Level5
 {
     position:absolute;
     top: 40%;
@@ -343,7 +343,7 @@ body
     height:5%;
 }
 
-#LevelSix
+#Level6
 {
     position:absolute;
     top: 40%;
@@ -351,7 +351,7 @@ body
     width:10%;
     height:5%;
 }
-#LevelSeven
+#Level7
 {
     position:absolute;
     top: 50%;
@@ -359,7 +359,7 @@ body
     width:10%;
     height:5%;
 }
-#LevelEight
+#Level8
 {
     position:absolute;
     top: 50%;
@@ -368,7 +368,7 @@ body
     height:5%;
 }
 
-#LevelNine
+#Level9
 {
     position:absolute;
     top: 50%;
@@ -376,7 +376,7 @@ body
     width:10%;
     height:5%;
 }
-#LevelTen
+#Level10
 {
     position:absolute;
     top: 60%;
@@ -384,7 +384,7 @@ body
     width:10%;
     height:5%;
 }
-#LevelEleven
+#Level11
 {
     position:absolute;
     top: 60%;
@@ -393,7 +393,7 @@ body
     height:5%;
 }
 
-#LevelTwelve
+#Level12
 {
     position:absolute;
     top: 60%;
