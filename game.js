@@ -544,6 +544,7 @@ function gameButtonClick()
 {
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
+	
     answer="";
     if(currentLocal=="bull"&&numQuestion<1)
     {
@@ -586,12 +587,13 @@ function wrongbutton(){
     $("#scoreDisplay").show();
     $("#difficultyDisplay").show();
     $("#Inventory").show();
+	ingameMusic();
     setImg();
     answer=""
     numQuestion=0;
     inventory[0]--;
     $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
-    gameLose()
+    gameLose();
 }
 
 <<<<<<< Updated upstream
@@ -630,6 +632,7 @@ function gameLose()
 			inventory[0]=10;
 			$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
 			$("#finalScoreButton2").text("Votre score final est "+ score);
+			defeatMusic();
 			$("#backgroundImage").attr("src","Images/Defeat.jpg");
 			maxLevel=1;
 			savePlayerData();

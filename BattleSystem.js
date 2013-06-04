@@ -168,6 +168,7 @@ function destroyBattle()
     $("#scoreDisplay").show();
     $("#difficultyDisplay").show();
     $("#Inventory").show();
+	ingameMusic();
 	savePlayerData();
 }
 

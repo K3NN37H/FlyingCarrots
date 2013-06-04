@@ -58,6 +58,7 @@ $("#continue").click(function () {
 	hideMainMenu();
 	$("#totalScoreButton").hide();
 	loadGame();
+	ingameMusic();
 	$("#controlButtons").show();
 	$("#Inventory").show();
 	if(usedMap === true){

@@ -6,6 +6,7 @@ function restartGame(){
     $("#scorebutton").text("Votre score est "+ score); 
     $("#finalScoreButton").text("Votre score final est "+ score); 
     $("#endGame").hide();
+	menuMusic();
     showMainMenu();
     $("#loseGame").hide();
     $("#backGround").hide();

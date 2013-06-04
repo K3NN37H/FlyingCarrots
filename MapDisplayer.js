@@ -294,6 +294,7 @@ function mover(event)
            $("#multipleChoice").empty();
            $("#mathAnswer").empty();
            $("#Inventory").hide();
+		   battleMusic();
            monsterDrawer();
             typeQuestion(difficulty);
             $("#controlButtons").hide();
@@ -371,6 +372,7 @@ function endGame()
     {
         if(playerY==endY)
         {
+			victoryMusic();
             $("#controlButtons").hide();
             $("#multipleChoice").hide();
             $("#mapContainer").hide();
@@ -413,7 +415,7 @@ function levelFinish()
         difficultyMode=1
         difficulty++
     }
-    UnlockLevelButton()
+    UnlockLevelButton();
 }
 
 function UnlockLevelButton(){
