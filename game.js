@@ -7,8 +7,12 @@ var useFlameCarrot=false;
 //var correctNumber=2;
 var question;
 var answer = "";
+
+// different types of question for different difficulty
 function typeQuestion(difficulty)
-{
+{   
+//for difficulty equals 1, level will only be 1.There will only be addition problem.
+//for difficulty equals 2, level will only be 1 or 2.There will be addition or subtraction problem appear randomly.
     var level=Math.floor((Math.random()*difficulty)+1);
     if(level===1)
     {
@@ -27,6 +31,8 @@ function typeQuestion(difficulty)
         division();
     }
 }
+
+// question generator
 function addition()
 {
 	a= Math.floor((Math.random()*50)+1);
@@ -42,14 +48,17 @@ function addition()
 //else {
 //     wrongbutton()
 //}
+
+//hide the difficulty display and the map.
+//show up the number pad and math question
    $("#difficultyDisplay").hide();
    $("#mapContainer").hide(); 
    mapToggle=0;
     buttonMaker();
-
     $("#multipleChoice").show();
-$("#mathAnswer").show();
+    $("#mathAnswer").show();
 }
+
 
 function subtraction(){
     a= Math.floor((Math.random()*100)+1);
@@ -91,7 +100,7 @@ function division(){
     b = a * c;
     
    question="C'est quoi la réponse pour "+ b +" ÷ " + a + " ?";
-
+   
 $("#difficultyDisplay").hide();
    $("#mapContainer").hide(); 
    mapToggle=0;
@@ -99,6 +108,8 @@ $("#difficultyDisplay").hide();
 $("#multipleChoice").show();
 $("#mathAnswer").show();
 }
+
+//draw monster when engage an enemy
 function monsterDrawer()
 {
 	if (currentLocal === "zombie" || currentLocal === "bull" || currentLocal === "bunny")
@@ -111,7 +122,9 @@ function monsterDrawer()
 		$("#areas").append('<div class="area" id="bodyArea"></div>');
 		$("#areas").append('<div class="area" id="legArea"></div>');
 		if(currentLocal==="zombie")
-		{
+		{   
+            //there are a male zombie and a female zombie
+            //Random choose from these two.
 			if(Math.round(Math.random())===1)
 			{
 				imgSrc="Zombiefemaleshrunkcopy.png";
@@ -197,8 +210,11 @@ function monsterDrawer()
 		
 	}
 }
+
+//buttons for number pad, math question, and math answer.
 function buttonMaker()
-{
+{  
+   // button for showing up question
    $("#multipleChoice").append('<button class="gamebutton" id=question>'+question+'</button>');
    $("#question").css("position","absolute");
    $("#question").css("left",55+"%");
@@ -208,7 +224,7 @@ function buttonMaker()
    $("#question").css("border-radius",10);
    
 
-
+   // button for showing up the answer the player types in
    $("#mathAnswer").append('<button class="gamebutton" id=answerDisplay></button>');
    $("#answerDisplay").text("La réponse est " + answer);
    $("#answerDisplay").css("position","absolute");
@@ -218,6 +234,7 @@ function buttonMaker()
    $("#answerDisplay").css("width", 30+"%");
    $("#answerDisplay").css("border-radius",10);
 
+   // number pad
    $("#multipleChoice").append('<button class="gamebutton" id=one>'+"1"+'</button>');
    $("#one").css("position","absolute");
    $("#one").css("left",65+"%");
@@ -363,6 +380,7 @@ function buttonMaker()
       enterAnswer();
    });
 
+//button for using flame carrots(skiping question)
    $("#multipleChoice").append('<button class="gamebutton" id=useFlameCarrot>'+"Carottes Flamme"+'</button>');
    $("#useFlameCarrot").css("position","absolute");
    $("#useFlameCarrot").css("left",25+"%");
@@ -495,7 +513,7 @@ function buttonMaker()
 }
 
 
-
+//input and delete answer for math question
 function numberInput(event){
     answer += "" + event;
 
@@ -511,6 +529,7 @@ function deleteAnswer(){
 
 }
 
+//enter the answer and check the answer.
 function enterAnswer(){
     if(answer ==c){
         gameButtonClick();
@@ -520,7 +539,7 @@ function enterAnswer(){
     }
 }
 
-
+// answer the question right and then they will go to the sling shot.(player needs to answer more questions for bulls and bunnies)
 function gameButtonClick()
 {
     $("#multipleChoice").empty();
@@ -550,7 +569,7 @@ function gameButtonClick()
     }
 }
 
-
+// answer math question wrong.(lose one carrot and go back one step)
 function wrongbutton(){
 	$("#areas").empty();
     maze[playerX][playerY]=currentLocal;
@@ -575,6 +594,7 @@ function wrongbutton(){
     gameLose()
 }
 
+<<<<<<< Updated upstream
 function gameLose()
 {
     if(inventory[0]<= 0 )
@@ -614,6 +634,47 @@ function gameLose()
 			maxLevel=1;
 			savePlayerData();
 		}
+=======
+//running out of carrots
+function gameLose(){
+    if(inventory[0]<= 0 ){
+        //don't have enough point to buy 10 more carrots
+        //lock level 2 to 12 again, and the player will keep their inventory and gain 10 normal carrots
+            if(points<500){
+            $("#controlButtons").hide();
+            $("#multipleChoice").hide();
+            $("#mapContainer").hide();
+            $("#scoreDisplay").hide();
+            $("#loseGame").show();
+            $("#Inventory").hide();
+            $("#backGround").show();
+            $("#backgroundContainer").hide();
+            currentLocal="floor";
+            recentmove="right";
+            createMaze();
+            mazeDrawer();
+            setImg();
+            difficulty=1
+            difficultyMode = 1
+            $("#LevelTwo").attr("disabled","disabled");
+            $("#LevelThree").attr("disabled","disabled");
+            $("#LevelFour").attr("disabled","disabled");
+            $("#LevelFive").attr("disabled","disabled");
+            $("#LevelSix").attr("disabled","disabled");
+            $("#LevelSeven").attr("disabled","disabled");
+            $("#LevelEight").attr("disabled","disabled");
+            $("#LevelNine").attr("disabled","disabled");
+            $("#LevelTen").attr("disabled","disabled");
+            $("#LevelEleven").attr("disabled","disabled");
+            $("#LevelTwelve").attr("disabled","disabled");
+            inventory[0]=10
+            $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
+            $("#finalScoreButton2").text("Votre score final est "+ score);
+            $("#backgroundImage").attr("src","Images/Defeat.jpg");
+            }
+            //have enough points to buy 10 more carrots
+            //the player will force to go to the shop and can only buy the normal carrots first
+>>>>>>> Stashed changes
             else{
                 showShop();
                 $("#shopBackButton").attr("disabled","disabled");

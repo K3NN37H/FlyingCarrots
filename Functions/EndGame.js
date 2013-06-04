@@ -1,3 +1,5 @@
+// hide playing page and show up the end game page.
+// It will show how many score the player gains in the game
 function restartGame(){
 	playing = false;
     score = 0;

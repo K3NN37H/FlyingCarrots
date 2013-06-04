@@ -144,10 +144,12 @@ function resetBull(direction)
     $("#left").removeAttr("disabled","disabled");
     $("#shopButton").removeAttr("disabled","disabled");
 }
+
 $("#upBull").click(function(){resetBull("up");});
 $("#rightBull").click(function(){resetBull("right");});
 $("#leftBull").click(function(){resetBull("left");});
 $("#toggleMapButton").click(toggleMap)
+
 var mapToggle=0;
 function toggleMap()
 {
@@ -163,6 +165,7 @@ function toggleMap()
 	}
 }
 
+// buttons shown the number of items the player has.
 $("#Inventory").append('<button class="gamebutton" id=carrotDisplay></button>');
 $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]); 
 $("#carrotDisplay").css("position","absolute");
