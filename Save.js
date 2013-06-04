@@ -36,7 +36,10 @@ function loadPlayerData(){
 		});
 	}
 	maxLevel = parseInt(localStorage.maxLevel);
-	
+	for(var i = 1; i<maxLevel;i++)
+	{
+		$("#Level"+i).removeAttr("disabled");
+	}
 }
 
 function saveGame(){

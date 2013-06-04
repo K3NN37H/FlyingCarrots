@@ -22,8 +22,8 @@ function normalLevelOption(){
 
 function hardLevelOption(){
     mazeSize=21;
-    numZombie=14;
-    numBull=8;
+    numZombie=20;
+    numBull=10;
 //    ModeDisplay="Hard";
 //   $("#modebutton").text("Current mode is "+ ModeDisplay);
     createMaze();

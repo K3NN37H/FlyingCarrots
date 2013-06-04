@@ -387,11 +387,13 @@ function endGame()
             $("#backgroundImage").attr("src","Images/Victory.jpg");
             $("#backGround").show();
             $("#backgroundContainer").hide();
-            if(LevelDisplay>currentLevel)
+            if(LevelDisplay>maxLevel)
             {
             	maxLevel=LevelDisplay;
             }
             levelFinish();
+			maxLevel++;
+			savePlayerData();
         }
     }
 }
@@ -404,7 +406,8 @@ function endGame()
 	$("#finalScoreButton").css("width", 20+"%");
 	$("#finalScoreButton").css("border-radius",10);	
 	
-function levelFinish(){
+function levelFinish()
+{
     difficultyMode++
     if(difficultyMode===4&&difficulty<4){
         difficultyMode=1
@@ -415,36 +418,36 @@ function levelFinish(){
 
 function UnlockLevelButton(){
     if (difficulty===1&&difficultyMode===2){
-        $("#LevelTwo").removeAttr("disabled","");
+        $("#Level2").removeAttr("disabled","");
     }
     if (difficulty===1&&difficultyMode===3){
-        $("#LevelThree").removeAttr("disabled","");
+        $("#Level3").removeAttr("disabled","");
     }
     if (difficulty===2&&difficultyMode===1){
-        $("#LevelFour").removeAttr("disabled","");
+        $("#Level4").removeAttr("disabled","");
     }
     if (difficulty===2&&difficultyMode===2){
-        $("#LevelFive").removeAttr("disabled","");
+        $("#Level5").removeAttr("disabled","");
     }
     if (difficulty===2&&difficultyMode===3){
-        $("#LevelSix").removeAttr("disabled","");
+        $("#Level6").removeAttr("disabled","");
     }
     if (difficulty===3&&difficultyMode===1){
-        $("#LevelSeven").removeAttr("disabled","");
+        $("#Level7").removeAttr("disabled","");
     }
     if (difficulty===3&&difficultyMode===2){
-        $("#LevelEight").removeAttr("disabled","");
+        $("#Level8").removeAttr("disabled","");
     }
     if (difficulty===3&&difficultyMode===3){
-        $("#LevelNine").removeAttr("disabled","");
+        $("#Level9").removeAttr("disabled","");
     }
     if (difficulty===4&&difficultyMode===1){
-        $("#LevelTen").removeAttr("disabled","");
+        $("#Level10").removeAttr("disabled","");
     }
     if (difficulty===4&&difficultyMode===2){
-        $("#LevelEleven").removeAttr("disabled","");
+        $("#Level11").removeAttr("disabled","");
     }
     if (difficulty===4&&difficultyMode===3){
-        $("#LevelTwelve").removeAttr("disabled","");
+        $("#Level12").removeAttr("disabled","");
     }
 }

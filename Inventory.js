@@ -132,7 +132,10 @@ function resetBull(direction)
 	$("#upBull").show();
     $("#rightBull").show();
     $("#leftBull").show();
-    $("#buyMapDisplay").removeAttr("disabled","");
+	if(usedMap===false)
+	{
+    	$("#buyMapDisplay").removeAttr("disabled","");
+	}
     $("#bullDozerDisplay").removeAttr("disabled","");
     $("#levelSkipDisplay").removeAttr("disabled","");
     $("#up").removeAttr("disabled","disabled");

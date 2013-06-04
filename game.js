@@ -611,6 +611,7 @@ function gameLose()
 			$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
 			$("#finalScoreButton2").text("Votre score final est "+ score);
 			$("#backgroundImage").attr("src","Images/Defeat.jpg");
+			maxLevel=1;
 			savePlayerData();
 		}
             else{

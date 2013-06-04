@@ -4,7 +4,7 @@ menuMusic();
 $("#Level1").click({diff:1,size:1,level:1},setLevel);
 $("#Level2").click({diff:1,size:2,level:2},setLevel);
 $("#Level3").click({diff:1,size:3,level:3},setLevel);
-$("#Leve4").click({diff:2,size:1,level:4},setLevel);
+$("#Level4").click({diff:2,size:1,level:4},setLevel);
 $("#Level5").click({diff:2,size:2,level:5},setLevel);
 $("#Level6").click({diff:2,size:3,level:6},setLevel);
 $("#Level7").click({diff:3,size:1,level:7},setLevel);
@@ -25,6 +25,11 @@ $("#Level9").attr("disabled","disabled");
 $("#Level10").attr("disabled","disabled");
 $("#Level11").attr("disabled","disabled");
 $("#Level12").attr("disabled","disabled");
+
+for(var i = 1; i<=maxLevel;i++)
+{
+	$("#Level"+i).removeAttr("disabled");
+}
 
 $("#logoSplash").click(function () {
 	$(this).hide();
