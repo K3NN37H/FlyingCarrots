@@ -1,12 +1,20 @@
 
 function startGame()
 {
-    hideMainMenu();
-    $("#totalScoreButton").hide();
-    $("#levelChoosing").show();   
+	showPopup();
+	//var levelTemp = $("#levelChoosing").detach();
+	$("#popup").append($("#levelChoosing"));
+	levelSelectClick();
+	$("body").append($("#levelChoosing").clone());
+	$("#popup > #levelChoosing").show();
+	//$("#levelChoosing").show();
+    //hideMainMenu();
+    //$("#totalScoreButton").hide();
+    //$("#levelChoosing").show();   
 }
 
 function setLevel(event){
+	hidePopup();
 	var diff = event.data.diff;
 	var size = event.data.size;
 	var level = event.data.level;
@@ -60,6 +68,15 @@ function showOptions(){
 		} else if (!mute){
 			playMusic();
 			$(this).text("Music: ON");
+		}
+	});
+	$("#popup").append('<br><br><br><br><br><button class="optionButton" id="clearSaveData">Effacer les données</button><br><br><br>');
+	$("#popup").append('<p>Game coded by K3NN37H, PinguNinja, yjyjohn</p>');
+	$("#popup").append('<p><em>"Move Forward", "Call to Adventure", "Ghostpocalypse - 7 Master", "Decline", "Darkness is Coming"</em> by Kevin MacLeod (incompetech.com)<br>Licensed under Creative Commons: By Attribution 3.0<br>http://creativecommons.org/licenses/by/3.0/</p>');
+	$("#clearSaveData").click(function () {
+		var clearOk = confirm("");
+		if (clearOk) {
+			localStorage.clear();
 		}
 	});
 }

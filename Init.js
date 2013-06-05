@@ -1,6 +1,7 @@
 //Stuff From Main Menu
 hideGame();
 menuMusic();
+function levelSelectClick(){
 $("#Level1").click({diff:1,size:1,level:1},setLevel);
 $("#Level2").click({diff:1,size:2,level:2},setLevel);
 $("#Level3").click({diff:1,size:3,level:3},setLevel);
@@ -13,6 +14,7 @@ $("#Level9").click({diff:3,size:3,level:9},setLevel);
 $("#Level10").click({diff:4,size:1,level:10},setLevel);
 $("#Level11").click({diff:4,size:2,level:11},setLevel);
 $("#Level12").click({diff:4,size:3,level:12},setLevel);
+}
 
 $("#Level2").attr("disabled","disabled");
 $("#Level3").attr("disabled","disabled");
