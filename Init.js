@@ -48,6 +48,7 @@ $("#menunav").append('<area id="menuShop" shape="rect" coords="'+Math.round(xBac
 $("#menunav").append('<area id="options" shape="rect" coords="'+Math.round(xBack*0.025)+','+Math.round(yBack*0.0215)+','+Math.round(xBack*0.075)+','+Math.round(yBack*0.086)+'">');
 
 $("#startgame").click(startGame);
+$("#menuShop").click(showShop);
 $("#back").click(restartGame);
 $("#loseBack").click(restartGame);
 $("#continue").click(function () {
@@ -67,4 +68,34 @@ $("#continue").click(function () {
 });
 $("#instruction").click(gameInstruction);
 $("#options").click(showOptions);
+
+var numItems= 5;
+var inventory = [numItems];
+var MORECARROT="0";
+var FLAMECARROT="1";
+var MAP="2";
+var BULLDOZER="3";
+var LEVELSKIP="4";
+inventory[0]=10;
+var xBack = $("#backgroundImg1").width();
+var yBack = $("#backgroundImg1").height();
+for(var i=1;i<numItems;i++)
+{
+    inventory[i]=0;
+}
+$("#shop").append('<map name="shopnav" id="shopnav"></map>');
+$("#shopnav").append('<area id="buyfireCarrot" shape="rect" coords="'+Math.round(xBack*0.1)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.22)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buymoreCarrot" shape="rect" coords="'+Math.round(xBack*0.221)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.36)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buymap" shape="rect" coords="'+Math.round(xBack*0.361)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.53)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buybulldozer" shape="rect" coords="'+Math.round(xBack*0.531)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.7)+','+Math.round(yBack*0.85)+'">');
+$("#shopnav").append('<area id="buyLevelSkip" shape="rect" coords="'+Math.round(xBack*0.701)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.87)+','+Math.round(yBack*0.85)+'">');
+$("#shopButton").click(showShop);
+$("#shopBackButton").click(hideShop);
+$("#buymap").click(function(){purchase("map")});
+$("#buybulldozer").click(function(){purchase 	("bulldozer")});
+$("#buymoreCarrot").click(function(){purchase("morecarrot")});
+$("#buyfireCarrot").click(function(){purchase("flamecarrot")});
+$("#buyLevelSkip").click(function(){purchase("levelskip")});
+$("#menuShop").click(showShop);
+$("#menuShopBackButton").click(hideShop);
 

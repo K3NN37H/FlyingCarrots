@@ -44,7 +44,7 @@ function defeatMusic()
 function victoryMusic()
 {
 	stopMusic();
-	bgm.src = 'Move.mp3'
+	bgm.src = 'Images/Move.mp3'
 	playMusic();
 }
 function playMusic()

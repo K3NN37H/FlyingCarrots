@@ -9,7 +9,52 @@ function hideMainMenu(){
 	$("#menuPage").hide();
 	$(".backImg").removeAttr("usemap");
 }
-
+function showShop(){
+     $("#backGround").show();
+    $("#backgroundContainer").hide();
+	$("#backgroundImage").attr("src","Images/Shop.png");
+//	$("#backgroundImg2").css({left:"0%",top:"0%",height:"100%",width:"100%"});
+	$("#backgroundImage").attr("usemap","#shopnav");
+	$("#controlButtons").hide();
+	if(playing)
+	{
+		menuMusic();
+	}
+	$("#shop").show();
+	$("#Inventory").show();
+	$("#totalScoreButton").show();
+    $("#mapContainer").hide();
+	$("#shopBackDuringTheGame").show();
+	$("#buyMapDisplay").attr("disabled","disabled");
+    $("#bullDozerDisplay").attr("disabled","disabled");
+    $("#levelSkipDisplay").attr("disabled","disabled");
+	mapToggle = 0;
+}
+function hideShop(){
+	$("#backgroundImage").removeAttr("usemap");
+	$("#shop").hide();
+	$("#shopBackDuringTheGame").hide();
+	if (playing) {
+		ingameMusic();
+		setImg();
+		$("#controlButtons").show();
+		$("#scoreDisplay").show();
+		$("#totalScoreButton").hide();
+	}
+	else {
+		$("#Inventory").hide();
+		showMainMenu();
+	}
+	if(usedMap===false)
+	{
+		$("#buyMapDisplay").removeAttr("disabled","");
+	}
+	$("#bullDozerDisplay").removeAttr("disabled","");
+	$("#levelSkipDisplay").removeAttr("disabled","");
+	$("#difficultyDisplay").show();
+    $("#backGround").hide();
+    $("#backgroundContainer").show();
+}
 function showPopup(){
 	hideMainMenu();
 	$("#backgroundImg"+backgroundCount).css("opacity","0.65");
