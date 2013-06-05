@@ -596,11 +596,13 @@ function wrongbutton(){
     gameLose();
 }
 
-<<<<<<< Updated upstream
+//running out of carrots
 function gameLose()
 {
     if(inventory[0]<= 0 )
 	{
+        //don't have enough point to buy 10 more carrots
+        //lock level 2 to 12 again, and the player will keep their inventory and gain 10 normal carrots
 		if(points<500)
 		{
 			$("#controlButtons").hide();
@@ -637,47 +639,8 @@ function gameLose()
 			maxLevel=1;
 			savePlayerData();
 		}
-=======
-//running out of carrots
-function gameLose(){
-    if(inventory[0]<= 0 ){
-        //don't have enough point to buy 10 more carrots
-        //lock level 2 to 12 again, and the player will keep their inventory and gain 10 normal carrots
-            if(points<500){
-            $("#controlButtons").hide();
-            $("#multipleChoice").hide();
-            $("#mapContainer").hide();
-            $("#scoreDisplay").hide();
-            $("#loseGame").show();
-            $("#Inventory").hide();
-            $("#backGround").show();
-            $("#backgroundContainer").hide();
-            currentLocal="floor";
-            recentmove="right";
-            createMaze();
-            mazeDrawer();
-            setImg();
-            difficulty=1
-            difficultyMode = 1
-            $("#LevelTwo").attr("disabled","disabled");
-            $("#LevelThree").attr("disabled","disabled");
-            $("#LevelFour").attr("disabled","disabled");
-            $("#LevelFive").attr("disabled","disabled");
-            $("#LevelSix").attr("disabled","disabled");
-            $("#LevelSeven").attr("disabled","disabled");
-            $("#LevelEight").attr("disabled","disabled");
-            $("#LevelNine").attr("disabled","disabled");
-            $("#LevelTen").attr("disabled","disabled");
-            $("#LevelEleven").attr("disabled","disabled");
-            $("#LevelTwelve").attr("disabled","disabled");
-            inventory[0]=10
-            $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
-            $("#finalScoreButton2").text("Votre score final est "+ score);
-            $("#backgroundImage").attr("src","Images/Defeat.jpg");
-            }
             //have enough points to buy 10 more carrots
             //the player will force to go to the shop and can only buy the normal carrots first
->>>>>>> Stashed changes
             else{
                 showShop();
                 $("#shopBackButton").attr("disabled","disabled");
