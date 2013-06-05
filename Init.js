@@ -69,20 +69,8 @@ $("#continue").click(function () {
 $("#instruction").click(gameInstruction);
 $("#options").click(showOptions);
 
-var numItems= 5;
-var inventory = [numItems];
-var MORECARROT="0";
-var FLAMECARROT="1";
-var MAP="2";
-var BULLDOZER="3";
-var LEVELSKIP="4";
-inventory[0]=10;
-var xBack = $("#backgroundImg1").width();
-var yBack = $("#backgroundImg1").height();
-for(var i=1;i<numItems;i++)
-{
-    inventory[i]=0;
-}
+//stuff from shop
+
 $("#shop").append('<map name="shopnav" id="shopnav"></map>');
 $("#shopnav").append('<area id="buyfireCarrot" shape="rect" coords="'+Math.round(xBack*0.1)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.22)+','+Math.round(yBack*0.85)+'">');
 $("#shopnav").append('<area id="buymoreCarrot" shape="rect" coords="'+Math.round(xBack*0.221)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.36)+','+Math.round(yBack*0.85)+'">');
@@ -99,3 +87,65 @@ $("#buyLevelSkip").click(function(){purchase("levelskip")});
 $("#menuShop").click(showShop);
 $("#menuShopBackButton").click(hideShop);
 
+//stuff from MapDisplayer
+
+$(document).keydown(mover);
+$("#up").click(function () {
+    mover({which:"38"});
+});
+$("#down").click(function () {
+	mover({which:"40"});
+});
+$("#left").click(function () {
+	mover({which:"37"});
+});
+$("#right").click(function () {
+	mover({which:"39"});
+});  
+
+$("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
+$("#finalScoreButton").text("Votre score final est "+ score);   
+$("#finalScoreButton").css("position","absolute");
+$("#finalScoreButton").css("left",45+"%");
+$("#finalScoreButton").css("top",15+"%");
+$("#finalScoreButton").css("height",6+"%");
+$("#finalScoreButton").css("width", 20+"%");
+$("#finalScoreButton").css("border-radius",10);
+
+//stuff from music
+bgm.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+
+//Stuff from debug
+
+// set up debug controls
+//$("body").append('<div id="debugControls" style="z-index:100;display:none;position:absolute;right:0%;top:25%;"></div>');
+//$("#debugControls").append('<button class="gamebutton" id="disSling">'+"Toggle Slingshot"+'</button>');
+//$("#debugControls").append('<button class="gamebutton" id="disMoveAnim">'+"Toggle Move Animations"+'</button>');
+//$("#debugControls").append('<button class="gamebutton" id="pointsAdd">'+"Add 10000 points"+'</button>');
+//$("#optionPage").append('<button class="gamebutton" id="debugOption">'+"Debug Mode"+'</button>');
+
+$("#disSling").click(function () {
+	disableSlingshot = !disableSlingshot;
+});
+
+$("#disMoveAnim").click(function () {
+	disableMoveAnim = !disableMoveAnim;
+});
+
+$("#pointsAdd").click(function () {
+	addScore(10000);
+});
+
+$("#debugOption").click(function () {
+	$("#debugControls").toggle();
+});
+
+//first person display
+$("#saveButton").click(saveButton);
+function saveButton(){
+	saveGame();
+	alert("Game saved");
+}
