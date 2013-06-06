@@ -151,7 +151,7 @@ function numWalls()
         catch(err){backwardWall=true;}
         try
         {
-            if(maze[playerX][playerY+1]==="wall"||maze[playerX][playerY-1]===undefined)
+            if(maze[playerX][playerY+1]==="wall"||maze[playerX][playerY+1]===undefined)
             {
                 leftWall=true;
             }

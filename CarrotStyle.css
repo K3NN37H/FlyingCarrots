@@ -436,3 +436,79 @@ body
 	width:30%;
 	height:12%;
 }
+#finalScoreButton
+{
+	position:absolute;
+	left:45%;
+	top:15%;
+	height:6%;
+	width:20%;
+	border-radius:10;
+}
+#carrotDisplay
+{
+	position:absolute;
+	left:20%;
+	top:94%;
+	height:6%;
+	width:10%;
+}
+#bullDozerDisplay
+{
+	position:absolute;
+	left:50%;
+	top:94%;
+	height:6%;
+	width:10%;
+}
+#flameCarrotDisplay
+{
+	position:absolute;
+	left:30%;
+	top:94%;
+	height:6%;
+	width:10%;
+}
+#buyMapDisplay
+{
+	position:absolute;
+	left:40%;
+	top:94%;
+	height:6%;
+	width:10%;
+}
+#levelSkipDisplay
+{
+	position:absolute;
+	left:60%;
+	top:94%;
+	height:6%;
+	width:10%;
+}
+#difficultybutton
+{
+	position:absolute;
+	left:75%;
+	top:8%;
+	height:5%;
+	width:20%;
+	border-radius:10;
+}
+#scorebutton
+{
+	position:absolute;
+	left:75%;
+	top:13%;
+	height:5%;
+	width:20%;
+	border-radius:10;
+}
+#totalScoreButton
+{
+	position:absolute;
+	left:75%;
+	top:1%;
+	height:5%;
+	width:20%;
+	border-radius:10;
+}

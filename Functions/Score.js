@@ -1,6 +1,3 @@
-var score = 0;
-var points = 10000
-
 function addScore(amount) {
 	score += amount;
 	points += amount;

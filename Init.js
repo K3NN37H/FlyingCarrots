@@ -42,12 +42,6 @@ window.setTimeout(function () {
 
 
 $(".backImg").attr("usemap","#menunav");
-$("#menuPage").append('<map name="menunav" id="menunav"></map>');
-$("#menunav").append('<area id="startgame" shape="rect" coords="'+Math.round(xBack*0.217)+','+Math.round(yBack*0.14)+','+Math.round(xBack*0.8)+','+Math.round(yBack*0.323)+'">');
-$("#menunav").append('<area id="continue" shape="rect" coords="'+Math.round(xBack*0.217)+','+Math.round(yBack*0.323)+','+Math.round(xBack*0.783)+','+Math.round(yBack*0.48)+'">');
-$("#menunav").append('<area id="instruction" shape="rect" coords="'+Math.round(xBack*0.15)+','+Math.round(yBack*0.528)+','+Math.round(xBack*0.8)+','+Math.round(yBack*0.647)+'">');
-$("#menunav").append('<area id="menuShop" shape="rect" coords="'+Math.round(xBack*0.167)+','+Math.round(yBack*0.668)+','+Math.round(xBack*0.8)+','+Math.round(yBack*0.744)+'">');
-$("#menunav").append('<area id="options" shape="rect" coords="'+Math.round(xBack*0.025)+','+Math.round(yBack*0.0215)+','+Math.round(xBack*0.075)+','+Math.round(yBack*0.086)+'">');
 
 $("#startgame").click(startGame);
 $("#menuShop").click(showShop);
@@ -71,14 +65,11 @@ $("#continue").click(function () {
 $("#instruction").click(gameInstruction);
 $("#options").click(showOptions);
 
+$("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);   
+$("#scorebutton").text("Votre score est "+ score);   
+$("#totalScoreButton").text("Votre point est "+ points);
 //stuff from shop
 
-$("#shop").append('<map name="shopnav" id="shopnav"></map>');
-$("#shopnav").append('<area id="buyfireCarrot" shape="rect" coords="'+Math.round(xBack*0.1)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.22)+','+Math.round(yBack*0.85)+'">');
-$("#shopnav").append('<area id="buymoreCarrot" shape="rect" coords="'+Math.round(xBack*0.221)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.36)+','+Math.round(yBack*0.85)+'">');
-$("#shopnav").append('<area id="buymap" shape="rect" coords="'+Math.round(xBack*0.361)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.53)+','+Math.round(yBack*0.85)+'">');
-$("#shopnav").append('<area id="buybulldozer" shape="rect" coords="'+Math.round(xBack*0.531)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.7)+','+Math.round(yBack*0.85)+'">');
-$("#shopnav").append('<area id="buyLevelSkip" shape="rect" coords="'+Math.round(xBack*0.701)+','+Math.round(yBack*0.6)+','+Math.round(xBack*0.87)+','+Math.round(yBack*0.85)+'">');
 $("#shopButton").click(showShop);
 $("#shopBackButton").click(hideShop);
 $("#buymap").click(function(){purchase("map")});
@@ -105,14 +96,8 @@ $("#right").click(function () {
 	mover({which:"39"});
 });  
 
-$("#endGame").append('<button class="gamebutton" id=finalScoreButton></button>');
+
 $("#finalScoreButton").text("Votre score final est "+ score);   
-$("#finalScoreButton").css("position","absolute");
-$("#finalScoreButton").css("left",45+"%");
-$("#finalScoreButton").css("top",15+"%");
-$("#finalScoreButton").css("height",6+"%");
-$("#finalScoreButton").css("width", 20+"%");
-$("#finalScoreButton").css("border-radius",10);
 
 //stuff from music
 bgm.addEventListener('ended', function() {
@@ -151,3 +136,74 @@ function saveButton(){
 	saveGame();
 	alert("Game saved");
 }
+
+//from inventory
+$("#upBull").click(function(){resetBull("up");});
+$("#rightBull").click(function(){resetBull("right");});
+$("#leftBull").click(function(){resetBull("left");});
+$("#toggleMapButton").click(toggleMap);
+
+$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]); 
+
+$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
+$("#bullDozerDisplay").click(function(){useItem("bulldozer")});
+$("#upBull").hide();
+$("#rightBull").hide();
+$("#leftBull").hide();
+
+$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]); 
+
+$("#buyMapDisplay").text("Carte: "+ inventory[MAP]); 
+$("#buyMapDisplay").click(function(){useItem("map")});
+
+$("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
+$("#levelSkipDisplay").click(function (){
+       if(inventory[LEVELSKIP]>0)
+       {levelFinish();
+       inventory[LEVELSKIP]--;
+       $("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
+        currentLocal="floor";
+        usedMap=false;
+        recentmove="right";
+    if (difficulty===1&&difficultyMode===2){
+        startLevelTwo()
+    }
+    if (difficulty===1&&difficultyMode===3){
+        startLevelThree()
+    }
+    if (difficulty===2&&difficultyMode===1){
+        startLevelFour()
+    }
+    if (difficulty===2&&difficultyMode===2){
+        startLevelFive()
+    }
+    if (difficulty===2&&difficultyMode===3){
+        startLevelSix()
+    }
+    if (difficulty===3&&difficultyMode===1){
+        startLevelSeven()
+    }
+    if (difficulty===3&&difficultyMode===2){
+        startLevelEight()
+    }
+    if (difficulty===3&&difficultyMode===3){
+        startLevelNine()
+    }
+    if (difficulty===4&&difficultyMode===1){
+        startLevelTen()
+    }
+    if (difficulty===4&&difficultyMode===2){
+       startLevelEleven()
+    }
+    if (difficulty===4&&difficultyMode>2){
+        startLevelTwelve()
+    }
+        setImg();
+        $("#toggleMapButton").css("display","none");
+        mapToggle=0;
+        score=0
+        refreshScore();
+        $("#mapContainer").hide();
+            $("#buyMapDisplay").removeAttr("disabled","");
+        }
+    });
