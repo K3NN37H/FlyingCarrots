@@ -50,31 +50,32 @@ function gameInstruction(){
 
 function showOptions(){
 	showPopup();
-	$("#popup").append('<button class="optionButton" id="animToggle">Movement Animations: ON</button>');
+	$("#popup").append('<button class="optionButton" id="animToggle">Animation de mouvement: ON</button>');
 	$("#animToggle").click(function () {
 		disableMoveAnim = !disableMoveAnim;
 		if (disableMoveAnim){
-			$(this).text("Movement Animations: OFF");
+			$(this).text("Animation de mouvement: OFF");
 		} else if (!disableMoveAnim){
-			$(this).text("Movement Animations: ON");
+			$(this).text("Animation de mouvement: ON");
 		}
 	});
-	$("#popup").append('<br><button class="optionButton" id="musicToggle">Music: ON</button>');
+	$("#popup").append('<br><button class="optionButton" id="musicToggle">Musique: ON</button>');
 	$("#musicToggle").click(function () {
 		mute = !mute;
 		if (mute){
 			stopMusic();
-			$(this).text("Music: OFF");
+			$(this).text("Musique: OFF");
 		} else if (!mute){
 			playMusic();
-			$(this).text("Music: ON");
+			$(this).text("Musique: ON");
 		}
 	});
 	$("#popup").append('<br><br><br><br><br><button class="optionButton" id="clearSaveData">Effacer les données</button><br><br><br>');
-	$("#popup").append('<p>Game coded by K3NN37H, PinguNinja, yjyjohn</p>');
-	$("#popup").append('<p><em>"Move Forward", "Call to Adventure", "Ghostpocalypse - 7 Master", "Decline", "Darkness is Coming"</em> by Kevin MacLeod (incompetech.com)<br>Licensed under Creative Commons: By Attribution 3.0<br>http://creativecommons.org/licenses/by/3.0/</p>');
+	$("#popup").append('<p><strong>Game published by <em>Le Studio D\'espace</em></strong></p>');
+	$("#popup").append('<p style="font-size:75%;">Game coded by K3NN37H (Kenneth C.), PinguNinja (Andrew Wong), yjyjohn (Junyi Yang)</p>');
+	$("#popup").append('<p style="font-size:90%;"><em>"Move Forward", "Call to Adventure", "Ghostpocalypse - 7 Master", "Decline", "Darkness is Coming"</em> by Kevin MacLeod (incompetech.com)<br>Licensed under Creative Commons: By Attribution 3.0<br>http://creativecommons.org/licenses/by/3.0/</p>');
 	$("#clearSaveData").click(function () {
-		var clearOk = confirm("");
+		var clearOk = confirm("Êtes-vous sûr?");
 		if (clearOk) {
 			localStorage.clear();
 		}
