@@ -69,8 +69,27 @@ var points = 10000;
 //from Inventory
 var usedMap=false;
 var mapToggle=0;
+// buttons shown the number of items the player has.
 $("#Inventory").append('<button class="gamebutton" id=carrotDisplay></button>');
 $("#Inventory").append('<button class="gamebutton" id=bullDozerDisplay></button>');
 $("#Inventory").append('<button class="gamebutton" id=flameCarrotDisplay></button>');
 $("#Inventory").append('<button class="gamebutton" id=buyMapDisplay></button>');
 $("#Inventory").append('<button class="gamebutton" id=levelSkipDisplay></button>');
+
+//from Maze Generator
+var mazeSize=15;
+var numZombie=10;
+var numBull=5;
+var maze=[mazeSize];
+var endX, endY, endCounter;
+var playerX=2;
+var playerY;
+
+//from game.js (math question generator.
+var a,b,c = 0;
+var numQuestion=0;
+var useFlameCarrot=false;
+var question;
+var answer = "";
+$("#loseGame").append('<button class="gamebutton" id=finalScoreButton2></button>');
+$("#finalScoreButton2").text("Votre score final est "+ score);  

@@ -10,45 +10,31 @@ function useItem(item)
 	}
 	else if(item==="bulldozer"&&inventory[BULLDOZER]>0)
 	{
-		inventory[BULLDOZER]--;
-		$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]);
-		$("#buyMapDisplay").attr("disabled","disabled");
-        $("#bullDozerDisplay").attr("disabled","disabled");
-        $("#levelSkipDisplay").attr("disabled","disabled");
-        $("#up").attr("disabled","disabled");
-        $("#down").attr("disabled","disabled");
-        $("#right").attr("disabled","disabled");
-        $("#left").attr("disabled","disabled");
-        $("#shopButton").attr("disabled","disabled");
-        bulldozer();
+		if(forewardWall===false&&leftWall===false&&rightWall===false)
+		{
+		}
+		else
+		{
+			inventory[BULLDOZER]--;
+			$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]);
+			$("#buyMapDisplay").attr("disabled","disabled");
+			$("#bullDozerDisplay").attr("disabled","disabled");
+			$("#levelSkipDisplay").attr("disabled","disabled");
+			$("#up").attr("disabled","disabled");
+			$("#down").attr("disabled","disabled");
+			$("#right").attr("disabled","disabled");
+			$("#left").attr("disabled","disabled");
+			$("#shopButton").attr("disabled","disabled");
+			bulldozer();
+		}
 	}
 }
 
 function bulldozer()
 {
-	
 	$("#bullDozer").show();
 	numWalls();
-	if(forewardWall===false&&leftWall===false&&rightWall===false)
-	{
-		$("#bullDozer").hide();
-		$("#upBull").hide();
-		$("#rightBull").hide();
-		$("#leftBull").hide();
-		if(usedMap===false)
-		{
-			$("#buyMapDisplay").removeAttr("disabled","");
-		}
-		$("#bullDozerDisplay").removeAttr("disabled","");
-		$("#levelSkipDisplay").removeAttr("disabled","");
-		$("#up").removeAttr("disabled","disabled");
-		$("#down").removeAttr("disabled","disabled");
-		$("#right").removeAttr("disabled","disabled");
-		$("#left").removeAttr("disabled","disabled");
-		$("#shopButton").removeAttr("disabled","disabled");
-		inventory[3]++;
-	}
-	else if(recentmove==="up")
+	if(recentmove==="up")
     {
         try
         {
@@ -156,44 +142,71 @@ function bulldozer()
         }
         catch(err){}
     }
-//	if(leftWall===true&&rightWall===true&&forewardWall===false)//straight corridor
-//    {
-//    	console.log("entered");
-//    	$("#upBull").hide();
-//    }
-//    else if(forewardWall===true&&leftWall===true&&rightWall===false)//corner right corridor
-//    {
-//    	$("#rightBull").hide();
-//    }
-//    else if(forewardWall===true&&leftWall===false&&rightWall===true)//corner left corridor
-//    {
-//    	$("#leftBull").hide();
-//    }
-//    else if(forewardWall===true&&leftWall===false&&rightWall===false)//3 way front corridor
-//    {
-//    	$("#leftBull").hide();
-//    	$("#rightBull").hide();
-//    }
-//    else if(forewardWall===false&&leftWall===true&&rightWall===false)//3 way right corridor
-//    {
-//    	$("#upBull").hide();
-//    	$("#rightBull").hide();
-//    }
-//    else if(forewardWall===false&&leftWall===false&&rightWall===true)//3 way left corridor
-//    {
-//    	$("#upBull").hide();
-//    	$("#leftBull").hide();
-//    }
-//    else if(forewardWall===false&&leftWall===false&&rightWall===false)//4 way corridor
-//    {
-//    	inventory[BULLDOZER]++;
-//		$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]);
-//    }
-//    else if(forewardWall===true&&leftWall===true&&rightWall===true)//dead end corridor
-//    {
-//    }
 }
-
+//Clicking on level skip will let the player go to the next level directly.
+//if the player use level skip in level 12, he will go to level 12 again but which will have a different maze.
+function levelSkipper()
+{
+	if(inventory[LEVELSKIP]>0)
+       {levelFinish();
+       inventory[LEVELSKIP]--;
+       $("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
+        currentLocal="floor";
+        usedMap=false;
+        recentmove="right";
+    if (difficulty===1&&difficultyMode===2){
+        LevelDisplay=2;
+    }
+    if (difficulty===1&&difficultyMode===3){
+        LevelDisplay=3;
+    }
+    if (difficulty===2&&difficultyMode===1){
+        LevelDisplay=4;
+   }
+    if (difficulty===2&&difficultyMode===2){
+        LevelDisplay=5;
+    }
+    if (difficulty===2&&difficultyMode===3){
+        LevelDisplay=6;
+    }
+    if (difficulty===3&&difficultyMode===1){
+       LevelDisplay=7;
+    }
+    if (difficulty===3&&difficultyMode===2){
+        LevelDisplay=8;
+    }
+    if (difficulty===3&&difficultyMode===3){
+        LevelDisplay=9;
+    }
+    if (difficulty===4&&difficultyMode===1){
+        LevelDisplay=10;
+    }
+    if (difficulty===4&&difficultyMode===2){
+       LevelDisplay=11;
+    }
+    if (difficulty===4&&difficultyMode>2){
+        LevelDisplay=12;
+    }
+        var temp = {
+            data:{
+                diff: difficulty, size: difficultyMode, level: LevelDisplay
+            }
+        };
+        setLevel(temp);
+        setImg();
+        $("#toggleMapButton").css("display","none");
+        mapToggle=0;
+        score=0
+        refreshScore();
+        if(LevelDisplay>maxLevel)
+        {
+            maxLevel=LevelDisplay;
+        }
+        savePlayerData();
+        $("#mapContainer").hide();
+            $("#buyMapDisplay").removeAttr("disabled","");
+        }
+}
 function resetBull(direction)
 {
 	if(direction==="up")

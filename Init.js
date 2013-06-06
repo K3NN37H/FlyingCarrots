@@ -58,7 +58,9 @@ $("#continue").click(function () {
 	ingameMusic();
 	$("#controlButtons").show();
 	$("#Inventory").show();
+	
 	if(usedMap === true){
+		$("#buyMapDisplay").attr("disabled","disabled");
 		$("#toggleMapButton").show();
 	}
 });
@@ -157,53 +159,6 @@ $("#buyMapDisplay").text("Carte: "+ inventory[MAP]);
 $("#buyMapDisplay").click(function(){useItem("map")});
 
 $("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
-$("#levelSkipDisplay").click(function (){
-       if(inventory[LEVELSKIP]>0)
-       {levelFinish();
-       inventory[LEVELSKIP]--;
-       $("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
-        currentLocal="floor";
-        usedMap=false;
-        recentmove="right";
-    if (difficulty===1&&difficultyMode===2){
-        startLevelTwo()
-    }
-    if (difficulty===1&&difficultyMode===3){
-        startLevelThree()
-    }
-    if (difficulty===2&&difficultyMode===1){
-        startLevelFour()
-    }
-    if (difficulty===2&&difficultyMode===2){
-        startLevelFive()
-    }
-    if (difficulty===2&&difficultyMode===3){
-        startLevelSix()
-    }
-    if (difficulty===3&&difficultyMode===1){
-        startLevelSeven()
-    }
-    if (difficulty===3&&difficultyMode===2){
-        startLevelEight()
-    }
-    if (difficulty===3&&difficultyMode===3){
-        startLevelNine()
-    }
-    if (difficulty===4&&difficultyMode===1){
-        startLevelTen()
-    }
-    if (difficulty===4&&difficultyMode===2){
-       startLevelEleven()
-    }
-    if (difficulty===4&&difficultyMode>2){
-        startLevelTwelve()
-    }
-        setImg();
-        $("#toggleMapButton").css("display","none");
-        mapToggle=0;
-        score=0
-        refreshScore();
-        $("#mapContainer").hide();
-            $("#buyMapDisplay").removeAttr("disabled","");
-        }
-    });
+$("#levelSkipDisplay").click(levelSkipper);
+
+//from MazeGener

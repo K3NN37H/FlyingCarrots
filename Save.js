@@ -74,6 +74,7 @@ function loadGame(){
 	LevelDisplay = parseInt(localStorage.LevelDisplay);
 	mazeSize = parseInt(localStorage.mazeSize);
 	usedMap = localStorage.usedMap;
+	console.log(usedMap);
 	if (usedMap === "false"){
 		usedMap = false;
 	} else if(usedMap === "true"){
