@@ -4,7 +4,7 @@
    version="1.0.0">
  
    <name>Flying Carrots</name>
-   <icon src="img/icon.png" />
+   <icon src="Images/icon.png" />
    <description>Find your kite!</description>
    <content src="index.html"/>
    <rim:orientation mode="landscape"/>
