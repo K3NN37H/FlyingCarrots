@@ -58,7 +58,9 @@ $("#continue").click(function () {
 	ingameMusic();
 	$("#controlButtons").show();
 	$("#Inventory").show();
-	
+	$("#scoreDisplay").show();
+	$("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);
+	$("#scorebutton").text("Votre score est "+ score); 
 	if(usedMap === true){
 		$("#buyMapDisplay").attr("disabled","disabled");
 		$("#toggleMapButton").show();
