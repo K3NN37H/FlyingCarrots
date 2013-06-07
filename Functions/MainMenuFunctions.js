@@ -15,6 +15,7 @@ function startGame()
 
 function setLevel(event){
 	hidePopup();
+	hideMainMenu();
 	var diff = event.data.diff;
 	var size = event.data.size;
 	var level = event.data.level;
