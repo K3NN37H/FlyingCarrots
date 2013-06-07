@@ -273,7 +273,7 @@ function buttonMaker()
    });
 
 //button for using flame carrots(skiping question)
-   $("#multipleChoice").append('<button class="gamebutton" id=useFlameCarrot>'+"Carottes Flamme"+'</button>');
+   $("#multipleChoice").append('<button class="calculatorButton" id=useFlameCarrot>'+"Carottes Flamme"+'</button>');
    $("#useFlameCarrot").click(function (){
       if(inventory[1]>0){
           numQuestion=3;
