@@ -1,9 +1,10 @@
+//this function is called whenver a new maze is to be generated, all other functions can be seen as private functions, called by this function.
 function createMaze()
 {
     endCounter=-1;
     playerX=0;
-    playerY=1;
-    for(var i=0;i<mazeSize;i++)
+    playerY=1;//sets the related variables back to their default values
+    for(var i=0;i<mazeSize;i++)//the array (made in variables.js) is turned into a 2d array, then initialized as all walls
     {
         maze[i]=[mazeSize];
         for(var j=0;j<mazeSize;j++)
@@ -12,7 +13,7 @@ function createMaze()
         }
     }
     maze[0][1]="floor";
-    maze[1][1]="floor";
+    maze[1][1]="floor";//sets the starting positions as a floor
     makeMaze(1,1,0);
     maze[0][1]="player";
     maze[endX][endY]="kite";
