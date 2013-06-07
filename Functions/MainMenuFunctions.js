@@ -78,7 +78,7 @@ function showOptions(){
 	$("#clearSaveData").click(function () {
 		var clearOk = confirm("Êtes-vous sûr?");
 		if (clearOk) {
-			localStorage.clear();
+			clearAllData();
 		}
 	});
 }

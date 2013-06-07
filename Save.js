@@ -102,3 +102,19 @@ function loadGame(){
 	mazeDrawer();
 	playing = true; // this needs to be set for the shop to work properly
 }
+
+function clearAllData(){
+	localStorage.clear();
+	points = 10000;
+	score = 0;
+	inventory = [10,0,0,0,0];
+	maxLevel = 1;
+	$("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);
+	refreshScore();
+	$(".levelButton").attr("disabled","disabled");
+	$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]); 
+	$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
+	$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]); 
+	$("#buyMapDisplay").text("Carte: "+ inventory[MAP]); 
+	$("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
+}
