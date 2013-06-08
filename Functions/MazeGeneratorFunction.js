@@ -14,29 +14,33 @@ function createMaze()
     }
     maze[0][1]="floor";
     maze[1][1]="floor";//sets the starting positions as a floor
-    makeMaze(1,1,0);
+    makeMaze(1,1,0);//starts the random maze generation process. 
     maze[0][1]="player";
     maze[endX][endY]="kite";
     inputEnemies();
     mazeDrawer();
 }
+/**This is the recurssive maze generation function. It will turn a tile into the floor, then move in a random direction
+then turn that tile into a floor. When it reaches a point where it can no longer cut then it
+will go back to the last point where it can, and start carving from there.**/
 function makeMaze (cx,cy,counter)
 {
-    deadEnd(cx,cy,counter);
-    counter++;
-    if(cx==1&&cy==1)
+    deadEnd(cx,cy,counter);//check if the current floor is the furstest away from the start
+    counter++;//increase the counter by 1. The counter will track how far away the current space is from the start.
+    //if on top left corner of maze
+	if(cx==1&&cy==1)
     {
         while(maze[cx+2][cy]==="wall"||maze[cx][cy+2]==="wall")//can go down or right
         {
             var dir;
-            dir=Math.floor(Math.random()*2+1);
+            dir=Math.floor(Math.random()*2+1);//chose a random direction to go in
             if(dir==1)
             {
                 if(maze[cx][cy+2]==="wall")
                 {
-                    maze[cx][cy+1]="floor";
-                    maze[cx][cy+2]="floor";
-                    makeMaze(cx,cy+2,counter);
+                    maze[cx][cy+1]="floor";//change the tile to a floor tile
+                    maze[cx][cy+2]="floor";//chage to floor tile
+                    makeMaze(cx,cy+2,counter);//call function from new spot
                 }
             }
             if(dir==2)
@@ -50,6 +54,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//if on bottom left of maze
     else if (cx===1&&cy==mazeSize-2)
     {
         while(maze[cx+2][cy]==="wall"||maze[cx][cy-2]==="wall")//can go up or right
@@ -76,6 +81,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//if on top right of maze
     else if (cx==mazeSize-2&&cy===1)
     {
         while(maze[cx][cy+2]==="wall"||maze[cx-2][cy]==="wall")//can go down or left
@@ -102,6 +108,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//if on bottom right of maze
     else if(cx==mazeSize-2&&cy==mazeSize-2)
     {
         while(maze[cx-2][cy]==="wall"||maze[cx][cy-2]==="wall")//can go up or left
@@ -128,6 +135,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//if along left wall
     else if(cx===1)
     {
         while(maze[cx+2][cy]==="wall"||maze[cx][cy+2]==="wall"||maze[cx][cy-2]==="wall")//can go up down right
@@ -163,6 +171,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//if along right wall
     else if(cx==mazeSize-2)
     {
         while(maze[cx][cy+2]==="wall"||maze[cx-2][cy]==="wall"||maze[cx][cy-2]==="wall")//down up left
@@ -197,7 +206,7 @@ function makeMaze (cx,cy,counter)
                 }
             }
         }
-    }
+    }//if along top
     else if(cy===1)
     {
         while(maze[cx+2][cy]==="wall"||maze[cx][cy+2]==="wall"||maze[cx-2][cy]==="wall")//down left right
@@ -233,6 +242,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//if along bottom
     else if(cy==mazeSize-2)
     {
         while(maze[cx+2][cy]==="wall"||maze[cx-2][cy]==="wall"||maze[cx][cy-2]==="wall")
@@ -268,6 +278,7 @@ function makeMaze (cx,cy,counter)
             }
         }
     }
+	//anywhere else in the maze
     else
     {
         while(maze[cx+2][cy]==="wall"||maze[cx][cy+2]==="wall"||maze[cx-2][cy]==="wall"||maze[cx][cy-2]==="wall")
@@ -313,7 +324,8 @@ function makeMaze (cx,cy,counter)
         }
     }
 }
-
+//check if the current tile is the furthest away from the the start position,
+//if it is then this will be used as the victory title.
 function deadEnd(cx,cy, counter)
 {
     if(counter>endCounter)
@@ -323,7 +335,8 @@ function deadEnd(cx,cy, counter)
         endCounter=counter;
     }
 }
-
+//after the maze is generated the monsters are place. There is a robotic bunny
+//right before the exit, and then the other enemies are scattered randomly.
 function inputEnemies()
 {
     if(maze[endX+1][endY]==="floor")
