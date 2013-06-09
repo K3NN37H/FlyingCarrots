@@ -77,6 +77,7 @@ function showPopup(){
 	$("#backgroundImg"+backgroundCount).css("opacity","0.65");
 	$("body").append('<div id="popup" style="position:absolute;top:15%;left:15%;width:60%;height:60%;background:#FFC8F2;border:solid 1px black;border-radius:10px;box-shadow: 10px 10px 5px #444444;"></div>');
 	$("#popup").append('<button id="closePopup" style="position:absolute;right:0%;bottom:0%;height:15%;width:15%">RECULER</button>');
+    $("#popup").append('<div id="popupContent"></div>');
 	$("#closePopup").click(hidePopup);
 }
 
