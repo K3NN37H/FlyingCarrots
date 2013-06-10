@@ -49,7 +49,7 @@ $("#back").click(restartGame);
 $("#loseBack").click(restartGame);
 $("#continue").click(function () {
 	if (localStorage.haveSave !== "true"){
-		alert("No save data");
+		alert("Il n'y a pas une jeux sauver.");
 		return;
 	}
 	hideMainMenu();
@@ -138,7 +138,7 @@ $("#debugOption").click(function () {
 $("#saveButton").click(saveButton);
 function saveButton(){
 	saveGame();
-	alert("Game saved");
+	alert("Jeux sauver.");
 }
 
 //from inventory
