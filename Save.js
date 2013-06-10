@@ -54,6 +54,8 @@ function saveGame(){
 	localStorage.LevelDisplay = LevelDisplay;
 	localStorage.playerX = playerX; // player X coordinates
 	localStorage.playerY = playerY; // player Y coordinates
+	localStorage.endX = endX;
+	localStorage.endY = endY;
 	localStorage.prevX = prevX; // previous X coords
 	localStorage.prevY = prevY; // previous Y coords
 	localStorage.prevO = prevO; // previous facing direction
@@ -82,6 +84,8 @@ function loadGame(){
 	}
 	playerX = parseInt(localStorage.playerX);
 	playerY = parseInt(localStorage.playerY);
+	endX = parseInt(localStorage.endX);
+	endY = parseInt(localStorage.endY);
 	prevX = parseInt(localStorage.prevX);
 	prevY = parseInt(localStorage.prevY);
 	prevO = localStorage.prevO;
@@ -98,6 +102,7 @@ function loadGame(){
 		}
 	}
 	maze = tempMaze;
+	refreshScore();
 	setImg();
 	mazeDrawer();
 	playing = true; // this needs to be set for the shop to work properly
