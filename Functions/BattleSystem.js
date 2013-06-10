@@ -67,7 +67,6 @@ function initBattle()
 			else if(useFlameCarrot===true)
 			{
 				$("#carrot").append('<img id=carrotimg src="Images/flamecarrot.png"></img>');
-				useFlameCarrot=false;
 			}
 		}
 		$("#carrot").css("left", orig.changedTouches[0].pageX);
@@ -102,6 +101,7 @@ function initBattle()
 				destroyBattle();
                 wrongbutton();
             }
+			useFlameCarrot=false;
 		});
 		},1000);
 		$(this).off();
@@ -158,6 +158,12 @@ function initBattle()
 
 function destroyBattle()
 {
+	if (useFlameCarrot){
+		inventory[1]--;
+		inventory[0]++;
+		$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]);
+		$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
+	}
     $("#battleInterface").empty();
 	$("#battleInterface").hide();
     $("#Inventory").show();
@@ -186,12 +192,7 @@ function hitEnemy(){
         currentLocal="floor"; 
 
         inventory[0]--;
-		if (useFlameCarrot){
-			inventory[1]--;
-			inventory[0]++;
-			$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]);
-			$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
-		}
+		
         $("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]);
         gameLose();
 }

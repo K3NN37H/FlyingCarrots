@@ -349,7 +349,6 @@ function wrongbutton(){
     currentLocal=maze[playerX][playerY];
     maze[playerX][playerY]="player";
     mazeDrawer();
-    destroyBattle()
     $("#multipleChoice").empty();
     $("#mathAnswer").empty();
     $("#controlButtons").show();

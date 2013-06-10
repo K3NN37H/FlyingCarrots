@@ -1,5 +1,0 @@
-
-/*global maze, playerX, playerY */
-
-
-
