@@ -75,21 +75,21 @@ function initBattle()
 		window.setTimeout(function () {
 		if ($("#headArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#headArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#headArea").offset().left+$("#headArea").width() > $("body").width()/2+(xSize/2-x) && $("#headArea").offset().top+$("#headArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
-			alert("HIT Head");
+			alert("Frapper la tête!");
             hitTheEnemy = true
 		}
 		else if ($("#bodyArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#bodyArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#bodyArea").offset().left+$("#bodyArea").width() > $("body").width()/2+(xSize/2-x) && $("#bodyArea").offset().top+$("#bodyArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
-			alert("HIT Body");
+			alert("Frapper le corps!");
             hitTheEnemy = true
 		}
 		else if ($("#legArea").offset().left < $("body").width()/2+(xSize/2-x) && $("#legArea").offset().top < $("#battleInterface").offset().top-(y-10)*2 && $("#legArea").offset().left+$("#legArea").width() > $("body").width()/2+(xSize/2-x) && $("#legArea").offset().top+$("#legArea").height() > $("#battleInterface").offset().top-(y-10)*2)
 		{
-			alert("HIT Leg");
+			alert("Frapper la jambe!");
             hitTheEnemy = true
 		}
         else{
-            alert("You missed it");
+            alert("Un coup raté! ");
         }
 		$("#battleInterface").append('<button id="leaveBattle" style="position:absolute;top:50%;left:50%;">OK</button>');
 		$("#leaveBattle").click(function (e) {
