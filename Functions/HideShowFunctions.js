@@ -1,6 +1,8 @@
 //set the background image to menu image
 //also show the div contains menu page
 function showMainMenu(){
+    $("#backgroundImg1").finish();
+    $("#backgroundImg2").finish();
 	$("#backgroundImg"+backgroundCount).attr("src","Images/Menu.png");
 	$("#menuPage").show();
 	$("#backgroundImg2").css({left:"0%",top:"0%",height:"100%",width:"100%"});
