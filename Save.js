@@ -7,6 +7,7 @@ function savePlayerData(){
 	localStorage.haveData = true;
 	localStorage.points = points; // spendable points
 	localStorage.inventory = inventory; // inventory
+	localStorage.maxLevel = maxLevel;
 }
 
 function loadPlayerData(){
@@ -34,6 +35,11 @@ function loadPlayerData(){
 		$("#shopHiders").show();
 		});
 	}
+	maxLevel = parseInt(localStorage.maxLevel);
+	for(var i = 1; i<maxLevel;i++)
+	{
+		$("#Level"+i).removeAttr("disabled");
+	}
 }
 
 function saveGame(){
@@ -48,6 +54,8 @@ function saveGame(){
 	localStorage.LevelDisplay = LevelDisplay;
 	localStorage.playerX = playerX; // player X coordinates
 	localStorage.playerY = playerY; // player Y coordinates
+	localStorage.endX = endX;
+	localStorage.endY = endY;
 	localStorage.prevX = prevX; // previous X coords
 	localStorage.prevY = prevY; // previous Y coords
 	localStorage.prevO = prevO; // previous facing direction
@@ -68,6 +76,7 @@ function loadGame(){
 	LevelDisplay = parseInt(localStorage.LevelDisplay);
 	mazeSize = parseInt(localStorage.mazeSize);
 	usedMap = localStorage.usedMap;
+	console.log(usedMap);
 	if (usedMap === "false"){
 		usedMap = false;
 	} else if(usedMap === "true"){
@@ -75,6 +84,8 @@ function loadGame(){
 	}
 	playerX = parseInt(localStorage.playerX);
 	playerY = parseInt(localStorage.playerY);
+	endX = parseInt(localStorage.endX);
+	endY = parseInt(localStorage.endY);
 	prevX = parseInt(localStorage.prevX);
 	prevY = parseInt(localStorage.prevY);
 	prevO = localStorage.prevO;
@@ -91,7 +102,24 @@ function loadGame(){
 		}
 	}
 	maze = tempMaze;
+	refreshScore();
 	setImg();
 	mazeDrawer();
 	playing = true; // this needs to be set for the shop to work properly
+}
+
+function clearAllData(){
+	localStorage.clear();
+	points = 10000;
+	score = 0;
+	inventory = [10,0,0,0,0];
+	maxLevel = 1;
+	$("#difficultybutton").text("Niveau courrant est "+ LevelDisplay);
+	refreshScore();
+	$(".levelButton").attr("disabled","disabled");
+	$("#carrotDisplay").text("Carrottes: "+ inventory[MORECARROT]); 
+	$("#bullDozerDisplay").text("Bulldozer: "+ inventory[BULLDOZER]); 
+	$("#flameCarrotDisplay").text("Carrottes Flamme: "+ inventory[FLAMECARROT]); 
+	$("#buyMapDisplay").text("Carte: "+ inventory[MAP]); 
+	$("#levelSkipDisplay").text("Sauter un Niveau: "+ inventory[LEVELSKIP]); 
 }

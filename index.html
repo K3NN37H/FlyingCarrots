@@ -50,40 +50,40 @@
 			</div>
         
         <div id="levelChoosing">
-            <button id="LevelOne">
+            <button id="Level1">
     			Niveau 1
 			</button>
-            <button id="LevelTwo">
+            <button class="levelButton" id="Level2">
         		Niveau 2
 			</button>
-            <button id="LevelThree">
+            <button class="levelButton" id="Level3">
             	Niveau 3
 			</button>
-            <button id="LevelFour">
+            <button class="levelButton" id="Level4">
             	Niveau 4
 			</button>
-            <button id="LevelFive">
+            <button class="levelButton" id="Level5">
             	Niveau 5
 			</button>
-            <button id="LevelSix">
+            <button class="levelButton" id="Level6">
         		Niveau 6
 			</button>
-            <button id="LevelSeven">
+            <button class="levelButton" id="Level7">
             	Niveau 7
 			</button>
-            <button id="LevelEight">
+            <button class="levelButton" id="Level8">
             	Niveau 8
 			</button>
-            <button id="LevelNine">
+            <button class="levelButton" id="Level9">
         		Niveau 9
 			</button>
-            <button id="LevelTen">
+            <button class="levelButton" id="Level10">
         		Niveau 10
 			</button>
-            <button id="LevelEleven">
+            <button class="levelButton" id="Level11">
             	Niveau 11
 			</button>
-            <button id="LevelTwelve">
+            <button class="levelButton" id="Level12">
             	Niveau 12
 			</button>
         </div>
@@ -145,18 +145,25 @@
             <div id="leftHider"></div>
             <div id="rightHider"></div>
         </div>
-        
-		<script src="Score.js"></script>
-        <script src="FirstPersonDisplay.js"></script>
-        <script src="game.js"></script>
-        <script src="MainMenu.js"></script>
-        <script src="Shop.js"></script>
-        <script src="MazeGenerator.js"></script>
-        <script src="MapDisplayer.js"></script>
-        <script src="Inventory.js"></script>
-		<script src="BattleSystem.js"></script>
-		<script src="Debug.js"></script>
+        <script src="Variables.js"></script>
+		
+        <script src="Functions/MainMenuFunctions.js"></script>
+		<script src="Functions/HideShowFunctions.js"></script>
+		<script src="Functions/LevelSelection.js"></script>
+		<script src="Functions/EndGame.js"></script>
+		<script src="Functions/MusicFunctions.js"></script>
+		<script src="Functions/ShopFunctions.js"></script>
+		<script src="Functions/MapDisplayerFunction.js"></script>
+		<script src="Functions/MovementFunctions.js"></script>
+		<script src="Functions/FirstPersonDisplayFunctions.js"></script>
+		<script src="Functions/Score.js"></script>
+		<script src="Functions/InventoryFunctions.js"></script>	
+		<script src="Functions/MazeGeneratorFunction.js"></script>
+		<script src="Functions/MathGeneratorFunction.js"></script>
+		<script src="Functions/BattleSystem.js"></script>
 		<script src="Save.js"></script>
+		
+		<script src="Init.js"></script>
 		
 	</body>
 </html>
